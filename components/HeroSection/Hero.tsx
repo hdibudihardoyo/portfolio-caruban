@@ -6,7 +6,6 @@ import { motion, Variants } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export default function HeroSection() {
-
   const words = ["Terintegrasi", "Inovatif", "Skalabel", "Profesional"];
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
@@ -59,7 +58,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-white text-[var(--foreground)] pt-20"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-white text-[var(--foreground)] pt-16 sm:pt-20"
     >
       <motion.div
         variants={containerVariants}
@@ -69,7 +68,7 @@ export default function HeroSection() {
       >
         {/* Title & Desc */}
         <motion.div variants={itemVariants} className="space-y-4">
-          <h1 className="text-4xl font-black tracking-tighter leading-[1.1]">
+          <h1 className="text-2xl sm:text-3xl font-black tracking-tighter leading-[1.1]">
             Solusi Pengembangan Web <br />
             <span className="text-[var(--primary)]">
               {words[index].substring(0, subIndex)}

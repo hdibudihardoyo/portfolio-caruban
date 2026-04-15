@@ -11,24 +11,24 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-24 px-6 bg-white overflow-hidden"
+      className="relative py-16 sm:py-20 px-6 bg-white overflow-hidden"
     >
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-[var(--primary)] opacity-[0.02] blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-5xl mx-auto">
         {/* Header  */}
-        <div className="flex flex-col items-center text-center mb-16 gap-4">
+        <div className="flex flex-col items-center text-center mb-10 gap-4">
           <div className="w-10 h-1.5 rounded-full bg-[var(--primary)]" />
-          <h2 className="text-3xl md:text-4xl font-black tracking-tighter">
+          <h2 className="text-2xl md:text-3xl font-black tracking-tighter">
             Konsultasi Gratis
           </h2>
-          <p className="text-sm md:text-base opacity-60 font-medium max-w-md">
+          <p className="text-xs sm:text-sm md:text-base opacity-60 font-medium max-w-md">
             Punya ide proyek menarik? Mari diskusikan bagaimana kami bisa
             membantu mewujudkannya.
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
+        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
           {/* Left Form */}
           <div className="w-full md:w-3/5">
             <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">

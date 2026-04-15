@@ -55,7 +55,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links - Using navLinks from constants */}
+          {/* Quick Links  */}
           <div className="flex flex-col gap-6">
             <h4 className="text-xs font-black uppercase tracking-[0.2em] text-[var(--brand-dark)]">
               Navigasi
@@ -86,7 +86,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info - Using footerContact from constants */}
+          {/* Contact Info  */}
           <div className="flex flex-col gap-6">
             <h4 className="text-xs font-black uppercase tracking-[0.2em] text-[var(--brand-dark)]">
               Kontak

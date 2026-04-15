@@ -8,15 +8,15 @@ export default function SectionReview() {
   return (
     <section
       id="testimonial"
-      className="py-24 px-6 bg-white text-[var(--foreground)] overflow-hidden"
+      className="py-16 sm:py-20 px-6 bg-white text-[var(--foreground)] overflow-hidden"
     >
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="flex justify-center mb-4">
+        <div className="text-center mb-5">
+          <div className="flex justify-center mb-3">
             <div className="w-10 h-2 rounded-full bg-[var(--primary)]" />
           </div>
-          <h2 className="text-3xl font-black tracking-tighter leading-tight">
+          <h2 className="text-2xl sm:text-3xl font-black tracking-tighter leading-tight">
             Apa Kata Mereka?
           </h2>
         </div>
@@ -36,7 +36,7 @@ export default function SectionReview() {
                   borderColor: "var(--primary)",
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                className="min-w-[280px] md:min-w-[320px] bg-white border border-[var(--border)] rounded-[2rem] p-7 shadow-sm hover:shadow-xl transition-all duration-300 relative"
+                className="min-w-[240px] md:min-w-[280px] bg-white border border-[var(--border)] rounded-[2rem] p-5 shadow-sm hover:shadow-xl transition-all duration-300 relative"
               >
                 <Quote className="absolute top-5 right-6 w-8 h-8 text-[var(--primary)] opacity-10" />
 

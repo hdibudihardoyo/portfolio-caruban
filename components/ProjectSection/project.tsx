@@ -10,13 +10,13 @@ export default function ProjectSection() {
   return (
     <section
       id="project"
-      className="relative py-24 px-6 overflow-hidden bg-white text-[var(--foreground)]"
+      className="relative py-16 sm:py-20 px-6 overflow-hidden bg-white text-[var(--foreground)]"
     >
       {/* Dekorasi Background */}
       <div className="absolute top-1/4 left-0 w-64 h-64 bg-[var(--primary)] opacity-[0.02] blur-[100px] pointer-events-none"></div>
 
       {/* Header  */}
-      <div className="max-w-5xl mx-auto text-center mb-16">
+      <div className="max-w-5xl mx-auto text-center mb-10 sm:mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,14 +24,14 @@ export default function ProjectSection() {
           className="flex flex-col items-center"
         >
           <div className="w-10 h-1.5 rounded-full bg-[var(--primary)] mb-4" />
-          <h2 className="text-3xl md:text-4xl font-black tracking-tighter">
+          <h2 className="text-2xl md:text-3xl font-black tracking-tighter">
             Portofolio Proyek
           </h2>
         </motion.div>
       </div>
 
       {/* Project List */}
-      <div className="max-w-6xl mx-auto flex flex-col gap-24">
+      <div className="max-w-6xl mx-auto flex flex-col gap-14 md:gap-20">
         {featuredProjects.map((project) => (
           <motion.div
             key={project.id}
@@ -41,7 +41,7 @@ export default function ProjectSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className={`flex flex-col ${
               project.imageLeft ? "md:flex-row" : "md:flex-row-reverse"
-            } items-center justify-center gap-10 md:gap-16`}
+            } items-center justify-center gap-8 md:gap-12`}
           >
             {/* Image Container */}
             <div className="w-full md:w-[38%] shrink-0 group">
@@ -59,13 +59,13 @@ export default function ProjectSection() {
             {/* Content */}
             <div className="w-full md:w-[45%] flex flex-col gap-4 text-left">
               <div className="flex items-center gap-3">
-                <span className="text-[var(--primary)] font-black text-lg md:text-xl opacity-25">
+                <span className="text-[var(--primary)] font-black text-base md:text-lg opacity-25">
                   {project.id}
                 </span>
                 <div className="h-[1px] w-6 bg-[var(--border)]" />
               </div>
 
-              <h3 className="text-xl md:text-2xl font-black tracking-tight leading-tight text-[var(--brand-dark)]">
+              <h3 className="text-lg md:text-xl font-black tracking-tight leading-tight text-[var(--brand-dark)]">
                 {project.title}
               </h3>
 

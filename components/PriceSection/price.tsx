@@ -12,22 +12,22 @@ export default function PriceSection() {
   return (
     <section
       id="pricing"
-      className="py-24 px-6 bg-white text-[var(--foreground)]"
+      className="py-16 sm:py-20 px-6 bg-white text-[var(--foreground)]"
     >
       <div className="max-w-5xl mx-auto text-center">
         <div className="flex justify-center mb-4">
           <div className="w-10 h-2 rounded-full bg-[var(--primary)]" />
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-tight mb-2">
+        <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight mb-2">
           Paket Solusi Digital
         </h2>
-        <p className="opacity-60 mb-4 max-w-lg mx-auto text-sm md:text-base font-medium">
+        <p className="opacity-60 mb-4 max-w-lg mx-auto text-xs sm:text-sm md:text-base font-medium">
           Pilih paket yang paling sesuai dengan skala bisnis Anda saat ini.
         </p>
 
         {/* Toggle */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-5">
           <div className="bg-[var(--brand-dark)] p-1 rounded-xl flex shadow-2xl border border-white/5">
             <button
               onClick={() => setActive("gratis")}
@@ -54,15 +54,15 @@ export default function PriceSection() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-5">
           {plans.map((plan, i) => (
             <div
               key={i}
-              className={`relative flex flex-col bg-white border ${
+              className={`relative flex flex-col surface ${
                 plan.highlight
-                  ? "border-[var(--primary)] ring-4 ring-[var(--primary)]/5"
-                  : "border-[var(--border)]"
-              } rounded-[2rem] p-7 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1`}
+                  ? "border-[var(--primary)] ring-4 ring-[var(--primary)]/10"
+                  : ""
+              } p-6 transition-all duration-500 hover:-translate-y-1`}
             >
               {plan.highlight && (
                 <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[var(--primary)] text-white text-[9px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full z-10 shadow-md">
@@ -74,11 +74,11 @@ export default function PriceSection() {
                 {plan.title}
               </span>
 
-              <h3 className="text-2xl font-black mb-2 tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-black mb-2 tracking-tight">
                 {plan.price}
               </h3>
 
-              <p className="text-xs md:text-sm opacity-60 mb-6 min-h-[40px] leading-relaxed font-medium">
+              <p className="text-xs md:text-sm opacity-60 mb-5 min-h-[40px] leading-relaxed font-medium">
                 {plan.desc}
               </p>
 
@@ -92,7 +92,7 @@ export default function PriceSection() {
                 {plan.button}
               </button>
 
-              <ul className="mt-8 space-y-3.5 text-xs md:text-sm text-left">
+              <ul className="mt-6 space-y-3 text-xs md:text-sm text-left">
                 {plan.features.map((item, idx) => (
                   <li
                     key={idx}
