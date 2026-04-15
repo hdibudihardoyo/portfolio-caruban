@@ -1,0 +1,14 @@
+{
+  "Navbar": {
+    "Home": "Beranda",
+    "About": "Tentang",
+    "Contact": "Kontak",
+    "Services": "Layanan",
+    "Button": "Hubungi Kami",
+    "Language": "Bahasa"
+  },
+  "Hero": {
+    "Title": "Solusi Pengembangan Web dan Aplikasi Terintegrasi untuk Bisnis Anda",
+    "Description": "Kami membantu transformasi digital bisnis Anda melalui pengembangan perangkat lunak yang skalabel, desain yang intuitif, dan teknologi terkini"
+  }
+}

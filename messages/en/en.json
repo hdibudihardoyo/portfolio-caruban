@@ -1,0 +1,14 @@
+{
+  "Navbar": {
+    "Home": "Home",
+    "About": "About",
+    "Contact": "Contact",
+    "Services": "Services",
+    "Button": "Contact Us",
+    "Language": "Language"
+  },
+  "Hero": {
+    "Title": "Integrated Web and Application Development Solutions for Your Business",
+    "Description": "We help transform your business digitally through scalable software development, intuitive design, and cutting-edge technology"
+  }
+}
