@@ -4,38 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-
-const projects = [
-  {
-    id: "01",
-    title: "Aplikasi Buwuhan",
-    description:
-      "Sistem Buwuhan adalah platform manajemen catatan keuangan yang dirancang khusus untuk memodernisasi tradisi pemberian sumbangan (kondangan/buwuhan) pada acara hajatan. Aplikasi ini menggantikan pencatatan manual di buku besar menjadi sistem basis data yang terorganisir, akurat, dan mudah diakses secara real-time.",
-    image: "/image-contoh.jpg",
-    slug: "https://www.google.com",
-    imageLeft: true,
-  },
-  {
-    id: "02",
-    title: "Sistem Manajemen Inventaris",
-    description:
-      "Kami menghadirkan solusi teknologi yang efisien untuk membantu manajemen data dan keuangan Anda. Dengan antarmuka yang bersih dan performa yang cepat, setiap proyek kami kerjakan dengan standar kualitas tinggi untuk mendukung skalabilitas bisnis.",
-    image: "/image-contoh.jpg",
-    slug: "https://www.google.com",
-    imageLeft: false,
-  },
-];
+import { featuredProjects } from "@/constants";
 
 export default function ProjectSection() {
   return (
     <section
       id="project"
-      className="relative py-20 px-6 overflow-hidden bg-white text-[var(--foreground)]"
+      className="relative py-24 px-6 overflow-hidden bg-white text-[var(--foreground)]"
     >
       {/* Dekorasi Background */}
       <div className="absolute top-1/4 left-0 w-64 h-64 bg-[var(--primary)] opacity-[0.02] blur-[100px] pointer-events-none"></div>
 
-      {/* Header - Font disesuaikan dengan FAQ */}
+      {/* Header  */}
       <div className="max-w-5xl mx-auto text-center mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,7 +32,7 @@ export default function ProjectSection() {
 
       {/* Project List */}
       <div className="max-w-6xl mx-auto flex flex-col gap-24">
-        {projects.map((project) => (
+        {featuredProjects.map((project) => (
           <motion.div
             key={project.id}
             initial={{ opacity: 0, y: 30 }}
@@ -76,7 +56,7 @@ export default function ProjectSection() {
               </div>
             </div>
 
-            {/* Content - Ukuran teks disesuaikan FAQ */}
+            {/* Content */}
             <div className="w-full md:w-[45%] flex flex-col gap-4 text-left">
               <div className="flex items-center gap-3">
                 <span className="text-[var(--primary)] font-black text-lg md:text-xl opacity-25">
@@ -116,7 +96,7 @@ export default function ProjectSection() {
         className="max-w-5xl mx-auto flex justify-center mt-20"
       >
         <Link
-          href="/project"
+          href="/projects"
           className="group flex flex-col items-center gap-3"
         >
           <div className="w-10 h-10 rounded-full border-2 border-[var(--border)] flex items-center justify-center group-hover:border-[var(--primary)] group-hover:bg-[var(--primary)] transition-all duration-500">

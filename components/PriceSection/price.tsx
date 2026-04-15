@@ -1,131 +1,51 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2 } from "lucide-center";
 import { CheckCircle2 as CheckIcon } from "lucide-react";
-
-interface PricingPlan {
-  title: string;
-  price: string;
-  desc: string;
-  features: string[];
-  button: string;
-  highlight?: boolean;
-}
+import { gratisPlans, berbayarPlans, type PricingPlan } from "@/constants";
 
 export default function PriceSection() {
   const [active, setActive] = useState<"gratis" | "berbayar">("gratis");
-
-  const gratisPlans: PricingPlan[] = [
-    {
-      title: "Basic Web Profile",
-      price: "Rp 0",
-      desc: "Halaman web statis sederhana untuk menampilkan profil profesional Anda secara online.",
-      features: [
-        "1 Halaman Landing Page (Single Page)",
-        "Setup Dasar Media Sosial",
-        "Template Standar",
-      ],
-      button: "Daftar Program UMKM!",
-    },
-    {
-      title: "UMKM Starter",
-      price: "Rp 0",
-      desc: "Katalog digital sederhana agar produk Anda dapat diakses pelanggan kapan saja.",
-      features: [
-        "Katalog Produk Statis",
-        "Integrasi WhatsApp",
-        "Optimasi Mobile",
-      ],
-      button: "Daftar Program UMKM!",
-    },
-    {
-      title: "Landing Page Edukasi",
-      price: "Rp 0",
-      desc: "Solusi penyampaian informasi organisasi untuk instansi non-profit.",
-      features: ["Desain Informatif", "Maintenance 3 Bulan", "Google Maps"],
-      button: "Daftar Sekarang!",
-    },
-  ];
-
-  const berbayarPlans: PricingPlan[] = [
-    {
-      title: "Business Website",
-      price: "Rp 1.500.000",
-      desc: "Website profesional untuk bisnis dengan fitur lengkap dan custom desain.",
-      features: [
-        "Multi Page Website",
-        "Custom Design",
-        "SEO Basic",
-        "Support 3 Bulan",
-      ],
-      button: "Pesan Sekarang",
-    },
-    {
-      title: "E-Commerce",
-      price: "Rp 3.500.000",
-      desc: "Toko online dengan sistem pembayaran otomatis (Payment Gateway).",
-      features: [
-        "Keranjang & Checkout",
-        "Payment Gateway",
-        "Dashboard Admin",
-        "Manajemen Produk",
-      ],
-      button: "Pesan Sekarang",
-      highlight: true,
-    },
-    {
-      title: "Custom App",
-      price: "Mulai Rp 5jt",
-      desc: "Aplikasi web sesuai kebutuhan logika bisnis Anda yang kompleks.",
-      features: [
-        "Full Custom Logic",
-        "API Integration",
-        "Scalable System",
-        "Maintenance Premium",
-      ],
-      button: "Konsultasi Gratis",
-    },
-  ];
 
   const plans = active === "gratis" ? gratisPlans : berbayarPlans;
 
   return (
     <section
       id="pricing"
-      className="py-20 px-6 bg-white text-[var(--foreground)]"
+      className="py-24 px-6 bg-white text-[var(--foreground)]"
     >
       <div className="max-w-5xl mx-auto text-center">
         <div className="flex justify-center mb-4">
-          <div className="w-10 h-1.5 rounded-full bg-[var(--primary)]" />
+          <div className="w-10 h-2 rounded-full bg-[var(--primary)]" />
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4 leading-tight">
+        <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-tight mb-2">
           Paket Solusi Digital
         </h2>
-        <p className="opacity-60 mb-10 max-w-lg mx-auto text-sm md:text-base font-medium">
+        <p className="opacity-60 mb-4 max-w-lg mx-auto text-sm md:text-base font-medium">
           Pilih paket yang paling sesuai dengan skala bisnis Anda saat ini.
         </p>
 
-        {/* Toggle - Gaya Modern Lebih Kecil */}
-        <div className="flex justify-center mb-16">
-          <div className="bg-[var(--brand-dark)] p-1 rounded-2xl flex shadow-xl">
+        {/* Toggle */}
+        <div className="flex justify-center mb-8">
+          <div className="bg-[var(--brand-dark)] p-1 rounded-xl flex shadow-2xl border border-white/5">
             <button
               onClick={() => setActive("gratis")}
-              className={`px-6 py-2 rounded-xl text-[11px] font-black tracking-widest transition-all duration-300 ${
+              className={`px-4 py-3 rounded-lg text-[9px] font-black transition-all duration-300 ${
                 active === "gratis"
-                  ? "bg-[var(--primary)] text-white shadow-lg"
-                  : "text-gray-400 hover:text-white"
+                  ? "bg-[var(--primary)] text-white shadow-md"
+                  : "text-white hover:text-white"
               }`}
             >
               PROGRAM GRATIS
             </button>
+
             <button
               onClick={() => setActive("berbayar")}
-              className={`px-6 py-2 rounded-xl text-[11px] font-black tracking-widest transition-all duration-300 ${
+              className={`px-4 py-3 rounded-lg text-[9px] font-black transition-all duration-300 ${
                 active === "berbayar"
-                  ? "bg-[var(--primary)] text-white shadow-lg"
-                  : "text-gray-400 hover:text-white"
+                  ? "bg-[var(--primary)] text-white shadow-md"
+                  : "text-white hover:text-white"
               }`}
             >
               LAYANAN PROFESIONAL
@@ -154,7 +74,6 @@ export default function PriceSection() {
                 {plan.title}
               </span>
 
-              {/* Harga diperkecil sedikit agar tidak terlalu 'bulky' */}
               <h3 className="text-2xl font-black mb-2 tracking-tight">
                 {plan.price}
               </h3>

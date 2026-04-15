@@ -4,47 +4,13 @@ import Image from "next/image";
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const faqs = [
-  {
-    question: "Mengapa bisnis saya membutuhkan website atau aplikasi khusus?",
-    answer:
-      "Website dan aplikasi meningkatkan kredibilitas, memperluas jangkauan pasar secara global, dan memungkinkan bisnis Anda beroperasi 24/7 tanpa batasan fisik.",
-  },
-  {
-    question:
-      "Berapa lama waktu yang dibutuhkan untuk menyelesaikan satu proyek?",
-    answer:
-      "Durasi proyek bergantung pada kompleksitas dan fitur yang dibutuhkan. Rata-rata proyek sederhana selesai dalam 2–4 minggu, sementara proyek kompleks bisa memakan waktu 1–3 bulan.",
-  },
-  {
-    question: "Bagaimana dengan keamanan data dan pemeliharaan setelah rilis?",
-    answer:
-      "Kami menerapkan standar keamanan terkini dan menyediakan paket pemeliharaan pasca-rilis untuk memastikan aplikasi Anda tetap aman, stabil, dan terus diperbarui.",
-  },
-  {
-    question: "Apakah ada biaya tersembunyi selain biaya pengembangan?",
-    answer:
-      "Tidak ada biaya tersembunyi. Semua biaya akan diuraikan secara transparan di awal sebelum proyek dimulai, termasuk biaya hosting, domain, dan pemeliharaan jika diperlukan.",
-  },
-  {
-    question: "Apakah saya bisa mengajukan revisi jika hasil tidak sesuai?",
-    answer:
-      "Tentu saja. Kami menyediakan sesi revisi sesuai kesepakatan di awal proyek untuk memastikan hasil akhir sesuai dengan ekspektasi Anda.",
-  },
-  {
-    question:
-      "Bagaimana cara memulai konsultasi proyek dengan Caruban Technology?",
-    answer:
-      "Anda bisa menghubungi kami melalui halaman kontak atau langsung via WhatsApp. Tim kami akan merespons dalam 1x24 jam untuk mendiskusikan kebutuhan proyek Anda.",
-  },
-];
+import { faqs } from "@/constants";
 
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative py-20 px-6 overflow-hidden bg-white text-[var(--foreground)]">
+    <section className="relative py-24 px-6 overflow-hidden bg-white text-[var(--foreground)]">
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-[var(--primary)] opacity-[0.02] blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-5xl mx-auto z-10 relative">

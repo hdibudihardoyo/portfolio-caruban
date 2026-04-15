@@ -1,55 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import { Cpu, Palette, HeadphonesIcon, Layers } from "lucide-react";
 import { motion } from "framer-motion";
+import { services } from "@/constants";
 
 export default function ServiceSection() {
-  const services = [
-    {
-      image: "/image-contoh.jpg",
-      icon: <Cpu className="w-5 h-5" />,
-      title: "Teknologi Terbaru",
-      description:
-        "Menggunakan stack teknologi modern untuk memastikan performa sistem yang optimal dan keamanan data yang terjamin.",
-      number: "01",
-    },
-    {
-      image: "/image-contoh.jpg",
-      icon: <Palette className="w-5 h-5" />,
-      title: "Desain Intuitif",
-      description:
-        "Riset UI/UX yang mendalam untuk menciptakan pengalaman pengguna yang mulus di berbagai perangkat.",
-      number: "02",
-    },
-    {
-      image: "/image-contoh.jpg",
-      icon: <HeadphonesIcon className="w-5 h-5" />,
-      title: "Penuh Dukungan",
-      description:
-        "Layanan pemeliharaan dan dukungan teknis pasca-rilis untuk menjamin stabilitas aplikasi Anda secara berkala.",
-      number: "03",
-    },
-    {
-      image: "/image-contoh.jpg",
-      icon: <Layers className="w-5 h-5" />,
-      title: "Efisiensi & Skalabilitas",
-      description:
-        "Sistem yang dirancang secara modular sehingga mudah dikembangkan seiring pertumbuhan bisnis Anda.",
-      number: "04",
-    },
-  ];
-
   return (
     <section
       id="services"
-      className="relative py-20 px-6 overflow-hidden bg-white text-[var(--foreground)]"
+      className="relative py-24 px-6 overflow-hidden bg-white text-[var(--foreground)]"
     >
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--primary)] opacity-[0.02] blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-5xl mx-auto z-10 relative">
         <div className="flex flex-col md:flex-row gap-16 md:gap-20">
-          {/* Left Side  */}
+          {/* Left Side */}
           <div className="md:w-[35%] md:sticky md:top-32 md:h-fit shrink-0 flex flex-col gap-6">
             <div className="w-10 h-1.5 rounded-full bg-[var(--primary)]" />
             <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-tight">
@@ -65,14 +30,14 @@ export default function ServiceSection() {
             </p>
           </div>
 
-          {/* Right Side  */}
+          {/* Right Side */}
           <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
                 className="group relative rounded-[2rem] overflow-hidden border border-[var(--border)] bg-white p-5 flex flex-col gap-4 hover:border-[var(--primary)] transition-all duration-500 shadow-sm hover:shadow-xl hover:-translate-y-1"
               >
-                {/* Card image dikecilkan */}
+                {/* Card image */}
                 <div className="relative h-40 overflow-hidden rounded-2xl">
                   <Image
                     src={service.image}

@@ -2,10 +2,43 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown } from "lucide-react";
 import { motion, Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function HeroSection() {
+
+  const words = ["Terintegrasi", "Inovatif", "Skalabel", "Profesional"];
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [reverse, setReverse] = useState(false);
+
+  useEffect(() => {
+    // 1. Logika ketika kata selesai diketik
+    if (subIndex === words[index].length + 1 && !reverse) {
+      const timeout = setTimeout(() => setReverse(true), 2000);
+      return () => clearTimeout(timeout);
+    }
+
+    // 2. Logika ketika kata selesai dihapus
+    if (subIndex === 0 && reverse) {
+      const timeout = setTimeout(() => {
+        setReverse(false);
+        setIndex((prev) => (prev + 1) % words.length);
+      }, 200);
+      return () => clearTimeout(timeout);
+    }
+
+    // 3. Logika proses mengetik dan menghapus
+    const timeout = setTimeout(
+      () => {
+        setSubIndex((prev) => prev + (reverse ? -1 : 1));
+      },
+      reverse ? 75 : 150,
+    );
+
+    return () => clearTimeout(timeout);
+  }, [subIndex, index, reverse, words]);
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,23 +61,21 @@ export default function HeroSection() {
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-white text-[var(--foreground)] pt-20"
     >
-      {/* Background Decor */}
-      <div className="absolute top-0 left-1/4 w-72 h-72 bg-[var(--primary)] opacity-[0.03] rounded-full blur-[100px] pointer-events-none"></div>
-      <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[var(--brand-dark)] opacity-[0.03] rounded-full blur-[100px] pointer-events-none"></div>
-
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         className="flex flex-col items-center z-10 w-full max-w-5xl"
       >
-        {/* Title & Desc - Dikecilkan sedikit agar tidak dominan sendirian */}
+        {/* Title & Desc */}
         <motion.div variants={itemVariants} className="space-y-4">
-          <h1 className="text-3xl md:text-5xl font-black tracking-tighter leading-[1.1]">
-            Solusi Pengembangan Web dan Aplikasi <br />
+          <h1 className="text-4xl font-black tracking-tighter leading-[1.1]">
+            Solusi Pengembangan Web <br />
             <span className="text-[var(--primary)]">
-              Terintegrasi untuk Bisnis Anda
-            </span>
+              {words[index].substring(0, subIndex)}
+              <span className="animate-pulse font-light">|</span>
+            </span>{" "}
+            untuk Bisnis Anda
           </h1>
           <p className="max-w-xl mx-auto text-sm md:text-base opacity-70 font-medium">
             Kami membantu transformasi digital bisnis Anda melalui pengembangan
@@ -53,7 +84,7 @@ export default function HeroSection() {
           </p>
         </motion.div>
 
-        {/* Illustration - UKURAN DIOPTIMASI agar pas di satu layar laptop */}
+        {/* Illustration */}
         <motion.div
           variants={itemVariants}
           animate={{ y: [0, -10, 0] }}
@@ -71,7 +102,7 @@ export default function HeroSection() {
           />
         </motion.div>
 
-        {/* Tags & Button Container - Digabung agar lebih compact */}
+        {/* Tags & Button Container */}
         <motion.div
           variants={itemVariants}
           className="flex flex-col items-center gap-6"
@@ -89,29 +120,38 @@ export default function HeroSection() {
             )}
           </div>
 
-          <button className="bg-[var(--primary)] hover:bg-[#168a65] text-white px-5 py-3 rounded-2xl flex items-center gap-3 transition-all transform hover:scale-105 shadow-lg shadow-[var(--primary)]/20 font-bold text-sm md:text-base group">
+          <button className="bg-[var(--primary)] hover:bg-[#168a65] text-white p-4 px-8 rounded-2xl transition-all transform hover:scale-105 shadow-lg shadow-[var(--primary)]/20 font-black text-xs uppercase ">
             Konsultasi Gratis
-            <div className="bg-white/20 p-1 rounded-lg">
-              <ArrowDown className="w-4 h-4 text-white group-hover:translate-y-1 transition-transform" />
-            </div>
           </button>
         </motion.div>
       </motion.div>
 
       {/* Floating WhatsApp */}
       <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 1, type: "spring" }}
-        className="fixed bottom-6 right-6 z-50"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{
+          scale: 1,
+          opacity: 1,
+          y: [0, -8, 0],
+        }}
+        transition={{
+          scale: { delay: 1, type: "spring" },
+          y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+        }}
+        className="fixed bottom-8 right-10 z-50"
       >
-        <Link href="https://wa.me/628XXXXXXXXXX" target="_blank">
+        <Link
+          href="https://wa.me/628XXXXXXXXXX"
+          target="_blank"
+          className="relative block group"
+        >
+          <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20 group-hover:opacity-40"></span>
           <Image
             src="/icon-WhatsApp.png"
             alt="WhatsApp"
-            width={55}
-            height={55}
-            className="hover:rotate-12 transition-transform drop-shadow-lg"
+            width={60}
+            height={60}
+            className="relative drop-shadow-2xl "
           />
         </Link>
       </motion.div>

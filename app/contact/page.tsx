@@ -1,4 +1,4 @@
-import Contact from "@/components/contact/contact";
+import Contact from "@/components/ContactSection/contact";
 
 export const metadata = {
   title: "Semua Proyek | Caruban Technology",

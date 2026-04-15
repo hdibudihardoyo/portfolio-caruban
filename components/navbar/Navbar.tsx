@@ -1,10 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import LanguageToggle from "@/components/toggle-languange/ToggleLanguange";
+import { navLinks } from "@/constants";
 
 export default function Navbar() {
+  const [active, setActive] = useState("Beranda");
+
   return (
     <div className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
       <motion.nav
@@ -15,7 +20,7 @@ export default function Navbar() {
           w-full max-w-[1050px] 
           flex items-center justify-between 
           pointer-events-auto
-          px-6 py-2.5 
+          px-6 py-3
           bg-white/40 backdrop-blur-md 
           rounded-2xl 
           border border-white/20 
@@ -23,7 +28,11 @@ export default function Navbar() {
         "
       >
         {/* Brand Logo */}
-        <div className="flex items-center gap-3 group cursor-pointer shrink-0">
+        <Link
+          href="/"
+          onClick={() => setActive("Beranda")}
+          className="flex items-center gap-3 group cursor-pointer shrink-0"
+        >
           <div className="relative">
             <Image
               src="/icon-caruban.png"
@@ -42,26 +51,31 @@ export default function Navbar() {
               TECHNOLOGY
             </span>
           </div>
-        </div>
+        </Link>
 
         {/* Nav Links - Desktop */}
-        <ul className="hidden lg:flex items-center space-x-7 text-[13px] font-black uppercase tracking-wider text-[var(--brand-dark)]">
-          {[
-            { name: "Beranda", id: "/#home" },
-            { name: "Proyek", id: "/#project" },
-            { name: "Layanan", id: "/#services" },
-            { name: "Harga", id: "/#pricing" },
-            { name: "Testimoni", id: "/#testimonial" },
-            { name: "Kontak", id: "/contact" },
-          ].map((item) => (
-            <li key={item.name}>
-              <a
+        <ul className="hidden lg:flex items-center space-x-7 text-[12px] font-black uppercase tracking-wider text-[var(--brand-dark)]">
+          {navLinks.map((item) => (
+            <li key={item.name} className="relative">
+              <Link
                 href={item.id}
-                className="relative hover:text-[var(--primary)] transition-colors group py-2"
+                onClick={() => setActive(item.name)}
+                className={`relative py-2 transition-colors duration-300 hover:text-[var(--primary)] ${
+                  active === item.name
+                    ? "text-[var(--primary)]"
+                    : "text-[var(--brand-dark)]"
+                }`}
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--primary)] transition-all duration-300 group-hover:w-full" />
-              </a>
+
+                {active === item.name && (
+                  <motion.div
+                    layoutId="underline"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[var(--primary)] rounded-full"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
             </li>
           ))}
         </ul>
@@ -71,9 +85,13 @@ export default function Navbar() {
           <div className="hidden sm:block scale-90">
             <LanguageToggle />
           </div>
-          <button className="bg-[var(--brand-dark)] hover:bg-[var(--primary)] text-white text-[11px] font-black uppercase tracking-widest py-2.5 px-5 rounded-xl transition-all shadow-lg active:scale-95 whitespace-nowrap">
+          <Link
+            href="/contact"
+            onClick={() => setActive("Kontak")}
+            className="bg-[var(--brand-dark)] hover:bg-[var(--primary)] text-white text-[10px] font-black uppercase tracking-widest py-2.5 px-5 rounded-xl transition-all shadow-lg active:scale-95 whitespace-nowrap"
+          >
             Hubungi Kami
-          </button>
+          </Link>
         </div>
       </motion.nav>
     </div>

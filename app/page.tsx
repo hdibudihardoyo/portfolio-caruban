@@ -1,15 +1,17 @@
-import HeroSection from "@/components/hero-section/Hero";
-import ServiceSection from "@/components/service-section/service";
-import ProjectSection from "@/components/project-section/project";
-import FaqSection from "@/components/faq-section/faq";
-import PriceSection from "@/components/price-section/price";
-import ReviewSection from "@/components/review-section/review";
-import TeamSection from "@/components/team-section/team";
+import HeroSection from "@/components/HeroSection/Hero";
+import ServiceSection from "@/components/ServiceSection/service";
+import ProjectSection from "@/components/ProjectSection/project";
+import FaqSection from "@/components/FaqSection/faq";
+import PriceSection from "@/components/PriceSection/price";
+import ReviewSection from "@/components/ReviewSection/review";
+import TeamSection from "@/components/TeamSection/team";
+import TechStackSection from "@/components/TechStackSection/TechStackSection";
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
+      <TechStackSection />
       <ServiceSection />
       <ProjectSection />
       <TeamSection />

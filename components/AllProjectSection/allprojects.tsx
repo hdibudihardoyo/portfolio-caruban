@@ -4,37 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
-
-const allProjects = [
-  {
-    title: "Aplikasi Buwuhan",
-    category: "Web Development",
-    desc: "Digitalisasi catatan sumbangan hajatan berbasis cloud.",
-    image: "/image-contoh.jpg",
-    link: "#",
-  },
-  {
-    title: "Inventory Master",
-    category: "Management System",
-    desc: "Sistem pelacakan stok barang real-time untuk UMKM.",
-    image: "/image-contoh.jpg",
-    link: "#",
-  },
-  {
-    title: "Caruban Tech Profile",
-    category: "Landing Page",
-    desc: "Website company profile dengan performa tinggi dan SEO.",
-    image: "/image-contoh.jpg",
-    link: "#",
-  },
-];
+import { allProjects } from "@/constants";
 
 export default function AllProjects() {
   return (
-    <section className="py-28 px-6 bg-white min-h-screen">
+    <section className="py-24 px-6 bg-white min-h-screen">
       <div className="max-w-5xl mx-auto">
-        {/* Header - Compact style seperti FAQ */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+        {/* Header  */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8">
           <div className="flex flex-col gap-4 text-left">
             <div className="w-10 h-1.5 rounded-full bg-[var(--primary)]" />
             <h1 className="text-3xl md:text-4xl font-black tracking-tighter text-[var(--brand-dark)]">
@@ -48,7 +25,7 @@ export default function AllProjects() {
           </div>
 
           <div className="hidden md:flex">
-            <span className="px-5 py-2 bg-zinc-50 border border-[var(--border)] rounded-full text-[10px] font-black uppercase tracking-widest text-[var(--brand-dark)]">
+            <span className="px-3 py-2 bg-zinc-50 border border-[var(--border)] rounded-full text-[10px] font-black uppercase tracking-widest text-[var(--brand-dark)]">
               Total: {allProjects.length} Projects
             </span>
           </div>

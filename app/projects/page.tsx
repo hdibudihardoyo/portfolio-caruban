@@ -1,4 +1,4 @@
-import AllProjects from "@/components/all-projects/allprojects";
+import AllProjects from "@/components/AllProjectSection/allprojects";
 
 export const metadata = {
   title: "Semua Proyek | Caruban Technology",

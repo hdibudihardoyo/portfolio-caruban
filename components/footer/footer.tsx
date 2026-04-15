@@ -3,13 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInstagram,
-  faGithub,
-  faLinkedin,
-  faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons";
 import { Mail, MapPin, ArrowUp } from "lucide-react";
+import {
+  navLinks,
+  footerSocials,
+  footerServices,
+  footerContact,
+} from "@/constants";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -43,58 +43,34 @@ export default function Footer() {
               pertumbuhan bisnis Anda melalui teknologi terkini.
             </p>
             <div className="flex gap-4">
-              {[faInstagram, faGithub, faLinkedin, faWhatsapp].map(
-                (icon, i) => (
-                  <Link
-                    key={i}
-                    href="#"
-                    className="w-8 h-8 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--brand-dark)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all"
-                  >
-                    <FontAwesomeIcon icon={icon} className="text-xs" />
-                  </Link>
-                ),
-              )}
+              {footerSocials.map((social, i) => (
+                <Link
+                  key={i}
+                  href={social.link}
+                  className="w-8 h-8 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--brand-dark)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all"
+                >
+                  <FontAwesomeIcon icon={social.icon} className="text-xs" />
+                </Link>
+              ))}
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links - Using navLinks from constants */}
           <div className="flex flex-col gap-6">
             <h4 className="text-xs font-black uppercase tracking-[0.2em] text-[var(--brand-dark)]">
               Navigasi
             </h4>
             <ul className="flex flex-col gap-3 text-sm font-medium opacity-60">
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-[var(--primary)] transition-colors"
-                >
-                  Beranda
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#about"
-                  className="hover:text-[var(--primary)] transition-colors"
-                >
-                  Tentang Kami
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#project"
-                  className="hover:text-[var(--primary)] transition-colors"
-                >
-                  Proyek
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#pricing"
-                  className="hover:text-[var(--primary)] transition-colors"
-                >
-                  Harga
-                </Link>
-              </li>
+              {navLinks.slice(0, 5).map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.id}
+                    className="hover:text-[var(--primary)] transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -104,14 +80,13 @@ export default function Footer() {
               Layanan
             </h4>
             <ul className="flex flex-col gap-3 text-sm font-medium opacity-60">
-              <li>Web Development</li>
-              <li>Mobile Apps</li>
-              <li>UI/UX Design</li>
-              <li>IT Consulting</li>
+              {footerServices.map((service) => (
+                <li key={service}>{service}</li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info - Using footerContact from constants */}
           <div className="flex flex-col gap-6">
             <h4 className="text-xs font-black uppercase tracking-[0.2em] text-[var(--brand-dark)]">
               Kontak
@@ -120,13 +95,13 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[var(--primary)] shrink-0" />
                 <span className="text-sm opacity-60 font-medium">
-                  Cirebon, Jawa Barat, Indonesia
+                  {footerContact.address}
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[var(--primary)] shrink-0" />
                 <span className="text-sm opacity-60 font-medium">
-                  hello@carubantech.id
+                  {footerContact.email}
                 </span>
               </li>
             </ul>
@@ -136,7 +111,8 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] font-black uppercase tracking-widest">
-            © 2026 Caruban Technology. All Rights Reserved.
+            © 2026 Caruban Technology. Seluruh Hak Cipta Dilindungi
+            Undang-Undang.
           </p>
 
           <button

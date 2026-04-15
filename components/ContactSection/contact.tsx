@@ -2,14 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Send, MessageCircle } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInstagram,
-  faTiktok,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
+import { socialMedia, contactConfig } from "@/constants";
 
 export default function Contact() {
   return (
@@ -33,7 +29,7 @@ export default function Contact() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
-          {/* Left */}
+          {/* Left Form */}
           <div className="w-full md:w-3/5">
             <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
@@ -68,8 +64,8 @@ export default function Contact() {
               {/* Buttons Group */}
               <div className="sm:col-span-2 flex flex-col sm:flex-row gap-4 mt-2">
                 <button className="flex-1 bg-[var(--brand-dark)] text-white py-4 rounded-2xl font-black text-[11px] uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-black transition-all active:scale-95 shadow-lg shadow-black/5">
-                  <Send className="w-4 h-4" />
-                  Kirim Pesan
+                  <Mail className="w-4 h-4" />
+                  Kirim Via Email
                 </button>
                 <button className="flex-1 bg-[var(--primary)] text-white py-4 rounded-2xl font-black text-[11px] uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-[#168a65] transition-all active:scale-95 shadow-lg shadow-[var(--primary)]/10">
                   <MessageCircle className="w-4 h-4" />
@@ -79,10 +75,9 @@ export default function Contact() {
             </form>
           </div>
 
-          {/* Right */}
+          {/* Right Visuals */}
           <div className="w-full md:w-2/5 flex flex-col items-center">
             <div className="relative">
-              {/* Main Avatar Circle */}
               <div className="w-48 h-48 md:w-64 md:h-64 bg-zinc-100 rounded-full flex items-center justify-center border border-zinc-200 relative">
                 <div className="w-[90%] h-[90%] bg-zinc-200 rounded-full overflow-hidden">
                   <Image
@@ -95,14 +90,14 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Bubble - Instagram Handle */}
+                {/* Bubble instagram Handle */}
                 <motion.div
                   initial={{ x: -20, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
                   className="absolute -left-4 top-10 bg-white shadow-xl border border-[var(--border)] px-4 py-2 rounded-2xl"
                 >
                   <p className="text-[10px] font-black text-[var(--brand-dark)]">
-                    @shrimp_dev
+                    {contactConfig.instagramHandle}
                   </p>
                 </motion.div>
 
@@ -118,26 +113,9 @@ export default function Contact() {
                 </motion.div>
               </div>
 
-              {/* Decorative Small Circles */}
+              {/* Decorative Social Icons from Constants */}
               <div className="flex gap-4 mt-3 justify-center">
-                {[
-                  {
-                    icon: faInstagram,
-                    link: "https://instagram.com/username",
-                    color:
-                      "hover:bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]",
-                  },
-                  {
-                    icon: faTiktok,
-                    link: "https://tiktok.com/@username",
-                    color: "hover:bg-black",
-                  },
-                  {
-                    icon: faGithub,
-                    link: "https://github.com/username",
-                    color: "hover:bg-[#333]",
-                  },
-                ].map((social, idx) => (
+                {socialMedia.map((social, idx) => (
                   <Link
                     key={idx}
                     href={social.link}
