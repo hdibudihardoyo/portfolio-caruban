@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { Poppins } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import Navbar from "@/components/Navbar/navbar";
-import Footer from "@/components/Footer/footer";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 import "./globals.css";
 
 const poppins = Poppins({
