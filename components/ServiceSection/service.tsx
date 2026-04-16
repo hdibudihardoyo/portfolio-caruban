@@ -42,7 +42,7 @@ export default function ServiceSection() {
                     src={service.image}
                     alt={t(service.title)}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover"
                   />
                 </div>
                 {/* Card body */}
