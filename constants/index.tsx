@@ -13,47 +13,47 @@ export const allProjects = [
     title: "Project1.Title",
     category: "Project1.Category",
     desc: "Project1.Description",
-    image: "/image-contoh.jpg",
-    link: "#",
+    image: "/projects1.png",
+    link: "https://buku-buwuhan.vercel.app/",
   },
-  {
-    title: "Project2.Title",
-    category: "Project2.Category",
-    desc: "Project2.Description",
-    image: "/image-contoh.jpg",
-    link: "#",
-  },
-  {
-    title: "Project3.Title",
-    category: "Project3.Category",
-    desc: "Project3.Description",
-    image: "/image-contoh.jpg",
-    link: "#",
-  },
+  // {
+  //   title: "Project2.Title",
+  //   category: "Project2.Category",
+  //   desc: "Project2.Description",
+  //   image: "/image-contoh.jpg",
+  //   link: "#",
+  // },
+  // {
+  //   title: "Project3.Title",
+  //   category: "Project3.Category",
+  //   desc: "Project3.Description",
+  //   image: "/image-contoh.jpg",
+  //   link: "#",
+  // },
 ];
 
 export const socialMedia = [
   {
     icon: faInstagram,
-    link: "https://instagram.com/username",
+    link: "https://instagram.com/caruban_tech",
     color: "hover:bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]",
   },
   {
     icon: faTiktok,
-    link: "https://tiktok.com/@username",
+    link: "https://tiktok.com/@caruban_tech",
     color: "hover:bg-black",
   },
   {
     icon: faGithub,
-    link: "https://github.com/username",
+    link: "https://github.com/CarubanTech",
     color: "hover:bg-[#333]",
   },
 ];
 
 export const contactConfig = {
-  instagramHandle: "@shrimp_dev",
-  whatsappNumber: "628xxxxxxxxxx",
-  email: "contact@yourdomain.com",
+  instagramHandle: "@caruban_tech",
+  whatsappNumber: "62882001771113",
+  email: "caruban_tech@gmail.com",
 };
 
 export const navLinks = [
@@ -155,18 +155,18 @@ export const featuredProjects = [
     id: "01",
     title: "Featured01.Title",
     description: "Featured01.Description",
-    image: "/image-contoh.jpg",
-    slug: "https://www.google.com",
+    image: "/projects1.png",
+    slug: "https://buku-buwuhan.vercel.app/",
     imageLeft: true,
   },
-  {
-    id: "02",
-    title: "Featured02.Title",
-    description: "Featured02.Description",
-    image: "/image-contoh.jpg",
-    slug: "https://www.google.com",
-    imageLeft: false,
-  },
+  // {
+  //   id: "02",
+  //   title: "Featured02.Title",
+  //   description: "Featured02.Description",
+  //   image: "/image-contoh.jpg",
+  //   slug: "https://www.google.com",
+  //   imageLeft: false,
+  // },
 ];
 
 export const reviews = [
@@ -241,9 +241,9 @@ export const teams = [
     name: "HARIS GUNAWAN R",
     image: "/haris.jpeg",
     socials: [
-      { icon: faInstagram, link: "#" },
-      { icon: faGithub, link: "#" },
-      { icon: faLinkedin, link: "#" },
+      { icon: faInstagram, link: "https://www.instagram.com/harisgunawanr_" },
+      { icon: faGithub, link: "https://github.com/HarisGunawanRomadon" },
+      { icon: faLinkedin, link: "https://www.linkedin.com/in/harisgunawanr" },
     ],
   },
   {
@@ -251,9 +251,16 @@ export const teams = [
     name: "HADI BUDI HARDOYO",
     image: "/hadii.jpg",
     socials: [
-      { icon: faInstagram, link: "#" },
-      { icon: faGithub, link: "#" },
-      { icon: faLinkedin, link: "#" },
+      {
+        icon: faInstagram,
+        link: "https://www.instagram.com/hdibudihardoyo ",
+      },
+      { icon: faGithub, 
+        link: "https://github.com/hdibudihardoyo " },
+      {
+        icon: faLinkedin,
+        link: "https://www.linkedin.com/in/hdibudihardoyo",
+      },
     ],
   },
   {
@@ -261,9 +268,9 @@ export const teams = [
     name: "LUFTAN HADI",
     image: "/lutfann.jpeg",
     socials: [
-      { icon: faInstagram, link: "#" },
-      { icon: faGithub, link: "#" },
-      { icon: faLinkedin, link: "#" },
+      { icon: faInstagram, link: "https://www.instagram.com/lutfanhadi05" },
+      { icon: faGithub, link: "https://github.com/Lutfanhadi" },
+      { icon: faLinkedin, link: "https://www.linkedin.com/in/lutfan-hadi" },
     ],
   },
   {
@@ -271,9 +278,12 @@ export const teams = [
     name: "DAMAYANTI",
     image: "/haris.jpeg",
     socials: [
-      { icon: faInstagram, link: "#" },
-      { icon: faGithub, link: "#" },
-      { icon: faLinkedin, link: "#" },
+      { icon: faInstagram, link: "https://www.instagram.com/yantirrz_" },
+      { icon: faGithub, link: "https://github.com/yantirrz" },
+      {
+        icon: faLinkedin,
+        link: "https://www.linkedin.com/in/damayanti-74b1b625a",
+      },
     ],
   },
 ];
@@ -335,10 +345,10 @@ export const faqs = [
 ];
 
 export const footerSocials = [
-  { icon: faInstagram, link: "#" },
-  { icon: faGithub, link: "#" },
-  { icon: faLinkedin, link: "#" },
-  { icon: faWhatsapp, link: "#" },
+  { icon: faInstagram, link: "https://www.instagram.com/caruban_tech" },
+  { icon: faGithub, link: "https://github.com/CarubanTech" },
+  { icon: faLinkedin, link: "https://www.linkedin.com/company/carubantech" },
+  { icon: faWhatsapp, link: "https://wa.me/62882001771113" },
 ];
 
 export const footerServices = [
@@ -350,5 +360,5 @@ export const footerServices = [
 
 export const footerContact = {
   address: "Cirebon, Jawa Barat, Indonesia",
-  email: "hello@carubantech.id",
+  email: "carubantech@gmail.com",
 };
