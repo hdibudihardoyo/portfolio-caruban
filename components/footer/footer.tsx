@@ -94,7 +94,7 @@ export default function Footer() {
               {t("Contact")}
             </h4>
             <ul className="flex flex-col gap-4">
-              <li className="flex items-start gap-3">
+              <li className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-[var(--primary)] shrink-0" />
                 <span className="text-sm opacity-60 font-medium">
                   {footerContact.address}

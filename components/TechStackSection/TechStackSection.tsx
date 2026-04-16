@@ -35,12 +35,12 @@ export default function TechStackSection() {
           {[...techStacks, ...techStacks].map((tech, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 px-6 py-4 rounded-2xl border border-[var(--border)] bg-zinc-50/50 hover:bg-white transition-all duration-300 cursor-default whitespace-nowrap group/item hover:shadow-xl hover:shadow-[var(--primary)]/5 hover:-translate-y-1"
+              className="flex items-center gap-2 px-5 py-2 rounded-2xl border border-[var(--border)] bg-zinc-50/50 hover:bg-white transition-all duration-300 cursor-default whitespace-nowrap group/item hover:shadow-xl hover:shadow-[var(--primary)]/5 hover:-translate-y-1"
             >
-              <div className="w-8 h-8 grayscale group-hover/item:grayscale-0 transition-all duration-500">
+              <div className="w-7 h-7 grayscale group-hover/item:grayscale-0 transition-all duration-500">
                 <StackIcon name={tech.icon} />
               </div>
-              <span className="text-[13px] font-black uppercase tracking-widest text-[var(--brand-dark)] opacity-70 group-hover/item:opacity-100">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[var(--brand-dark)] opacity-70 group-hover/item:opacity-100">
                 {tech.name}
               </span>
             </div>

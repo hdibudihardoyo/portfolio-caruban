@@ -103,7 +103,7 @@ export default function HeroSection() {
         className="fixed bottom-8 right-10 z-50"
       >
         <Link
-          href="https://wa.me/628XXXXXXXXXX"
+          href="https://wa.me/62882001771113"
           target="_blank"
           className="relative block group cursor-pointer"
         >
@@ -111,8 +111,8 @@ export default function HeroSection() {
           <Image
             src="/icon-WhatsApp.png"
             alt="WhatsApp"
-            width={60}
-            height={60}
+            width={50}
+            height={50}
             className="relative drop-shadow-2xl "
           />
         </Link>

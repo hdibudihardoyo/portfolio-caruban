@@ -138,13 +138,13 @@ export default function Contact() {
               </div>
 
               {/* Decorative Social Icons from Constants */}
-              <div className="flex gap-4 mt-3 justify-center">
+              <div className="flex gap-2 mt-2 justify-center">
                 {socialMedia.map((social, idx) => (
                   <Link
                     key={idx}
                     href={social.link}
                     target="_blank"
-                    className={`w-11 h-11 bg-white border border-zinc-200 rounded-full flex items-center justify-center text-[var(--brand-dark)] shadow-sm transition-all duration-300 hover:text-white hover:border-transparent hover:-translate-y-1 ${social.color}`}
+                    className={`w-10 h-10 bg-white border border-zinc-200 rounded-full flex items-center justify-center text-[var(--brand-dark)] shadow-sm transition-all duration-300 hover:text-white hover:border-transparent hover:-translate-y-1 ${social.color}`}
                   >
                     <FontAwesomeIcon icon={social.icon} className="text-lg" />
                   </Link>
