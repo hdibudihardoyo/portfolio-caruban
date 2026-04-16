@@ -56,7 +56,7 @@ export default function PriceSection() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
           {plans.map((plan, i) => (
             <div
               key={i}

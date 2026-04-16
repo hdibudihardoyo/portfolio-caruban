@@ -15,9 +15,6 @@ export default function ProjectSection() {
       id="project"
       className="relative py-16 sm:py-20 px-6 overflow-hidden bg-white text-[var(--foreground)]"
     >
-      {/* Dekorasi Background */}
-      <div className="absolute top-1/4 left-0 w-64 h-64 bg-[var(--primary)] opacity-[0.02] blur-[100px] pointer-events-none"></div>
-
       {/* Header  */}
       <div className="max-w-5xl mx-auto text-center mb-10 sm:mb-12">
         <motion.div
@@ -26,7 +23,7 @@ export default function ProjectSection() {
           viewport={{ once: true }}
           className="flex flex-col items-center"
         >
-          <div className="w-10 h-1.5 rounded-full bg-[var(--primary)] mb-4" />
+          <div className="w-10 h-2 rounded-full bg-[var(--primary)] mb-4" />
           <h2 className="text-2xl md:text-3xl font-black tracking-tighter">
             {t("Title")}
           </h2>
@@ -47,13 +44,13 @@ export default function ProjectSection() {
             } items-center justify-center gap-8 md:gap-12`}
           >
             {/* Image Container */}
-            <div className="w-full md:w-[38%] shrink-0 group">
+            <div className="w-full md:w-[40%] shrink-0 group">
               <div className="relative w-full h-60 md:h-[300px] rounded-[2rem] overflow-hidden border border-[var(--border)] bg-zinc-50 shadow-sm transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-[var(--primary)]/10">
                 <Image
                   src={project.image}
                   alt={t(project.title)}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-contain transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-[var(--brand-dark)]/0 group-hover:bg-[var(--brand-dark)]/5 transition-colors duration-500" />
               </div>
@@ -95,7 +92,7 @@ export default function ProjectSection() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="max-w-5xl mx-auto flex justify-center mt-20"
+        className="max-w-5xl mx-auto flex justify-center mt-8"
       >
         <Link
           href="/projects"

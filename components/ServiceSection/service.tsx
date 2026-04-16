@@ -13,13 +13,11 @@ export default function ServiceSection() {
       id="services"
       className="relative py-16 sm:py-20 px-6 overflow-hidden bg-white text-[var(--foreground)]"
     >
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--primary)] opacity-[0.02] blur-[100px] pointer-events-none"></div>
-
       <div className="max-w-5xl mx-auto z-10 relative">
         <div className="flex flex-col md:flex-row gap-6 md:gap-10">
           {/* Left Side */}
           <div className="md:w-[35%] md:sticky md:top-24 md:h-fit shrink-0 flex flex-col gap-5">
-            <div className="w-10 h-1.5 rounded-full bg-[var(--primary)]" />
+            <div className="w-10 h-2 rounded-full bg-[var(--primary)]" />
             <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight">
               {t("Title")} <br />
               <span className="text-[var(--primary)] italic">
@@ -32,7 +30,7 @@ export default function ServiceSection() {
           </div>
 
           {/* Right Side */}
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="flex-1 grid grid-cols-2 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}

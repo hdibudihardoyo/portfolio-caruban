@@ -40,7 +40,7 @@
     "Explore": "Explore All Projects",
     "Featured01": {
       "Title": "Aplikasi Buwuhan",
-      "Description": "A digital platform for tracking traditional event donations, replacing manual ledgers with a real-time, organized database."
+      "Description": "A digital platform for recording traditional event donations, replacing manual ledgers with a real-time, organized database."
     },
     "Featured02": {
       "Title": "Sistem Manajemen Inventaris",
@@ -99,7 +99,7 @@
       "BusinessWebsite": {
         "Title": "Business Website",
         "Description": "A professional website with full features and custom design.",
-        "Feature1": "Multi-page website",
+        "Feature1": "Multi page website",
         "Feature2": "Custom design",
         "Feature3": "Basic SEO",
         "Feature4": "3 months support",
@@ -165,17 +165,17 @@
     "Project1": {
       "Title": "Aplikasi Buwuhan",
       "Category": "Web Development",
-      "Description": "Cloud-based donation tracking for traditional celebrations."
+      "Description": "Cloud based donation recording for traditional celebrations."
     },
     "Project2": {
       "Title": "Inventory Master",
       "Category": "Management System",
-      "Description": "Real-time stock tracking for small and growing businesses."
+      "Description": "Real time stock tracking for small and growing businesses."
     },
     "Project3": {
       "Title": "Caruban Tech Profile",
       "Category": "Landing Page",
-      "Description": "A high-performance company profile website optimized for SEO."
+      "Description": "A high performance company profile website optimized for SEO."
     }
   },
   "Footer": {
