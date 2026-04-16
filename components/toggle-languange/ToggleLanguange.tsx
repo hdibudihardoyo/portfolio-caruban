@@ -21,9 +21,10 @@ export default function LanguageToggle() {
 
   const handleSwitch = (newLocale: string) => {
     setOpen(false);
-    if (newLocale !== locale) {
-      router.replace(pathname, { locale: newLocale } as any);
-    }
+    if (newLocale === locale) return;
+
+    document.cookie = `locale=${newLocale}; path=/; max-age=${60 * 60 * 24 * 365}`;
+    router.refresh();
   };
 
   useEffect(() => {
@@ -43,7 +44,7 @@ export default function LanguageToggle() {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className={`w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 ${
+        className={`w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 cursor-pointer ${
           open
             ? "bg-[var(--primary)] text-white shadow-lg shadow-[var(--primary)]/20"
             : "text-[var(--brand-dark)] hover:bg-white/50 backdrop-blur-sm border border-transparent hover:border-[var(--border)]"
@@ -70,7 +71,7 @@ export default function LanguageToggle() {
               <button
                 key={lang.locale}
                 onClick={() => handleSwitch(lang.locale)}
-                className={`w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-xs transition-all duration-200 group ${
+                className={`w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-xs transition-all duration-200 group cursor-pointer ${
                   locale === lang.locale
                     ? "bg-[var(--primary)]/10 text-[var(--primary)] font-bold"
                     : "text-[var(--brand-dark)] hover:bg-[var(--primary)] hover:text-white"

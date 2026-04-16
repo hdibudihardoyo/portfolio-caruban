@@ -6,7 +6,7 @@ export const metadata = {
     "Daftar portofolio lengkap pengembangan web dan aplikasi oleh Caruban Technology.",
 };
 
-export default function ProjectsPage() {
+export default function AllProjectsPage() {
   return (
     <main>
       <AllProjects />

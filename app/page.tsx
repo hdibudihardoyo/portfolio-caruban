@@ -7,7 +7,7 @@ import ReviewSection from "@/components/ReviewSection/review";
 import TeamSection from "@/components/TeamSection/team";
 import TechStackSection from "@/components/TechStackSection/TechStackSection";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main>
       <HeroSection />

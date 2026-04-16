@@ -10,23 +10,23 @@ import {
 
 export const allProjects = [
   {
-    title: "Aplikasi Buwuhan",
-    category: "Web Development",
-    desc: "Digitalisasi catatan sumbangan hajatan berbasis cloud.",
+    title: "Project1.Title",
+    category: "Project1.Category",
+    desc: "Project1.Description",
     image: "/image-contoh.jpg",
     link: "#",
   },
   {
-    title: "Inventory Master",
-    category: "Management System",
-    desc: "Sistem pelacakan stok barang real-time untuk UMKM.",
+    title: "Project2.Title",
+    category: "Project2.Category",
+    desc: "Project2.Description",
     image: "/image-contoh.jpg",
     link: "#",
   },
   {
-    title: "Caruban Tech Profile",
-    category: "Landing Page",
-    desc: "Website company profile dengan performa tinggi dan SEO.",
+    title: "Project3.Title",
+    category: "Project3.Category",
+    desc: "Project3.Description",
     image: "/image-contoh.jpg",
     link: "#",
   },
@@ -57,12 +57,12 @@ export const contactConfig = {
 };
 
 export const navLinks = [
-  { name: "Beranda", id: "/#" },
-  { name: "Proyek", id: "/#project" },
-  { name: "Layanan", id: "/#services" },
-  { name: "Harga", id: "/#pricing" },
-  { name: "Testimoni", id: "/#testimonial" },
-  { name: "Kontak", id: "/contact" },
+  { key: "Home", name: "Beranda", id: "/#" },
+  { key: "Projects", name: "Proyek", id: "/#project" },
+  { key: "Services", name: "Layanan", id: "/#services" },
+  { key: "Pricing", name: "Harga", id: "/#pricing" },
+  { key: "Testimonials", name: "Testimoni", id: "/#testimonial" },
+  { key: "Contact", name: "Kontak", id: "/contact" },
 ];
 
 export interface PricingPlan {
@@ -76,91 +76,93 @@ export interface PricingPlan {
 
 export const gratisPlans: PricingPlan[] = [
   {
-    title: "Basic Web Profile",
+    title: "Free.BasicWebProfile.Title",
     price: "Rp 0",
-    desc: "Halaman web statis sederhana untuk menampilkan profil profesional Anda.",
+    desc: "Free.BasicWebProfile.Description",
     features: [
-      "1 Halaman Landing Page (Single Page)",
-      "Setup Dasar Media Sosial",
-      "Template Standar",
+      "Free.BasicWebProfile.Feature1",
+      "Free.BasicWebProfile.Feature2",
+      "Free.BasicWebProfile.Feature3",
     ],
-    button: "Daftar Program UMKM!",
+    button: "Free.BasicWebProfile.Button",
   },
   {
-    title: "UMKM Starter",
+    title: "Free.UMKMStarter.Title",
     price: "Rp 0",
-    desc: "Katalog digital sederhana agar produk Anda dapat diakses pelanggan kapan saja.",
+    desc: "Free.UMKMStarter.Description",
     features: [
-      "Katalog Produk Statis",
-      "Integrasi WhatsApp",
-      "Optimasi Mobile",
+      "Free.UMKMStarter.Feature1",
+      "Free.UMKMStarter.Feature2",
+      "Free.UMKMStarter.Feature3",
     ],
-    button: "Daftar Program UMKM!",
+    button: "Free.UMKMStarter.Button",
   },
   {
-    title: "Landing Page Edukasi",
+    title: "Free.LandingPage.Title",
     price: "Rp 0",
-    desc: "Solusi penyampaian informasi organisasi untuk instansi non-profit.",
-    features: ["Desain Informatif", "Maintenance 3 Bulan", "Google Maps"],
-    button: "Daftar Sekarang!",
+    desc: "Free.LandingPage.Description",
+    features: [
+      "Free.LandingPage.Feature1",
+      "Free.LandingPage.Feature2",
+      "Free.LandingPage.Feature3",
+    ],
+    button: "Free.LandingPage.Button",
   },
 ];
 
 export const berbayarPlans: PricingPlan[] = [
   {
-    title: "Business Website",
+    title: "Paid.BusinessWebsite.Title",
     price: "Rp 1.500.000",
-    desc: "Website profesional untuk bisnis dengan fitur lengkap dan custom desain.",
+    desc: "Paid.BusinessWebsite.Description",
     features: [
-      "Multi Page Website",
-      "Custom Design",
-      "SEO Basic",
-      "Support 3 Bulan",
+      "Paid.BusinessWebsite.Feature1",
+      "Paid.BusinessWebsite.Feature2",
+      "Paid.BusinessWebsite.Feature3",
+      "Paid.BusinessWebsite.Feature4",
     ],
-    button: "Pesan Sekarang",
+    button: "Paid.BusinessWebsite.Button",
   },
   {
-    title: "E-Commerce",
+    title: "Paid.ECommerce.Title",
     price: "Rp 3.500.000",
-    desc: "Toko online dengan sistem pembayaran otomatis (Payment Gateway).",
+    desc: "Paid.ECommerce.Description",
     features: [
-      "Keranjang & Checkout",
-      "Payment Gateway",
-      "Dashboard Admin",
-      "Manajemen Produk",
+      "Paid.ECommerce.Feature1",
+      "Paid.ECommerce.Feature2",
+      "Paid.ECommerce.Feature3",
+      "Paid.ECommerce.Feature4",
     ],
-    button: "Pesan Sekarang",
+    button: "Paid.ECommerce.Button",
     highlight: true,
   },
   {
-    title: "Custom App",
+    title: "Paid.CustomApp.Title",
     price: "Mulai Rp 5jt",
-    desc: "Aplikasi web sesuai kebutuhan logika bisnis Anda yang kompleks.",
+    desc: "Paid.CustomApp.Description",
     features: [
-      "Full Custom Logic",
-      "API Integration",
-      "Scalable System",
-      "Maintenance Premium",
+      "Paid.CustomApp.Feature1",
+      "Paid.CustomApp.Feature2",
+      "Paid.CustomApp.Feature3",
+      "Paid.CustomApp.Feature4",
     ],
-    button: "Konsultasi Gratis",
+    button: "Paid.CustomApp.Button",
   },
 ];
 
 export const featuredProjects = [
   {
     id: "01",
-    title: "Aplikasi Buwuhan",
-    description:
-      "Sistem Buwuhan adalah platform manajemen catatan keuangan yang dirancang khusus untuk memodernisasi tradisi pemberian sumbangan (kondangan/buwuhan) pada acara hajatan. Aplikasi ini menggantikan pencatatan manual di buku besar menjadi sistem basis data yang terorganisir, akurat, dan mudah diakses secara real-time.",
+    title: "Featured01.Title",
+    description: "Featured01.Description",
     image: "/image-contoh.jpg",
     slug: "https://www.google.com",
     imageLeft: true,
   },
   {
     id: "02",
-    title: "Sistem Manajemen Inventaris",
-    description:
-      "Kami menghadirkan solusi teknologi yang efisien untuk membantu manajemen data dan keuangan Anda. Dengan antarmuka yang bersih dan performa yang cepat, setiap proyek kami kerjakan dengan standar kualitas tinggi untuk mendukung skalabilitas bisnis.",
+    title: "Featured02.Title",
+    description: "Featured02.Description",
     image: "/image-contoh.jpg",
     slug: "https://www.google.com",
     imageLeft: false,
@@ -169,27 +171,27 @@ export const featuredProjects = [
 
 export const reviews = [
   {
-    text: "Websitenya keren parah, gue suka banget sama desainnya! Worth it lah pokoknya",
+    text: "Testimonial1",
     name: "miyaa anifah",
   },
   {
-    text: "Timnya asik-asik, ga ribet, langsung ngerti maunya kita. Hasilnya juga mantap!",
+    text: "Testimonial2",
     name: "Rizky Pratama",
   },
   {
-    text: "Revisinya sabar banget ngeladenin request gue yang banyak. Makasih ya",
+    text: "Testimonial3",
     name: "Farhan Alif",
   },
   {
-    text: "Pelayanan cepat dan hasil sesuai ekspektasi, recommended banget!",
+    text: "Testimonial4",
     name: "Andi Saputra",
   },
   {
-    text: "Desainnya bener-bener mencerminkan identitas brand kami. Caruban Tech emang juara!",
+    text: "Testimonial5",
     name: "Siti Aminah",
   },
   {
-    text: "Kodingannya rapi, performa web kencang banget. Puas banget sama hasilnya.",
+    text: "Testimonial6",
     name: "Budi Santoso",
   },
 ];
@@ -206,40 +208,36 @@ export const services: ServiceItem[] = [
   {
     image: "/image-contoh.jpg",
     icon: <Cpu className="w-5 h-5" />,
-    title: "Teknologi Terbaru",
-    description:
-      "Menggunakan stack teknologi modern untuk memastikan performa sistem yang optimal dan keamanan data yang terjamin.",
+    title: "TechnologyLatest",
+    description: "TechnologyLatestDescription",
     number: "01",
   },
   {
     image: "/image-contoh.jpg",
     icon: <Palette className="w-5 h-5" />,
-    title: "Desain Intuitif",
-    description:
-      "Riset UI/UX yang mendalam untuk menciptakan pengalaman pengguna yang mulus di berbagai perangkat.",
+    title: "IntuitiveDesign",
+    description: "IntuitiveDesignDescription",
     number: "02",
   },
   {
     image: "/image-contoh.jpg",
     icon: <HeadphonesIcon className="w-5 h-5" />,
-    title: "Penuh Dukungan",
-    description:
-      "Layanan pemeliharaan dan dukungan teknis pasca-rilis untuk menjamin stabilitas aplikasi Anda secara berkala.",
+    title: "SupportPlus",
+    description: "SupportPlusDescription",
     number: "03",
   },
   {
     image: "/image-contoh.jpg",
     icon: <Layers className="w-5 h-5" />,
-    title: "Efisiensi & Skalabilitas",
-    description:
-      "Sistem yang dirancang secara modular sehingga mudah dikembangkan seiring pertumbuhan bisnis Anda.",
+    title: "EfficiencyScalability",
+    description: "EfficiencyScalabilityDescription",
     number: "04",
   },
 ];
 
 export const teams = [
   {
-    role: "Back-End Developer",
+    role: "BackEndDeveloper",
     name: "HARIS GUNAWAN R",
     image: "/haris.jpeg",
     socials: [
@@ -249,7 +247,7 @@ export const teams = [
     ],
   },
   {
-    role: "Front-End Developer",
+    role: "FrontEndDeveloper",
     name: "HADI BUDI HARDOYO",
     image: "/hadii.jpg",
     socials: [
@@ -259,7 +257,7 @@ export const teams = [
     ],
   },
   {
-    role: "Front-End Developer",
+    role: "FrontEndDeveloper",
     name: "LUFTAN HADI",
     image: "/lutfann.jpeg",
     socials: [
@@ -269,7 +267,7 @@ export const teams = [
     ],
   },
   {
-    role: "UI/UX Designer",
+    role: "UIUXDesigner",
     name: "DAMAYANTI",
     image: "/haris.jpeg",
     socials: [
@@ -311,36 +309,28 @@ export const techStacks = [
 
 export const faqs = [
   {
-    question: "Mengapa bisnis saya membutuhkan website atau aplikasi khusus?",
-    answer:
-      "Website dan aplikasi meningkatkan kredibilitas, memperluas jangkauan pasar secara global, dan memungkinkan bisnis Anda beroperasi 24/7 tanpa batasan fisik.",
+    question: "Question1",
+    answer: "Answer1",
   },
   {
-    question:
-      "Berapa lama waktu yang dibutuhkan untuk menyelesaikan satu proyek?",
-    answer:
-      "Durasi proyek bergantung pada kompleksitas dan fitur yang dibutuhkan. Rata-rata proyek sederhana selesai dalam 2–4 minggu, sementara proyek kompleks bisa memakan waktu 1–3 bulan.",
+    question: "Question2",
+    answer: "Answer2",
   },
   {
-    question: "Bagaimana dengan keamanan data dan pemeliharaan setelah rilis?",
-    answer:
-      "Kami menerapkan standar keamanan terkini dan menyediakan paket pemeliharaan pasca-rilis untuk memastikan aplikasi Anda tetap aman, stabil, dan terus diperbarui.",
+    question: "Question3",
+    answer: "Answer3",
   },
   {
-    question: "Apakah ada biaya tersembunyi selain biaya pengembangan?",
-    answer:
-      "Tidak ada biaya tersembunyi. Semua biaya akan diuraikan secara transparan di awal sebelum proyek dimulai, termasuk biaya hosting, domain, dan pemeliharaan jika diperlukan.",
+    question: "Question4",
+    answer: "Answer4",
   },
   {
-    question: "Apakah saya bisa mengajukan revisi jika hasil tidak sesuai?",
-    answer:
-      "Tentu saja. Kami menyediakan sesi revisi sesuai kesepakatan di awal proyek untuk memastikan hasil akhir sesuai dengan ekspektasi Anda.",
+    question: "Question5",
+    answer: "Answer5",
   },
   {
-    question:
-      "Bagaimana cara memulai konsultasi proyek dengan Caruban Technology?",
-    answer:
-      "Anda bisa menghubungi kami melalui halaman kontak atau langsung via WhatsApp. Tim kami akan merespons dalam 1x24 jam untuk mendiskusikan kebutuhan proyek Anda.",
+    question: "Question6",
+    answer: "Answer6",
   },
 ];
 
@@ -352,10 +342,10 @@ export const footerSocials = [
 ];
 
 export const footerServices = [
-  "Web Development",
-  "Mobile Apps",
-  "UI/UX Design",
-  "IT Consulting",
+  "WebDevelopment",
+  "MobileApps",
+  "UIDesign",
+  "ITConsulting",
 ];
 
 export const footerContact = {

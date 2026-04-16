@@ -3,41 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
-
-  const words = ["Terintegrasi", "Inovatif", "Skalabel", "Profesional"];
-  const [index, setIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
-  const [reverse, setReverse] = useState(false);
-
-  useEffect(() => {
-    // 1. Logika ketika kata selesai diketik
-    if (subIndex === words[index].length + 1 && !reverse) {
-      const timeout = setTimeout(() => setReverse(true), 2000);
-      return () => clearTimeout(timeout);
-    }
-
-    // 2. Logika ketika kata selesai dihapus
-    if (subIndex === 0 && reverse) {
-      const timeout = setTimeout(() => {
-        setReverse(false);
-        setIndex((prev) => (prev + 1) % words.length);
-      }, 200);
-      return () => clearTimeout(timeout);
-    }
-
-    // 3. Logika proses mengetik dan menghapus
-    const timeout = setTimeout(
-      () => {
-        setSubIndex((prev) => prev + (reverse ? -1 : 1));
-      },
-      reverse ? 75 : 150,
-    );
-
-    return () => clearTimeout(timeout);
-  }, [subIndex, index, reverse, words]);
+  const t = useTranslations("Hero");
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -59,7 +28,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-white text-[var(--foreground)] pt-20"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-white text-[var(--foreground)] pt-16 sm:pt-20"
     >
       <motion.div
         variants={containerVariants}
@@ -69,18 +38,11 @@ export default function HeroSection() {
       >
         {/* Title & Desc */}
         <motion.div variants={itemVariants} className="space-y-4">
-          <h1 className="text-4xl font-black tracking-tighter leading-[1.1]">
-            Solusi Pengembangan Web <br />
-            <span className="text-[var(--primary)]">
-              {words[index].substring(0, subIndex)}
-              <span className="animate-pulse font-light">|</span>
-            </span>{" "}
-            untuk Bisnis Anda
+          <h1 className="text-3xl max-w-3xl font-black tracking-tighter leading-[1.1]">
+            {t("Title")}
           </h1>
           <p className="max-w-xl mx-auto text-sm md:text-base opacity-70 font-medium">
-            Kami membantu transformasi digital bisnis Anda melalui pengembangan
-            perangkat lunak yang skalabel, desain intuitif, dan teknologi
-            terkini.
+            {t("Description")}
           </p>
         </motion.div>
 
@@ -108,20 +70,20 @@ export default function HeroSection() {
           className="flex flex-col items-center gap-6"
         >
           <div className="flex flex-wrap justify-center items-center gap-2">
-            {["Web design", "Branding", "Marketing", "SEO", "Consulting"].map(
+            {["WebDesign", "Branding", "Marketing", "SEO", "Consulting"].map(
               (item, i) => (
                 <span
                   key={i}
                   className="px-4 py-1.5 bg-white border border-[var(--border)] rounded-full shadow-sm text-[10px] md:text-xs font-bold text-[var(--brand-dark)]"
                 >
-                  {item}
+                  {t(`Tags.${item}`)}
                 </span>
               ),
             )}
           </div>
 
-          <button className="bg-[var(--primary)] hover:bg-[#168a65] text-white p-4 px-8 rounded-2xl transition-all transform hover:scale-105 shadow-lg shadow-[var(--primary)]/20 font-black text-xs uppercase ">
-            Konsultasi Gratis
+          <button className="cursor-pointer bg-[var(--primary)] hover:bg-[#168a65] text-white p-4 px-8 rounded-2xl transition-all transform hover:scale-105 shadow-lg shadow-[var(--primary)]/20 font-black text-xs uppercase">
+            {t("Button")}
           </button>
         </motion.div>
       </motion.div>
@@ -143,7 +105,7 @@ export default function HeroSection() {
         <Link
           href="https://wa.me/628XXXXXXXXXX"
           target="_blank"
-          className="relative block group"
+          className="relative block group cursor-pointer"
         >
           <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20 group-hover:opacity-40"></span>
           <Image

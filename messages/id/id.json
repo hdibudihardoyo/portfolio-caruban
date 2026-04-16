@@ -1,14 +1,193 @@
 {
   "Navbar": {
     "Home": "Beranda",
-    "About": "Tentang",
-    "Contact": "Kontak",
+    "Projects": "Proyek",
     "Services": "Layanan",
+    "Pricing": "Harga",
+    "Testimonials": "Testimoni",
+    "Contact": "Kontak",
     "Button": "Hubungi Kami",
     "Language": "Bahasa"
   },
   "Hero": {
     "Title": "Solusi Pengembangan Web dan Aplikasi Terintegrasi untuk Bisnis Anda",
-    "Description": "Kami membantu transformasi digital bisnis Anda melalui pengembangan perangkat lunak yang skalabel, desain yang intuitif, dan teknologi terkini"
+    "Description": "Kami membantu transformasi digital bisnis Anda melalui pengembangan perangkat lunak yang skalabel, desain yang intuitif, dan teknologi terkini",
+    "Button": "Konsultasi Gratis",
+    "Tags": {
+      "WebDesign": "Desain Web",
+      "Branding": "Branding",
+      "Marketing": "Marketing",
+      "SEO": "SEO",
+      "Consulting": "Konsultasi"
+    }
+  },
+  "Service": {
+    "Title": "Mengapa Memilih",
+    "Subtitle": "Layanan Kami?",
+    "Description": "Kami menciptakan solusi digital yang dirancang khusus untuk mempercepat pertumbuhan bisnis Anda dengan standar kualitas tinggi.",
+    "TechnologyLatest": "Teknologi Terbaru",
+    "TechnologyLatestDescription": "Menggunakan stack teknologi modern untuk performa optimal dan keamanan data yang terjamin.",
+    "IntuitiveDesign": "Desain Intuitif",
+    "IntuitiveDesignDescription": "Riset UI/UX mendalam untuk pengalaman pengguna yang mulus di berbagai perangkat.",
+    "SupportPlus": "Dukungan & Pemeliharaan",
+    "SupportPlusDescription": "Layanan pemeliharaan dan dukungan teknis pasca-rilis untuk menjaga stabilitas aplikasi.",
+    "EfficiencyScalability": "Efisiensi & Skalabilitas",
+    "EfficiencyScalabilityDescription": "Arsitektur modular yang dirancang untuk berkembang seiring pertumbuhan bisnis Anda."
+  },
+  "Project": {
+    "Title": "Portofolio Proyek",
+    "Details": "Lihat Proyek",
+    "Explore": "Eksplor Semua Proyek",
+    "Featured01": {
+      "Title": "Aplikasi Buwuhan",
+      "Description": "Platform manajemen catatan sumbangan tradisional yang menggantikan buku manual dengan basis data real-time."
+    },
+    "Featured02": {
+      "Title": "Sistem Manajemen Inventaris",
+      "Description": "Solusi inventaris efisien yang dibangun untuk performa cepat dan alur kerja bisnis yang skala."
+    }
+  },
+  "FAQ": {
+    "Title": "FAQ &",
+    "Subtitle": "Informasi Layanan",
+    "Description": "Temukan jawaban atas pertanyaan umum atau hubungi tim kami untuk konsultasi langsung.",
+    "Question1": "Mengapa bisnis saya membutuhkan website atau aplikasi khusus?",
+    "Answer1": "Website dan aplikasi meningkatkan kredibilitas, memperluas jangkauan pasar secara global, dan memungkinkan bisnis Anda beroperasi 24/7 tanpa batasan fisik.",
+    "Question2": "Berapa lama waktu yang dibutuhkan untuk menyelesaikan satu proyek?",
+    "Answer2": "Durasi proyek bergantung pada kompleksitas dan fitur yang dibutuhkan. Rata-rata proyek sederhana selesai dalam 2–4 minggu, sementara proyek kompleks bisa memakan waktu 1–3 bulan.",
+    "Question3": "Bagaimana dengan keamanan data dan pemeliharaan setelah rilis?",
+    "Answer3": "Kami menerapkan standar keamanan terkini dan menyediakan paket pemeliharaan pasca-rilis untuk memastikan aplikasi Anda tetap aman, stabil, dan terus diperbarui.",
+    "Question4": "Apakah ada biaya tersembunyi selain biaya pengembangan?",
+    "Answer4": "Tidak ada biaya tersembunyi. Semua biaya akan diuraikan secara transparan di awal sebelum proyek dimulai, termasuk biaya hosting, domain, dan pemeliharaan jika diperlukan.",
+    "Question5": "Apakah saya bisa mengajukan revisi jika hasil tidak sesuai?",
+    "Answer5": "Tentu saja. Kami menyediakan sesi revisi sesuai kesepakatan di awal proyek untuk memastikan hasil akhir sesuai dengan ekspektasi Anda.",
+    "Question6": "Bagaimana cara memulai konsultasi proyek dengan Caruban Technology?",
+    "Answer6": "Anda bisa menghubungi kami melalui halaman kontak atau langsung via WhatsApp. Tim kami akan merespons dalam 1x24 jam untuk mendiskusikan kebutuhan proyek Anda."
+  },
+  "Price": {
+    "Title": "Paket Solusi Digital",
+    "Description": "Pilih paket yang paling sesuai dengan skala bisnis Anda saat ini.",
+    "FreePlan": "PROGRAM GRATIS",
+    "PaidPlan": "LAYANAN PROFESIONAL",
+    "Free": {
+      "BasicWebProfile": {
+        "Title": "Basic Web Profile",
+        "Description": "Halaman statis sederhana untuk menampilkan profil profesional Anda.",
+        "Feature1": "Landing page satu halaman",
+        "Feature2": "Setup sosial media dasar",
+        "Feature3": "Template standar",
+        "Button": "Daftar Program UMKM!"
+      },
+      "UMKMStarter": {
+        "Title": "UMKM Starter",
+        "Description": "Katalog digital supaya produk Anda bisa diakses pelanggan kapan saja.",
+        "Feature1": "Katalog produk statis",
+        "Feature2": "Integrasi WhatsApp",
+        "Feature3": "Optimasi mobile",
+        "Button": "Daftar Program UMKM!"
+      },
+      "LandingPage": {
+        "Title": "Landing Page Edukasi",
+        "Description": "Solusi informasi untuk organisasi dan inisiatif non-profit.",
+        "Feature1": "Desain informatif",
+        "Feature2": "Maintenance 3 bulan",
+        "Feature3": "Integrasi Google Maps",
+        "Button": "Daftar Sekarang!"
+      }
+    },
+    "Paid": {
+      "BusinessWebsite": {
+        "Title": "Business Website",
+        "Description": "Website profesional dengan fitur lengkap dan desain custom.",
+        "Feature1": "Website multi halaman",
+        "Feature2": "Desain custom",
+        "Feature3": "SEO dasar",
+        "Feature4": "Support 3 bulan",
+        "Button": "Pesan Sekarang"
+      },
+      "ECommerce": {
+        "Title": "E-Commerce",
+        "Description": "Toko online dengan pembayaran otomatis dan fitur admin.",
+        "Feature1": "Keranjang & checkout",
+        "Feature2": "Payment gateway",
+        "Feature3": "Dashboard admin",
+        "Feature4": "Manajemen produk",
+        "Button": "Pesan Sekarang"
+      },
+      "CustomApp": {
+        "Title": "Custom App",
+        "Description": "Aplikasi web khusus sesuai kebutuhan logika bisnis Anda.",
+        "Feature1": "Logika custom penuh",
+        "Feature2": "Integrasi API",
+        "Feature3": "Sistem skala",
+        "Feature4": "Maintenance premium",
+        "Button": "Konsultasi Gratis"
+      }
+    }
+  },
+  "Review": {
+    "Title": "Apa Kata Mereka?",
+    "Hint": "← Geser untuk melihat →",
+    "Testimonial1": "Websitenya keren parah, gue suka banget sama desainnya! Worth it lah pokoknya",
+    "Testimonial2": "Timnya asik-asik, ga ribet, langsung ngerti maunya kita. Hasilnya juga mantap!",
+    "Testimonial3": "Revisinya sabar banget ngeladenin request gue yang banyak. Makasih ya",
+    "Testimonial4": "Pelayanan cepat dan hasil sesuai ekspektasi, recommended banget!",
+    "Testimonial5": "Desainnya bener-bener mencerminkan identitas brand kami. Caruban Tech emang juara!",
+    "Testimonial6": "Kodingannya rapi, performa web kencang banget. Puas banget sama hasilnya."
+  },
+  "Team": {
+    "Title": "Informasi Tim Developer",
+    "BackEndDeveloper": "Back-End Developer",
+    "FrontEndDeveloper": "Front-End Developer",
+    "UIUXDesigner": "UI/UX Designer"
+  },
+  "TechStack": {
+    "TitlePrefix": "Teknologi",
+    "TitleHighlight": "Andalan Kami",
+    "Description": "Kami menggunakan ekosistem teknologi modern untuk memastikan performa dan keamanan aplikasi Anda."
+  },
+  "Contact": {
+    "Title": "Konsultasi Gratis",
+    "Description": "Punya ide proyek menarik? Mari diskusikan bagaimana kami bisa membantu mewujudkannya.",
+    "FirstName": "Nama depan",
+    "LastName": "Nama belakang",
+    "Email": "Alamat email",
+    "Message": "Isi pesan",
+    "SendEmail": "Kirim Via Email",
+    "WhatsAppChat": "Chat via WhatsApp",
+    "FollowUs": "Yuk follow sosmed kami"
+  },
+  "AllProjects": {
+    "TitlePrefix": "Eksplor Seluruh",
+    "TitleHighlight": "Karya Kami",
+    "Description": "Daftar lengkap solusi digital yang telah kami bangun dengan standar kualitas tinggi.",
+    "TotalProjects": "Total: {count} Proyek",
+    "Project1": {
+      "Title": "Aplikasi Buwuhan",
+      "Category": "Web Development",
+      "Description": "Pelacakan sumbangan hajatan berbasis cloud untuk menggantikan catatan manual."
+    },
+    "Project2": {
+      "Title": "Inventory Master",
+      "Category": "Management System",
+      "Description": "Pelacakan stok real-time untuk mendukung UMKM yang berkembang."
+    },
+    "Project3": {
+      "Title": "Caruban Tech Profile",
+      "Category": "Landing Page",
+      "Description": "Website company profile berkinerja tinggi yang telah dioptimalkan untuk SEO."
+    }
+  },
+  "Footer": {
+    "Navigation": "Navigasi",
+    "Services": "Layanan",
+    "Contact": "Kontak",
+    "BrandDescription": "Solusi transformasi digital terintegrasi untuk membantu pertumbuhan bisnis Anda melalui teknologi terkini.",
+    "BackToTop": "Kembali ke Atas",
+    "WebDevelopment": "Web Development",
+    "MobileApps": "Mobile Apps",
+    "UIDesign": "UI/UX Design",
+    "ITConsulting": "IT Consulting",
+    "Copyright": "© 2026 Caruban Technology. Seluruh Hak Cipta Dilindungi Undang-Undang."
   }
 }

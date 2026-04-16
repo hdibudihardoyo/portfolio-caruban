@@ -1,47 +1,80 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useRef } from "react";
 import { reviews } from "@/constants";
 
 export default function SectionReview() {
+  const t = useTranslations("Review");
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!carouselRef.current) return;
+    const width = carouselRef.current.clientWidth * 0.8;
+    carouselRef.current.scrollBy({
+      left: direction === "right" ? width : -width,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section
       id="testimonial"
-      className="py-24 px-6 bg-white text-[var(--foreground)] overflow-hidden"
+      className="py-16 sm:py-20 px-6 bg-white text-[var(--foreground)] overflow-hidden"
     >
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="flex justify-center mb-4">
-            <div className="w-10 h-2 rounded-full bg-[var(--primary)]" />
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-5">
+          <div className="text-center sm:text-left flex-1">
+            <div className="flex justify-center sm:justify-start mb-3">
+              <div className="w-10 h-2 rounded-full bg-[var(--primary)]" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black tracking-tighter leading-tight">
+              {t("Title")}
+            </h2>
           </div>
-          <h2 className="text-3xl font-black tracking-tighter leading-tight">
-            Apa Kata Mereka?
-          </h2>
+
+          <div className="flex items-center justify-center sm:justify-end gap-2">
+            <button
+              type="button"
+              onClick={() => scroll("left")}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] text-[var(--brand-dark)] hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all"
+              aria-label="Previous review"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => scroll("right")}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] text-[var(--brand-dark)] hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all"
+              aria-label="Next review"
+            >
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
-        {/* Drag Container */}
-        <div className="relative cursor-grab active:cursor-grabbing px-4">
-          <motion.div
-            className="flex gap-6"
-            drag="x"
-            dragConstraints={{ left: -1200, right: 0 }}
-          >
+        {/* Review Carousel */}
+        <div
+          ref={carouselRef}
+          className="relative overflow-x-auto overflow-y-hidden scrollbar-hide px-4"
+        >
+          <div className="flex gap-6 pb-4">
             {reviews.map((item, i) => (
               <motion.div
                 key={i}
                 whileHover={{
                   y: -5,
-                  borderColor: "var(--primary)",
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                className="min-w-[280px] md:min-w-[320px] bg-white border border-[var(--border)] rounded-[2rem] p-7 shadow-sm hover:shadow-xl transition-all duration-300 relative"
+                className="min-w-[240px] md:min-w-[280px] bg-white border border-[var(--border)] rounded-[2rem] p-5 transition-all duration-300 relative"
               >
                 <Quote className="absolute top-5 right-6 w-8 h-8 text-[var(--primary)] opacity-10" />
 
                 <p className="text-sm md:text-base italic opacity-70 mb-8 leading-relaxed relative z-10 font-medium">
-                  “{item.text}”
+                  “{t(item.text)}”
                 </p>
 
                 <div className="flex items-center gap-3 border-t border-[var(--border)] pt-5">
@@ -60,12 +93,12 @@ export default function SectionReview() {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Hint untuk user */}
         <p className="text-center mt-10 text-[10px] font-black uppercase tracking-[0.2em] opacity-30 animate-pulse">
-          ← Geser untuk melihat →
+          {t("Hint")}
         </p>
       </div>
     </section>

@@ -1,14 +1,193 @@
 {
   "Navbar": {
     "Home": "Home",
-    "About": "About",
-    "Contact": "Contact",
+    "Projects": "Projects",
     "Services": "Services",
+    "Pricing": "Pricing",
+    "Testimonials": "Testimonials",
+    "Contact": "Contact",
     "Button": "Contact Us",
     "Language": "Language"
   },
   "Hero": {
     "Title": "Integrated Web and Application Development Solutions for Your Business",
-    "Description": "We help transform your business digitally through scalable software development, intuitive design, and cutting-edge technology"
+    "Description": "We help transform your business digitally through scalable software development, intuitive design, and cutting edge technology",
+    "Button": "Free Consultation",
+    "Tags": {
+      "WebDesign": "Web design",
+      "Branding": "Branding",
+      "Marketing": "Marketing",
+      "SEO": "SEO",
+      "Consulting": "Consulting"
+    }
+  },
+  "Service": {
+    "Title": "Why Choose",
+    "Subtitle": "Our Services?",
+    "Description": "We build digital solutions tailored to accelerate your business growth with high quality standards.",
+    "TechnologyLatest": "Latest Technology",
+    "TechnologyLatestDescription": "Using modern tech stacks to ensure optimal system performance and data security.",
+    "IntuitiveDesign": "Intuitive Design",
+    "IntuitiveDesignDescription": "UI/UX research to create seamless experiences across every device.",
+    "SupportPlus": "Support & Maintenance",
+    "SupportPlusDescription": "Post-launch maintenance and technical support to keep your app stable and updated.",
+    "EfficiencyScalability": "Efficiency & Scalability",
+    "EfficiencyScalabilityDescription": "Modular architecture designed to grow smoothly with your business."
+  },
+  "Project": {
+    "Title": "Project Portfolio",
+    "Details": "View Project",
+    "Explore": "Explore All Projects",
+    "Featured01": {
+      "Title": "Aplikasi Buwuhan",
+      "Description": "A digital platform for tracking traditional event donations, replacing manual ledgers with a real-time, organized database."
+    },
+    "Featured02": {
+      "Title": "Sistem Manajemen Inventaris",
+      "Description": "An efficient inventory management solution built for fast performance and scalable business workflows."
+    }
+  },
+  "FAQ": {
+    "Title": "FAQ &",
+    "Subtitle": "Service Information",
+    "Description": "Find answers to common questions or contact our team for a consultation.",
+    "Question1": "Why does my business need a website or dedicated app?",
+    "Answer1": "Websites and apps boost credibility, expand market reach, and allow your business to operate 24/7 without physical limits.",
+    "Question2": "How long does it take to complete a project?",
+    "Answer2": "Project timelines depend on complexity. Simple projects typically finish in 2–4 weeks, while complex systems may take 1–3 months.",
+    "Question3": "What about data security and post-launch maintenance?",
+    "Answer3": "We apply current security standards and offer maintenance packages to keep your app safe, stable, and up to date.",
+    "Question4": "Are there hidden fees beyond development costs?",
+    "Answer4": "No hidden fees. All costs are explained transparently before the project starts, including hosting, domain, and maintenance if needed.",
+    "Question5": "Can I request revisions if the result is not as expected?",
+    "Answer5": "Absolutely. We provide revision sessions agreed upon at the start of the project to ensure the final result meets expectations.",
+    "Question6": "How do I start a project consultation with Caruban Technology?",
+    "Answer6": "Contact us through the contact page or WhatsApp. Our team responds within 24 hours to discuss your project needs."
+  },
+  "Price": {
+    "Title": "Digital Solution Packages",
+    "Description": "Choose the package that fits your current business scale.",
+    "FreePlan": "FREE PROGRAM",
+    "PaidPlan": "PROFESSIONAL SERVICE",
+    "Free": {
+      "BasicWebProfile": {
+        "Title": "Basic Web Profile",
+        "Description": "A simple static page to showcase your professional profile.",
+        "Feature1": "Single-page landing page",
+        "Feature2": "Basic social media setup",
+        "Feature3": "Standard template",
+        "Button": "Join UMKM Program!"
+      },
+      "UMKMStarter": {
+        "Title": "UMKM Starter",
+        "Description": "A digital catalog to make your products accessible to customers anytime.",
+        "Feature1": "Static product catalog",
+        "Feature2": "WhatsApp integration",
+        "Feature3": "Mobile optimization",
+        "Button": "Join UMKM Program!"
+      },
+      "LandingPage": {
+        "Title": "Educational Landing Page",
+        "Description": "An informational site for organizations and non-profit initiatives.",
+        "Feature1": "Informative design",
+        "Feature2": "3 months maintenance",
+        "Feature3": "Google Maps integration",
+        "Button": "Register Now!"
+      }
+    },
+    "Paid": {
+      "BusinessWebsite": {
+        "Title": "Business Website",
+        "Description": "A professional website with full features and custom design.",
+        "Feature1": "Multi-page website",
+        "Feature2": "Custom design",
+        "Feature3": "Basic SEO",
+        "Feature4": "3 months support",
+        "Button": "Order Now"
+      },
+      "ECommerce": {
+        "Title": "E-Commerce",
+        "Description": "An online store with automated payments and admin tools.",
+        "Feature1": "Cart & checkout",
+        "Feature2": "Payment gateway",
+        "Feature3": "Admin dashboard",
+        "Feature4": "Product management",
+        "Button": "Order Now"
+      },
+      "CustomApp": {
+        "Title": "Custom App",
+        "Description": "A tailored web app built for your business logic and growth needs.",
+        "Feature1": "Full custom logic",
+        "Feature2": "API integration",
+        "Feature3": "Scalable system",
+        "Feature4": "Premium maintenance",
+        "Button": "Free consultation"
+      }
+    }
+  },
+  "Review": {
+    "Title": "What Clients Say?",
+    "Hint": "← Swipe to view →",
+    "Testimonial1": "The website looks amazing, I really love the design! Totally worth it.",
+    "Testimonial2": "The team was easy to work with and understood exactly what we needed. Great result!",
+    "Testimonial3": "They were patient with revisions and handled my many requests professionally.",
+    "Testimonial4": "Fast delivery and the final result matched our expectations perfectly.",
+    "Testimonial5": "The design captured our brand identity beautifully. Caruban Tech is top-notch!",
+    "Testimonial6": "Clean code and fast performance. Very satisfied with the final website."
+  },
+  "Team": {
+    "Title": "Meet Our Developer Team",
+    "BackEndDeveloper": "Back-End Developer",
+    "FrontEndDeveloper": "Front-End Developer",
+    "UIUXDesigner": "UI/UX Designer"
+  },
+  "TechStack": {
+    "TitlePrefix": "Technology",
+    "TitleHighlight": "We Use",
+    "Description": "We use a modern technology ecosystem to ensure your application performs securely and reliably."
+  },
+  "Contact": {
+    "Title": "Free Consultation",
+    "Description": "Have an exciting project idea? Let’s discuss how we can help bring it to life.",
+    "FirstName": "First Name",
+    "LastName": "Last Name",
+    "Email": "Email Address",
+    "Message": "Write your message",
+    "SendEmail": "Send via Email",
+    "WhatsAppChat": "Chat via WhatsApp",
+    "FollowUs": "Follow us on socials"
+  },
+  "AllProjects": {
+    "TitlePrefix": "Explore All",
+    "TitleHighlight": "Our Work",
+    "Description": "Complete list of digital solutions we have built with high quality standards.",
+    "TotalProjects": "Total: {count} Projects",
+    "Project1": {
+      "Title": "Aplikasi Buwuhan",
+      "Category": "Web Development",
+      "Description": "Cloud-based donation tracking for traditional celebrations."
+    },
+    "Project2": {
+      "Title": "Inventory Master",
+      "Category": "Management System",
+      "Description": "Real-time stock tracking for small and growing businesses."
+    },
+    "Project3": {
+      "Title": "Caruban Tech Profile",
+      "Category": "Landing Page",
+      "Description": "A high-performance company profile website optimized for SEO."
+    }
+  },
+  "Footer": {
+    "Navigation": "Navigation",
+    "Services": "Services",
+    "Contact": "Contact",
+    "BrandDescription": "Integrated digital transformation solutions to help your business grow with the latest technology.",
+    "BackToTop": "Back to Top",
+    "WebDevelopment": "Web Development",
+    "MobileApps": "Mobile Apps",
+    "UIDesign": "UI/UX Design",
+    "ITConsulting": "IT Consulting",
+    "Copyright": "© 2026 Caruban Technology. All rights reserved."
   }
 }

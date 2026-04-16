@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { CheckCircle2 as CheckIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { gratisPlans, berbayarPlans, type PricingPlan } from "@/constants";
 
 export default function PriceSection() {
+  const t = useTranslations("Price");
   const [active, setActive] = useState<"gratis" | "berbayar">("gratis");
 
   const plans = active === "gratis" ? gratisPlans : berbayarPlans;
@@ -12,22 +14,22 @@ export default function PriceSection() {
   return (
     <section
       id="pricing"
-      className="py-24 px-6 bg-white text-[var(--foreground)]"
+      className="py-16 sm:py-20 px-6 bg-white text-[var(--foreground)]"
     >
       <div className="max-w-5xl mx-auto text-center">
         <div className="flex justify-center mb-4">
           <div className="w-10 h-2 rounded-full bg-[var(--primary)]" />
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-tight mb-2">
-          Paket Solusi Digital
+        <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight mb-2">
+          {t("Title")}
         </h2>
-        <p className="opacity-60 mb-4 max-w-lg mx-auto text-sm md:text-base font-medium">
-          Pilih paket yang paling sesuai dengan skala bisnis Anda saat ini.
+        <p className="opacity-60 mb-4 max-w-lg mx-auto text-xs sm:text-sm md:text-base font-medium">
+          {t("Description")}
         </p>
 
         {/* Toggle */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-5">
           <div className="bg-[var(--brand-dark)] p-1 rounded-xl flex shadow-2xl border border-white/5">
             <button
               onClick={() => setActive("gratis")}
@@ -37,7 +39,7 @@ export default function PriceSection() {
                   : "text-white hover:text-white"
               }`}
             >
-              PROGRAM GRATIS
+              {t("FreePlan")}
             </button>
 
             <button
@@ -48,58 +50,42 @@ export default function PriceSection() {
                   : "text-white hover:text-white"
               }`}
             >
-              LAYANAN PROFESIONAL
+              {t("PaidPlan")}
             </button>
           </div>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-5">
           {plans.map((plan, i) => (
             <div
               key={i}
-              className={`relative flex flex-col bg-white border ${
-                plan.highlight
-                  ? "border-[var(--primary)] ring-4 ring-[var(--primary)]/5"
-                  : "border-[var(--border)]"
-              } rounded-[2rem] p-7 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1`}
+              className="relative flex flex-col surface border border-[var(--border)] p-6 transition-all duration-500 hover:-translate-y-1"
             >
-              {plan.highlight && (
-                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[var(--primary)] text-white text-[9px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full z-10 shadow-md">
-                  Paling Populer
-                </span>
-              )}
-
               <span className="text-[9px] uppercase tracking-[0.15em] font-black text-[var(--primary)] mb-3">
-                {plan.title}
+                {t(plan.title)}
               </span>
 
-              <h3 className="text-2xl font-black mb-2 tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-black mb-2 tracking-tight">
                 {plan.price}
               </h3>
 
-              <p className="text-xs md:text-sm opacity-60 mb-6 min-h-[40px] leading-relaxed font-medium">
-                {plan.desc}
+              <p className="text-xs md:text-sm opacity-60 mb-5 min-h-[40px] leading-relaxed font-medium">
+                {t(plan.desc)}
               </p>
 
-              <button
-                className={`w-full rounded-xl py-3 text-[11px] font-black uppercase tracking-wider transition-all duration-300 ${
-                  plan.highlight
-                    ? "bg-[var(--primary)] text-white hover:bg-[#168a65] shadow-lg shadow-[var(--primary)]/20"
-                    : "border-2 border-[var(--brand-dark)] text-[var(--brand-dark)] hover:bg-[var(--brand-dark)] hover:text-white"
-                }`}
-              >
-                {plan.button}
+              <button className="w-full rounded-xl py-3 text-[11px] font-black uppercase tracking-wider transition-all duration-300 border-2 border-[var(--brand-dark)] text-[var(--brand-dark)] hover:bg-[var(--brand-dark)] hover:text-white">
+                {t(plan.button)}
               </button>
 
-              <ul className="mt-8 space-y-3.5 text-xs md:text-sm text-left">
+              <ul className="mt-6 space-y-3 text-xs md:text-sm text-left">
                 {plan.features.map((item, idx) => (
                   <li
                     key={idx}
                     className="flex items-start gap-2.5 opacity-70 font-medium"
                   >
                     <CheckIcon className="w-4 h-4 text-[var(--primary)] shrink-0 mt-0.5" />
-                    <span>{item}</span>
+                    <span>{t(item)}</span>
                   </li>
                 ))}
               </ul>

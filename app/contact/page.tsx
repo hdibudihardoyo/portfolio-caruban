@@ -1,12 +1,12 @@
 import Contact from "@/components/ContactSection/contact";
 
 export const metadata = {
-  title: "Semua Proyek | Caruban Technology",
+  title: "Kontak | Caruban Technology",
   description:
-    "Daftar portofolio lengkap pengembangan web dan aplikasi oleh Caruban Technology.",
+    "Hubungi tim Caruban Technology untuk konsultasi pengembangan web dan aplikasi.",
 };
 
-export default function ProjectsPage() {
+export default function ContactPage() {
   return (
     <main>
       <Contact />

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { Poppins } from "next/font/google";
-import "./globals.css";
+import { NextIntlClientProvider } from "next-intl";
 import Navbar from "@/components/Navbar/navbar";
 import Footer from "@/components/Footer/footer";
-import { NextIntlClientProvider } from "next-intl";
+import "./globals.css";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -17,20 +18,25 @@ export const metadata: Metadata = {
     "Caruban Technology adalah perusahaan teknologi yang berfokus pada pengembangan solusi inovatif untuk berbagai industri. Kami menyediakan layanan konsultasi, pengembangan perangkat lunak, dan solusi teknologi yang disesuaikan dengan kebutuhan bisnis Anda.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const locale = cookieStore.get("locale")?.value ?? "en";
+  const messages = (await import(`../messages/${locale}/${locale}.json`))
+    .default;
+
   return (
-    <html lang="en" className={`${poppins.variable} h-full antialiased`}>
-      <NextIntlClientProvider>
-        <body className="min-h-full flex flex-col">
+    <html lang={locale} className={`${poppins.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col">
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           {children}
           <Footer />
-        </body>
-      </NextIntlClientProvider>
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }

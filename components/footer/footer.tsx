@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Mail, MapPin, ArrowUp } from "lucide-react";
 import {
@@ -12,6 +13,8 @@ import {
 } from "@/constants";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+  const tNav = useTranslations("Navbar");
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -39,8 +42,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm opacity-60 font-medium leading-relaxed">
-              Solusi transformasi digital terintegrasi untuk membantu
-              pertumbuhan bisnis Anda melalui teknologi terkini.
+              {t("BrandDescription")}
             </p>
             <div className="flex gap-4">
               {footerSocials.map((social, i) => (
@@ -55,19 +57,19 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links - Using navLinks from constants */}
+          {/* Quick Links  */}
           <div className="flex flex-col gap-6">
             <h4 className="text-xs font-black uppercase tracking-[0.2em] text-[var(--brand-dark)]">
-              Navigasi
+              {t("Navigation")}
             </h4>
             <ul className="flex flex-col gap-3 text-sm font-medium opacity-60">
               {navLinks.slice(0, 5).map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <Link
                     href={link.id}
                     className="hover:text-[var(--primary)] transition-colors"
                   >
-                    {link.name}
+                    {tNav(link.key)}
                   </Link>
                 </li>
               ))}
@@ -77,19 +79,19 @@ export default function Footer() {
           {/* Services */}
           <div className="flex flex-col gap-6">
             <h4 className="text-xs font-black uppercase tracking-[0.2em] text-[var(--brand-dark)]">
-              Layanan
+              {t("Services")}
             </h4>
             <ul className="flex flex-col gap-3 text-sm font-medium opacity-60">
               {footerServices.map((service) => (
-                <li key={service}>{service}</li>
+                <li key={service}>{t(service)}</li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info - Using footerContact from constants */}
+          {/* Contact Info  */}
           <div className="flex flex-col gap-6">
             <h4 className="text-xs font-black uppercase tracking-[0.2em] text-[var(--brand-dark)]">
-              Kontak
+              {t("Contact")}
             </h4>
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
@@ -111,15 +113,14 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] font-black uppercase tracking-widest">
-            © 2026 Caruban Technology. Seluruh Hak Cipta Dilindungi
-            Undang-Undang.
+            {t("Copyright")}
           </p>
 
           <button
             onClick={scrollToTop}
             className="group flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-[var(--brand-dark)] hover:text-[var(--primary)] transition-colors"
           >
-            Kembali ke Atas
+            {t("BackToTop")}
             <div className="w-8 h-8 rounded-full border border-[var(--border)] flex items-center justify-center group-hover:border-[var(--primary)] group-hover:bg-[var(--primary)] group-hover:text-white transition-all">
               <ArrowUp className="w-3 h-3" />
             </div>
