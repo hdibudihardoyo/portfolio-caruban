@@ -13,7 +13,7 @@ export default function ProjectSection() {
   return (
     <section
       id="project"
-      className="relative py-16 sm:py-20 px-6 overflow-hidden bg-white text-[var(--foreground)]"
+      className="relative py-16 sm:py-20 px-6 overflow-hidden bg-[var(--main-background)]"
     >
       {/* Header  */}
       <div className="max-w-5xl mx-auto text-center mb-10 sm:mb-12">
@@ -23,15 +23,15 @@ export default function ProjectSection() {
           viewport={{ once: true }}
           className="flex flex-col items-center"
         >
-          <div className="w-10 h-2 rounded-full bg-[var(--primary)] mb-4" />
-          <h2 className="text-2xl md:text-3xl font-black tracking-tighter">
+          <div className="w-15 h-1 rounded-full bg-[var(--color-muted)] mb-4" />
+          <h2 className="text-2xl md:text-3xl font-black tracking-tighter bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent">
             {t("Title")}
           </h2>
         </motion.div>
       </div>
 
       {/* Project List */}
-      <div className="max-w-6xl mx-auto flex flex-col gap-14 md:gap-20">
+      <div className="max-w-5xl mx-auto flex flex-col gap-14 md:gap-20">
         {featuredProjects.map((project) => (
           <motion.div
             key={project.id}
@@ -44,7 +44,7 @@ export default function ProjectSection() {
             } items-center justify-center gap-8 md:gap-12`}
           >
             {/* Image Container */}
-            <div className="w-full md:w-[40%] shrink-0 group">
+            <div className="flex-1 group">
               <div className="relative w-full h-60 md:h-[300px] rounded-[2rem] overflow-hidden border border-[var(--border)] bg-zinc-50 shadow-sm transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-[var(--primary)]/10">
                 <Image
                   src={project.image}
@@ -57,29 +57,32 @@ export default function ProjectSection() {
             </div>
 
             {/* Content */}
-            <div className="w-full md:w-[45%] flex flex-col gap-4 text-left">
+            <div className="flex-1 flex flex-col gap-4 text-left">
               <div className="flex items-center gap-3">
-                <span className="text-[var(--primary)] font-black text-base md:text-lg opacity-25">
+                <span className="text-[var(--color-primary)] font-black text-base md:text-lg">
                   {project.id}
                 </span>
-                <div className="h-[1px] w-6 bg-[var(--border)]" />
+                <div className="h-[1px] w-6 bg-[var(--color-primary)]" />
               </div>
 
-              <h3 className="text-lg md:text-xl font-black tracking-tight leading-tight text-[var(--brand-dark)]">
+              <h3 className="text-lg md:text-xl font-black tracking-tight leading-tight text-[var(--primary-accent)]">
                 {t(project.title)}
               </h3>
 
-              <p className="text-sm md:text-base opacity-65 leading-relaxed font-medium max-w-xl">
+              <p className="text-xs md:text-sm leading-relaxed text-[var(--color-primary)]">
                 {t(project.description)}
               </p>
 
-              <div className="pt-2">
+              <div>
                 <Link
                   target="_blank"
                   href={project.slug}
-                  className="inline-flex items-center px-6 py-3 rounded-xl bg-[var(--brand-dark)] text-white text-xs font-bold hover:bg-[var(--primary)] transition-all duration-300 transform hover:scale-105 shadow-lg group uppercase tracking-wider"
+                  className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-[var(--primary-accent)] text-[var(--color-primary)] text-xs font-bold transition-all duration-300 hover:scale-105 shadow-lg uppercase tracking-wider"
                 >
                   {t("Details")}
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[var(--secondary-accent)]">
+                    <ArrowRight className="w-3 h-3" />
+                  </span>
                 </Link>
               </div>
             </div>
@@ -96,12 +99,12 @@ export default function ProjectSection() {
       >
         <Link
           href="/projects"
-          className="group flex flex-col items-center gap-3"
+          className="group flex flex-col items-center gap-3 mt-4"
         >
-          <div className="w-10 h-10 rounded-full border-2 border-[var(--border)] flex items-center justify-center group-hover:border-[var(--primary)] group-hover:bg-[var(--primary)] transition-all duration-500">
-            <ArrowRight className="w-4 h-4 text-[var(--brand-dark)] group-hover:text-white -rotate-45 group-hover:rotate-0 transition-all duration-500" />
+          <div className="w-8 h-8 rounded-full bg-[var(--primary-accent)] border-2 border-[var(--color-primary)] flex items-center justify-center">
+            <ArrowRight className="w-4 h-4 -rotate-45 transition-all duration-500 text-[var(--color-primary)] group-hover:rotate-0" />
           </div>
-          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--brand-dark)] opacity-60">
+          <span className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-primary)]">
             {t("Explore")}
           </span>
         </Link>

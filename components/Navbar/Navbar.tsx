@@ -28,7 +28,7 @@ export default function Navbar() {
           aria-hidden="true"
         />
       )}
-      <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+      <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
         <motion.nav
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -37,11 +37,9 @@ export default function Navbar() {
             w-full max-w-[1050px] 
             flex items-center justify-between 
             pointer-events-auto
-            px-6 py-3
-            bg-white/40 backdrop-blur-md 
-            rounded-2xl 
-            border border-white/20 
-            shadow-[0_8px_32px_0_rgba(31,38,135,0.05)]
+            px-4 py-2 
+            bg-[var(--color-secondary)]/40 backdrop-blur-md 
+            rounded-full 
           "
         >
           {/* Brand Logo */}
@@ -54,24 +52,24 @@ export default function Navbar() {
               <Image
                 src="/icon-caruban.png"
                 alt="Logo"
-                width={34}
-                height={34}
+                width={28}
+                height={28}
                 className="transition-transform duration-500 group-hover:rotate-12"
                 priority
               />
             </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-sm font-black tracking-tighter text-[var(--brand-dark)]">
+            <div className="flex flex-col leading-none text-[var(--primary)]">
+              <span className="text-xs font-black tracking-tighter">
                 Caruban
               </span>
-              <span className="text-[9px] font-bold tracking-[0.2em] text-[var(--primary)]">
+              <span className="text-[9px] font-bold tracking-[0.2em]">
                 TECHNOLOGY
               </span>
             </div>
           </Link>
 
           {/* Nav Links - Desktop */}
-          <ul className="hidden lg:flex items-center space-x-7 text-[12px] font-black uppercase tracking-wider text-[var(--brand-dark)]">
+          <ul className="hidden lg:flex items-center gap-4 text-[11px] font-black uppercase tracking-wider">
             {navLinks.map((item) => (
               <li key={item.key} className="relative">
                 <Link
@@ -79,13 +77,13 @@ export default function Navbar() {
                   onClick={() => handleNavClick(item.key)}
                   className={`relative py-2 transition-colors duration-300 hover:text-[var(--primary)] ${
                     active === item.key
-                      ? "text-[var(--primary)]"
-                      : "text-[var(--brand-dark)]"
+                      ? "text-[var(--color-muted)]"
+                      : "text-[var(--color-muted)]"
                   }`}
                 >
                   {t(item.key)}
 
-                  {active === item.name && (
+                  {active === item.key && (
                     <motion.div
                       layoutId="underline"
                       className="absolute bottom-0 left-0 right-0 h-0.5 bg-[var(--primary)] rounded-full"
@@ -107,7 +105,7 @@ export default function Navbar() {
               type="button"
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label={menuOpen ? "Tutup menu" : "Buka menu"}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--border)] bg-white/90 text-[var(--brand-dark)] shadow-sm transition-all hover:bg-white lg:hidden cursor-pointer"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-[var(--border)] bg-white/90 text-[var(--brand-dark)] shadow-sm transition-all hover:bg-white lg:hidden cursor-pointer"
             >
               {menuOpen ? (
                 <X className="h-5 w-5" />
@@ -122,7 +120,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => handleNavClick("Kontak")}
-              className="hidden lg:inline-flex bg-[var(--brand-dark)] hover:bg-[var(--primary)] text-white text-[10px] font-black uppercase tracking-widest py-2.5 px-5 rounded-xl transition-all shadow-lg active:scale-95 whitespace-nowrap cursor-pointer"
+              className="hidden lg:inline-flex bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] text-[var(--color-primary)] text-xs font-bold uppercase tracking-widest py-2 px-3 rounded-lg transition-all shadow-md active:scale-95 whitespace-nowrap cursor-pointer"
             >
               {t("Button")}
             </Link>
@@ -144,7 +142,7 @@ export default function Navbar() {
                         onClick={() => handleNavClick(item.key)}
                         className={`block rounded-2xl px-4 py-3 transition-colors duration-200 ${
                           active === item.key
-                            ? "bg-[var(--primary)] text-white"
+                            ? "bg-[var(--color-primary)] text-white"
                             : "hover:bg-[var(--brand-dark)]/5"
                         }`}
                       >
@@ -154,11 +152,11 @@ export default function Navbar() {
                   ))}
                 </ul>
 
-                <div className="mt-4 flex flex-col gap-3 border-t border-[var(--border)] pt-4">
+                <div className="mt-4 flex flex-col gap-3 border-t pt-4">
                   <Link
                     href="/contact"
                     onClick={() => handleNavClick("Kontak")}
-                    className="inline-flex items-center justify-center rounded-2xl bg-[var(--brand-dark)] px-4 py-3 text-center text-xs font-black uppercase tracking-widest text-white transition-all hover:bg-[var(--primary)]"
+                    className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#1B9D77] to-[#F9CD19]  py-2 px-4 text-center text-xs font-black uppercase tracking-widest transition-all"
                   >
                     {t("Button")}
                   </Link>

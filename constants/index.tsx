@@ -206,28 +206,28 @@ export interface ServiceItem {
 
 export const services: ServiceItem[] = [
   {
-    image: "/image-contoh.jpg",
+    image: "/image-service1.png",
     icon: <Cpu className="w-5 h-5" />,
     title: "TechnologyLatest",
     description: "TechnologyLatestDescription",
     number: "01",
   },
   {
-    image: "/image-contoh.jpg",
+    image: "/image-service2.png",
     icon: <Palette className="w-5 h-5" />,
     title: "IntuitiveDesign",
     description: "IntuitiveDesignDescription",
     number: "02",
   },
   {
-    image: "/image-contoh.jpg",
+    image: "/image-service3.png",
     icon: <HeadphonesIcon className="w-5 h-5" />,
     title: "SupportPlus",
     description: "SupportPlusDescription",
     number: "03",
   },
   {
-    image: "/image-contoh.jpg",
+    image: "/image-service4.png",
     icon: <Layers className="w-5 h-5" />,
     title: "EfficiencyScalability",
     description: "EfficiencyScalabilityDescription",
@@ -239,7 +239,7 @@ export const teams = [
   {
     role: "BackEndDeveloper",
     name: "HARIS GUNAWAN R",
-    image: "/haris.jpeg",
+    image: "/haris.png",
     socials: [
       { icon: faInstagram, link: "https://www.instagram.com/harisgunawanr_" },
       { icon: faGithub, link: "https://github.com/HarisGunawanRomadon" },
@@ -249,14 +249,13 @@ export const teams = [
   {
     role: "FrontEndDeveloper",
     name: "HADI BUDI HARDOYO",
-    image: "/hadii.jpg",
+    image: "/hadiii.png",
     socials: [
       {
         icon: faInstagram,
         link: "https://www.instagram.com/hdibudihardoyo ",
       },
-      { icon: faGithub, 
-        link: "https://github.com/hdibudihardoyo " },
+      { icon: faGithub, link: "https://github.com/hdibudihardoyo " },
       {
         icon: faLinkedin,
         link: "https://www.linkedin.com/in/hdibudihardoyo",
@@ -266,7 +265,7 @@ export const teams = [
   {
     role: "FrontEndDeveloper",
     name: "LUFTAN HADI",
-    image: "/lutfann.jpeg",
+    image: "/lutfan.png",
     socials: [
       { icon: faInstagram, link: "https://www.instagram.com/lutfanhadi05" },
       { icon: faGithub, link: "https://github.com/Lutfanhadi" },
@@ -276,7 +275,7 @@ export const teams = [
   {
     role: "UIUXDesigner",
     name: "DAMAYANTI",
-    image: "/haris.jpeg",
+    image: "/dama.png",
     socials: [
       { icon: faInstagram, link: "https://www.instagram.com/yantirrz_" },
       { icon: faGithub, link: "https://github.com/yantirrz" },

@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
 :root {
+
+  --main-background: #050811;
+  --primary-accent: #1CA078;
+  --secondary-accent: #F9CD19;
+  --color-primary: #FFFFFF;
+  --color-secondary: #D9D9D9;
+  --color-tertiary: #000000;
+  --color-muted: #E8E9EE;
+  --color-muted-2: #555555;
+
   --brand-primary: #1d9e75;
   --brand-dark: #1a1a2e;
   --brand-light: #f1efe8;

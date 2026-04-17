@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 export default function HeroSection() {
   const t = useTranslations("Hero");
@@ -28,20 +30,20 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-white text-[var(--foreground)] pt-16 sm:pt-20"
+      className="min-h-screen flex flex-col items-center justify-center text-center py-16 sm:py-24 overflow-hidden bg-[var(--main-background)]"
     >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex flex-col items-center z-10 w-full max-w-5xl"
+        className="flex flex-col items-center z-10 w-full max-w-3xl mx-auto"
       >
         {/* Title & Desc */}
         <motion.div variants={itemVariants} className="space-y-4">
-          <h1 className="text-3xl max-w-3xl font-black tracking-tighter leading-[1.1]">
+          <h1 className="text-3xl max-w-2xl font-black tracking-tighter leading-[1.1] bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent mx-auto">
             {t("Title")}
           </h1>
-          <p className="max-w-xl mx-auto text-sm md:text-base opacity-70 font-medium">
+          <p className="max-w-2xl mx-auto text-sm md:text-base font-medium text-[var(--color-primary)]">
             {t("Description")}
           </p>
         </motion.div>
@@ -51,30 +53,31 @@ export default function HeroSection() {
           variants={itemVariants}
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="relative my-6 w-full max-w-[450px] md:max-w-[500px]"
+          className="relative my-6 w-full max-w-[560px] md:max-w-[680px] mx-auto"
         >
           <div className="absolute inset-0 bg-[var(--primary)] opacity-5 blur-3xl rounded-full scale-90"></div>
           <Image
-            src="/logo-hero.png"
+            src="/image-hero.png"
             alt="Hero Illustration"
             width={500}
             height={500}
             priority
-            className="relative w-full h-auto drop-shadow-xl"
+            className="relative w-full h-auto drop-shadow-xl rounded-2xl"
           />
         </motion.div>
 
         {/* Tags & Button Container */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center gap-6"
+          className="flex flex-col items-center gap-6 w-full"
         >
-          <div className="flex flex-wrap justify-center items-center gap-2">
+          {/* Tags  */}
+          <div className="flex flex-wrap justify-center gap-2 max-w-md mx-auto">
             {["WebDesign", "Branding", "Marketing", "SEO", "Consulting"].map(
               (item, i) => (
                 <span
                   key={i}
-                  className="px-4 py-1.5 bg-white border border-[var(--border)] rounded-full shadow-sm text-[10px] md:text-xs font-bold text-[var(--brand-dark)]"
+                  className="px-4 py-2 bg-[var(--color-primary)]/10 border border-[var(--color-primary)] rounded-full shadow-sm text-[10px] text-[var(--color-primary)] text-center"
                 >
                   {t(`Tags.${item}`)}
                 </span>
@@ -82,8 +85,9 @@ export default function HeroSection() {
             )}
           </div>
 
-          <button className="cursor-pointer bg-[var(--primary)] hover:bg-[#168a65] text-white p-4 px-8 rounded-2xl transition-all transform hover:scale-105 shadow-lg shadow-[var(--primary)]/20 font-black text-xs uppercase">
+          <button className="cursor-pointer bg-[var(--primary)] hover:bg-[#168a65] text-[var(--color-primary)] py-3 px-4  rounded-full transition-all transform hover:scale-105 shadow-lg font-bold text-xs uppercase flex items-center gap-1">
             {t("Button")}
+            <FontAwesomeIcon icon={faWhatsapp} className="text-lg" />
           </button>
         </motion.div>
       </motion.div>
@@ -109,11 +113,11 @@ export default function HeroSection() {
         >
           <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20 group-hover:opacity-40"></span>
           <Image
-            src="/icon-WhatsApp.png"
+            src="/icon-catie-ai.png"
             alt="WhatsApp"
-            width={50}
-            height={50}
-            className="relative drop-shadow-2xl "
+            width={120}
+            height={120}
+            className="relative drop-shadow-2xl shadow-[var(--primary-accent)] "
           />
         </Link>
       </motion.div>

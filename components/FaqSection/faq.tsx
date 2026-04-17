@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { ChevronRight } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { faqs } from "@/constants";
@@ -12,21 +12,19 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative py-16 sm:py-20 px-6 overflow-hidden bg-white text-[var(--foreground)]">
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-[var(--primary)] opacity-[0.02] blur-[100px] pointer-events-none"></div>
-
+    <section className="relative py-16 sm:py-20 px-6 overflow-hidden bg-[var(--main-background)]">
       <div className="max-w-5xl mx-auto z-10 relative">
         <div className="flex flex-col md:flex-row gap-6 md:gap-10">
           <div className="md:w-[35%] md:sticky md:top-24 md:h-fit shrink-0 flex flex-col gap-6">
             <div className="flex flex-col gap-4">
-              <div className="w-10 h-2 rounded-full bg-[var(--primary)]" />
-              <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight">
+              <div className="w-15 h-1 rounded-full bg-[var(--muted)]" />
+              <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent">
                 {t("Title")} <br />
-                <span className="text-[var(--primary)] italic">
+                <span className="bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent italic">
                   {t("Subtitle")}
                 </span>
               </h2>
-              <p className="text-sm md:text-base opacity-65 font-medium leading-relaxed">
+              <p className="text-xs md:text-sm max-w-sm leading-relaxed text-[var(--color-primary)]">
                 {t("Description")}
               </p>
             </div>
@@ -47,40 +45,28 @@ export default function FaqSection() {
             </motion.div>
           </div>
 
-          <div className="flex-1 flex flex-col">
+          <div className="flex-1 flex flex-col gap-2">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
               return (
-                <div
-                  key={index}
-                  className={`border-b border-[var(--border)] transition-all duration-300 ${isOpen ? "py-6" : "py-4"}`}
-                >
+                <div key={index} className="rounded-2xl overflow-hidden">
+                  {/* Question */}
                   <button
                     type="button"
                     onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="w-full flex items-start justify-between gap-4 text-left group"
+                    className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 bg-[var(--primary-accent)]"
                   >
-                    <span
-                      className={`text-sm md:text-sm tracking-tight leading-snug transition-colors duration-300 flex-1 ${
-                        isOpen
-                          ? "text-[var(--primary)]"
-                          : "text-[var(--brand-dark)] group-hover:text-[var(--primary)]"
-                      }`}
-                    >
+                    <span className="text-xs md:text-sm tracking-tight leading-snug text-[var(--color-primary)] flex-1">
                       {t(faq.question)}
                     </span>
-
                     <div
-                      className={`mt-1 w-7 h-7 rounded-full flex items-center justify-center shrink-0 border transition-all duration-300 ${
-                        isOpen
-                          ? "bg-[var(--primary)] text-white border-[var(--primary)] rotate-90"
-                          : "bg-zinc-50 border-[var(--border)] text-[var(--brand-dark)] group-hover:border-[var(--primary)]/30 group-hover:bg-[var(--primary)]/5"
-                      }`}
+                      className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 bg-white/20 text-[var(--color-primary)] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                     >
-                      <ChevronRight className="w-4 h-4" />
+                      <ChevronDown className="w-4 h-4" />
                     </div>
                   </button>
 
+                  {/* Answer */}
                   <AnimatePresence>
                     {isOpen && (
                       <motion.div
@@ -91,9 +77,9 @@ export default function FaqSection() {
                           duration: 0.4,
                           ease: [0.04, 0.62, 0.23, 0.98],
                         }}
-                        className="overflow-hidden"
+                        className="overflow-hidden bg-[var(--secondary-accent)]"
                       >
-                        <p className="text-xs md:text-sm opacity-70 leading-relaxed font-medium pt-4 max-w-2xl">
+                        <p className="text-xs md:text-sm text-[var(--color-tertiary)] leading-relaxed px-5 py-4 max-w-2xl">
                           {t(faq.answer)}
                         </p>
                       </motion.div>

@@ -9,13 +9,13 @@ import { teams } from "@/constants";
 export default function TeamSection() {
   const t = useTranslations("Team");
   return (
-    <section className="py-16 sm:py-20 px-6 bg-[var(--background)] text-[var(--foreground)]">
+    <section className="py-16 sm:py-20 px-6 bg-[var(--main-background)]">
       <div className="max-w-5xl mx-auto text-center">
         {/* Title */}
         <div className="flex justify-center mb-4">
-          <div className="w-12 h-2 rounded-full bg-[var(--primary)]" />
+          <div className="w-15 h-1 rounded-full bg-[var(--color-muted)]" />
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold mb-10 sm:mb-16 tracking-tight">
+        <h2 className="text-2xl md:text-3xl font-black mb-10 sm:mb-16 tracking-tight bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent">
           {t("Title")}
         </h2>
 
@@ -25,13 +25,13 @@ export default function TeamSection() {
             <div key={i} className="flex flex-col items-center group">
               {/* Avatar Container */}
               <div className="relative z-10">
-                <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-white shadow-lg transform transition-all duration-300 group-hover:scale-105">
+                <div className=" w-32 h-32 sm:w-36 sm:h-36 lg:w-48 lg:h-48 rounded-full overflow-hidden transform transition-all duration-300 group-hover:scale-105">
                   <div className="relative w-full h-full">
                     <Image
                       fill
                       src={item.image}
                       alt={item.name}
-                      sizes="160px"
+                      sizes="300px"
                       className="object-contain"
                       priority={true}
                     />
@@ -40,11 +40,11 @@ export default function TeamSection() {
               </div>
 
               {/* Info Card */}
-              <div className="bg-[var(--brand-dark)] text-white px-5 py-4 rounded-tr-[2rem] rounded-bl-[2rem] -mt-6 relative z-20 w-full shadow-lg transform transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-2xl">
-                <p className="text-[10px] uppercase tracking-widest text-[var(--primary)] font-bold">
+              <div className="flex flex-col gap-1 bg-[var(--primary-accent)] border border-[var(--color-primary)] px-4 py-3 sm:px-6 sm:py-4 rounded-tr-[2rem] rounded-bl-[2rem] -mt-6 relative z-20 w-full shadow-lg transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-2xl">
+                <p className="text-left text-[8px] font-bold sm:text-[10px] uppercase tracking-widest text-[var(--color-primary)]">
                   {t(item.role)}
                 </p>
-                <p className="text-sm font-bold mt-1 tracking-tight uppercase">
+                <p className="text-xs font-black tracking-tight uppercase text-[var(--color-primary)]">
                   {item.name}
                 </p>
               </div>
@@ -56,9 +56,12 @@ export default function TeamSection() {
                     key={idx}
                     href={social.link}
                     target="_blank"
-                    className="w-9 h-9 bg-white rounded-full shadow-md flex items-center justify-center text-[var(--brand-dark)] hover:bg-[var(--primary)] hover:text-white transition-all duration-300"
+                    className="w-8 h-8 bg-[var(--color-secondary)]/60 border border-[var(--color-primary)] rounded-full flex items-center justify-center hover:bg-[var(--primary-accent)] hover:border-transparent transition-all duration-300 hover:scale-110"
                   >
-                    <FontAwesomeIcon icon={social.icon} className="text-sm" />
+                    <FontAwesomeIcon
+                      icon={social.icon}
+                      className="w-3.5 h-3.5 text-[var(--color-primary)]"
+                    />
                   </Link>
                 ))}
               </div>

@@ -14,17 +14,17 @@ export default function PriceSection() {
   return (
     <section
       id="pricing"
-      className="py-16 sm:py-20 px-6 bg-white text-[var(--foreground)]"
+      className="py-16 sm:py-20 px-6 bg-[var(--main-background)]"
     >
       <div className="max-w-5xl mx-auto text-center">
         <div className="flex justify-center mb-4">
-          <div className="w-10 h-2 rounded-full bg-[var(--primary)]" />
+          <div className="w-15 h-1 rounded-full bg-[var(--muted)]" />
         </div>
 
-        <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight mb-2">
+        <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight mb-2 bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent">
           {t("Title")}
         </h2>
-        <p className="opacity-60 mb-4 max-w-lg mx-auto text-xs sm:text-sm md:text-base font-medium">
+        <p className="text-[var(--color-primary)] mb-4 max-w-lg mx-auto text-xs md:text-sm">
           {t("Description")}
         </p>
 
@@ -56,13 +56,13 @@ export default function PriceSection() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {plans.map((plan, i) => (
             <div
               key={i}
               className="relative flex flex-col surface border border-[var(--border)] p-6 transition-all duration-500 hover:-translate-y-1"
             >
-              <span className="text-[9px] uppercase tracking-[0.15em] font-black text-[var(--primary)] mb-3">
+              <span className="text-xs md:text-sm uppercase font-black text-[var(--primary)] mb-3">
                 {t(plan.title)}
               </span>
 
@@ -70,7 +70,7 @@ export default function PriceSection() {
                 {plan.price}
               </h3>
 
-              <p className="text-xs md:text-sm opacity-60 mb-5 min-h-[40px] leading-relaxed font-medium">
+              <p className="text-xs md:text-sm mb-5 min-h-[40px] leading-relaxed">
                 {t(plan.desc)}
               </p>
 
