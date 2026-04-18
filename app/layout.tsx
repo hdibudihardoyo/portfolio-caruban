@@ -4,7 +4,9 @@ import { Poppins } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import AiChatbotFloating from "@/components/AiChatbotFloating";
 import "./globals.css";
+import { ChatbotProvider } from "@/components/AiChatbotContext";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -32,9 +34,12 @@ export default async function RootLayout({
     <html lang={locale} className={`${poppins.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Navbar />
-          {children}
-          <Footer />
+          <ChatbotProvider>
+            <Navbar />
+            {children}
+            <AiChatbotFloating />
+            <Footer />
+          </ChatbotProvider>
         </NextIntlClientProvider>
       </body>
     </html>
