@@ -1,15 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { faqs } from "@/constants";
+import { useFaq } from "@/hooks/useFaq";
 
 export default function FaqSection() {
   const t = useTranslations("FAQ");
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { openIndex, toggleFaqItem } = useFaq();
 
   return (
     <section className="relative py-20 sm:py-24 px-6 overflow-hidden bg-[var(--main-background)]">
@@ -53,7 +53,7 @@ export default function FaqSection() {
                   {/* Question */}
                   <button
                     type="button"
-                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    onClick={() => toggleFaqItem(index)}
                     className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 bg-[var(--primary-accent)]"
                   >
                     <span className="text-xs md:text-sm tracking-tight leading-snug text-[var(--color-primary)] flex-1">

@@ -1,15 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import { CheckCircle2 as CheckIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { gratisPlans, berbayarPlans, type PricingPlan } from "@/constants";
+import { usePriceSection } from "@/hooks/usePriceSection";
 
 export default function PriceSection() {
   const t = useTranslations("Price");
-  const [active, setActive] = useState<"gratis" | "berbayar">("gratis");
-
-  const plans = active === "gratis" ? gratisPlans : berbayarPlans;
+  const { active, setActive, plans } = usePriceSection();
 
   return (
     <section

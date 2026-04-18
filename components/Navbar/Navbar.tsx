@@ -1,6 +1,5 @@
 ﻿"use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,16 +7,12 @@ import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import LanguageToggle from "@/components/toggle-languange/ToggleLanguange";
 import { navLinks } from "@/constants";
+import { useNavbar } from "@/hooks/useNavbar";
 
 export default function Navbar() {
   const t = useTranslations("Navbar");
-  const [active, setActive] = useState("Home");
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleNavClick = (key: string) => {
-    setActive(key);
-    setMenuOpen(false);
-  };
+  const { active, setActive, menuOpen, setMenuOpen, handleNavClick } =
+    useNavbar();
 
   return (
     <>
