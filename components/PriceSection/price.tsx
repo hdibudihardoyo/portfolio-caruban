@@ -27,13 +27,13 @@ export default function PriceSection() {
 
         {/* Toggle */}
         <div className="flex justify-center mb-5">
-          <div className="bg-[var(--brand-dark)] p-1 rounded-xl flex shadow-2xl border border-white/5">
+          <div className="bg-[var(--primary-accent)] p-1 rounded-xl flex shadow-2xl border border-white/5">
             <button
               onClick={() => setActive("gratis")}
-              className={`px-4 py-3 rounded-lg text-[9px] font-black transition-all duration-300 ${
+              className={`px-4 py-3 rounded-lg text-[9px] font-black transition-all duration-300 cursor-pointer ${
                 active === "gratis"
-                  ? "bg-[var(--primary)] text-white shadow-md"
-                  : "text-white hover:text-white"
+                  ? "bg-[var(--color-primary)] text-[var(--primary-accent)]"
+                  : "text-[var(--color-primary)]"
               }`}
             >
               {t("FreePlan")}
@@ -41,10 +41,10 @@ export default function PriceSection() {
 
             <button
               onClick={() => setActive("berbayar")}
-              className={`px-4 py-3 rounded-lg text-[9px] font-black transition-all duration-300 ${
+              className={`px-4 py-3 rounded-lg text-[9px] font-black transition-all duration-300 cursor-pointer ${
                 active === "berbayar"
-                  ? "bg-[var(--primary)] text-white shadow-md"
-                  : "text-white hover:text-white"
+                  ? "bg-[var(--color-primary)] text-[var(--primary-accent)]"
+                  : "text-[var(--color-primary)]"
               }`}
             >
               {t("PaidPlan")}
@@ -57,9 +57,9 @@ export default function PriceSection() {
           {plans.map((plan, i) => (
             <div
               key={i}
-              className="relative flex flex-col surface border border-[var(--border)] p-6 transition-all duration-500 hover:-translate-y-1"
+              className="relative flex flex-col surface p-6 transition-all duration-500 hover:-translate-y-1"
             >
-              <span className="text-xs md:text-sm uppercase font-black text-[var(--primary)] mb-3">
+              <span className="text-xs md:text-sm uppercase font-black text-[var(--primary-accent)] mb-3">
                 {t(plan.title)}
               </span>
 
@@ -71,7 +71,7 @@ export default function PriceSection() {
                 {t(plan.desc)}
               </p>
 
-              <button className="w-full rounded-xl py-3 text-[11px] font-black uppercase tracking-wider transition-all duration-300 border-2 border-[var(--brand-dark)] text-[var(--brand-dark)] hover:bg-[var(--brand-dark)] hover:text-white">
+              <button className="w-full rounded-xl py-3 text-[11px] font-black uppercase tracking-wider transition-all duration-300 text-[var(--color-primary)] bg-[var(--primary-accent)] cursor-pointer">
                 {t(plan.button)}
               </button>
 

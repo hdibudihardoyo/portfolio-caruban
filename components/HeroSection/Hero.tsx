@@ -86,7 +86,7 @@ export default function HeroSection() {
               )}
             </div>
 
-            <button className="cursor-pointer bg-[var(--primary)] hover:bg-[#168a65] text-[var(--color-primary)] py-3 px-4  rounded-full transition-all transform hover:scale-105 shadow-lg font-medium text-xs uppercase flex items-center gap-1">
+            <button className="cursor-pointer bg-[var(--primary-accent)] hover:bg-[#168a65] text-[var(--color-primary)] py-3 px-4  rounded-full transition-all transform hover:scale-105 shadow-lg font-medium text-xs uppercase flex items-center gap-1">
               {t("Button")}
               <FontAwesomeIcon icon={faWhatsapp} className="text-lg" />
             </button>
