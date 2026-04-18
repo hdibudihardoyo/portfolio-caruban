@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { useChatbotContext } from "../AiChatbotContext";
 
 export default function HeroSection() {
   const t = useTranslations("Hero");
+  const { setIsOpen } = useChatbotContext();
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -105,22 +106,21 @@ export default function HeroSection() {
             scale: { delay: 1, type: "spring" },
             y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
           }}
-          className="fixed bottom-8 right-0 z-50"
+          className="fixed bottom-8 right-0 z-50 p-4"
         >
-          <Link
-            href="https://wa.me/62882001771113"
-            target="_blank"
-            className="relative block group cursor-pointer"
+          <button
+            onClick={() => setIsOpen(true)}
+            className="relative block group cursor-pointer appearance-none bg-transparent border-none p-0"
           >
-            <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20 group-hover:opacity-40"></span>
+            <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-20 group-hover:opacity-40"></span>
             <Image
               src="/icon-catie-ai.png"
-              alt="WhatsApp"
+              alt="Tanya AI"
               width={100}
               height={100}
-              className="relative drop-shadow-2xl shadow-[var(--primary-accent)] "
+              className="relative drop-shadow-2xl shadow-primary transition-transform group-hover:scale-110"
             />
-          </Link>
+          </button>
         </motion.div>
       </div>
     </section>
