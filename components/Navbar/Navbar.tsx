@@ -57,12 +57,8 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col leading-none text-[var(--primary-accent)]">
-              <span className="text-xs font-black tracking-tighter">
-                Caruban
-              </span>
-              <span className="text-[9px] font-bold tracking-[0.25em] opacity-70">
-                TECHNOLOGY
-              </span>
+              <span className="text-xs font-black">CARUBAN</span>
+              <span className="text-xs font-black">TECHNOLOGY</span>
             </div>
           </Link>
           {/* Nav Links - Desktop */}

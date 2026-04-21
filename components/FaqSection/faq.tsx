@@ -36,7 +36,7 @@ export default function FaqSection() {
               className="relative w-full h-48 rounded-[1.5rem] overflow-hidden border border-[var(--border)] bg-zinc-50 shadow-sm"
             >
               <Image
-                src="/image-contoh.jpg"
+                src="/faqq.svg"
                 alt="FAQ Caruban Technology"
                 fill
                 className="object-cover"

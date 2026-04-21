@@ -36,17 +36,17 @@ export const socialMedia = [
   {
     icon: faInstagram,
     link: "https://instagram.com/caruban_tech",
-    color: "hover:bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]",
+    color: "hover:bg-[var(--primary-accent)]",
   },
   {
     icon: faTiktok,
     link: "https://tiktok.com/@caruban_tech",
-    color: "hover:bg-black",
+    color: "hover:bg-[var(--primary-accent)]",
   },
   {
     icon: faGithub,
     link: "https://github.com/CarubanTech",
-    color: "hover:bg-[#333]",
+    color: "hover:bg-[var(--primary-accent)]",
   },
 ];
 
@@ -59,7 +59,7 @@ export const contactConfig = {
 export const navLinks = [
   { key: "Home", name: "Beranda", id: "/#" },
   { key: "Projects", name: "Proyek", id: "/#project" },
-  { key: "Services", name: "Layanan", id: "/#services" },
+  { key: "About", name: "Tentang Kami", id: "/about" },
   { key: "Pricing", name: "Harga", id: "/#pricing" },
   { key: "Testimonials", name: "Testimoni", id: "/#testimonial" },
   { key: "Contact", name: "Kontak", id: "/contact" },
@@ -206,28 +206,28 @@ export interface ServiceItem {
 
 export const services: ServiceItem[] = [
   {
-    image: "/image-service1.png",
+    image: "/images1.png",
     icon: <Cpu className="w-5 h-5" />,
     title: "TechnologyLatest",
     description: "TechnologyLatestDescription",
     number: "01",
   },
   {
-    image: "/image-service2.png",
+    image: "/images2.png",
     icon: <Palette className="w-5 h-5" />,
     title: "IntuitiveDesign",
     description: "IntuitiveDesignDescription",
     number: "02",
   },
   {
-    image: "/image-service3.png",
+    image: "/images4.png",
     icon: <HeadphonesIcon className="w-5 h-5" />,
     title: "SupportPlus",
     description: "SupportPlusDescription",
     number: "03",
   },
   {
-    image: "/image-service4.png",
+    image: "/images3.png",
     icon: <Layers className="w-5 h-5" />,
     title: "EfficiencyScalability",
     description: "EfficiencyScalabilityDescription",

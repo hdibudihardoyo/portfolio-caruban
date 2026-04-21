@@ -2,7 +2,7 @@
   "Navbar": {
     "Home": "Beranda",
     "Projects": "Proyek",
-    "Services": "Layanan",
+    "About": "Tentang Kami",
     "Pricing": "Harga",
     "Testimonials": "Testimoni",
     "Contact": "Kontak",
@@ -25,7 +25,13 @@
     "Title": "Tentang Kami",
     "DescriptionHighlight": "Caruban Technology",
     "Description": "adalah startup yang berfokus pada pengembangan software inovatif untuk mempermudah kehidupan sehari-hari masyarakat. Kami hadir dengan semangat kolaborasi dan kreativitas, menciptakan solusi digital yang tidak hanya fungsional, tetapi juga relevan dengan kebutuhan zaman. Dengan tim yang terdiri dari individu-individu berdedikasi, kami berkomitmen untuk menghadirkan teknologi yang berdampak nyata dan mudah diakses oleh berbagai kalangan.",
-    "Description2": "Selain itu, kami juga menyediakan layanan pembuatan website profesional serta penjualan template UI/UX yang modern dan user-friendly. Kami percaya bahwa tampilan dan pengalaman pengguna adalah kunci utama dalam dunia digital, sehingga setiap produk yang kami hasilkan dirancang dengan detail, estetika, dan kenyamanan pengguna sebagai prioritas. Dengan kombinasi kreativitas dan teknologi, kami siap menjadi partner digital yang membantu mengembangkan ide menjadi solusi nyata."
+    "Description2": "Selain itu, kami juga menyediakan layanan pembuatan website profesional serta penjualan template UI/UX yang modern dan user-friendly. Kami percaya bahwa tampilan dan pengalaman pengguna adalah kunci utama dalam dunia digital, sehingga setiap produk yang kami hasilkan dirancang dengan detail, estetika, dan kenyamanan pengguna sebagai prioritas. Dengan kombinasi kreativitas dan teknologi, kami siap menjadi partner digital yang membantu mengembangkan ide menjadi solusi nyata.",
+    "VisionTitle": "Visi Kami",
+    "Vision": "Menjadi perusahaan teknologi terdepan yang mendorong inovasi dan transformasi digital secara global.",
+    "MissionTitle": "Misi Kami",
+    "Mission1": "Menyediakan solusi digital berkualitas tinggi.",
+    "Mission2": "Memberdayakan bisnis melalui teknologi.",
+    "Mission3": "Terus berinovasi dengan teknologi modern."
   },
   "Service": {
     "Title": "Mengapa Memilih Layanan Kami?",

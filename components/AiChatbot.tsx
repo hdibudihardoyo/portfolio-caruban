@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils";
 import { useChatbotContext } from "./AiChatbotContext";
 
 const AiAssistant = () => {
-  const { messages, input, setInput, isLoading, sendMessage, setIsOpen } = useChatbotContext();
+  const { messages, input, setInput, isLoading, sendMessage, setIsOpen } =
+    useChatbotContext();
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
@@ -36,16 +37,18 @@ const AiAssistant = () => {
   };
 
   return (
-    <div className="flex flex-col h-full w-full bg-white/80 backdrop-blur-sm overflow-hidden">
+    <div className="flex flex-col h-full w-full bg-transparent overflow-hidden">
       {/* Header */}
-      <div className="p-4 border-b bg-[#1ca078] text-primary-foreground shadow-sm shrink-0">
+      <div className="p-4 border-b bg-[var(--primary-accent)] text-[var(--color-primary)] shadow-sm shrink-0">
         <div className="flex items-center gap-3">
           <div className="shrink-0 aspect-square p-2 bg-white/20 flex items-center justify-center size-10 md:size-12 rounded-full backdrop-blur-md border border-white/30">
             <Bot className="size-6 md:size-8" />
           </div>
           <div className="tracking-tight overflow-hidden">
-            <h3 className="font-bold text-base md:text-lg leading-tight truncate">Caruban AI</h3>
-            <p className="text-[10px] md:text-xs text-blue-100 truncate">
+            <h3 className="font-bold text-base md:text-lg leading-tight truncate">
+              Caruban AI
+            </h3>
+            <p className="text-[10px] md:text-xs text-[var(--color-secondary)] truncate">
               Asisten Virtual Caruban Technology
             </p>
           </div>
@@ -104,7 +107,7 @@ const AiAssistant = () => {
       </div>
 
       {/* Footer */}
-      <div className="p-3 border-t bg-[#1ca078] flex flex-col gap-4 shrink-0">
+      <div className="p-3 border-t bg-[var(--primary-accent)] flex flex-col gap-4 shrink-0">
         {!isLoading && messages.length < 2 && messages.length > 0 && (
           <div className="flex flex-wrap gap-2 w-full animate-in fade-in slide-in-from-bottom-2 mb-1">
             {SUGGESTIONS.map((text) => (

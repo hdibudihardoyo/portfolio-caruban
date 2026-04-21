@@ -2,7 +2,7 @@
   "Navbar": {
     "Home": "Home",
     "Projects": "Projects",
-    "Services": "Services",
+    "About": "About Us",
     "Pricing": "Pricing",
     "Testimonials": "Testimonials",
     "Contact": "Contact",
@@ -25,7 +25,13 @@
     "Title": "About Us",
     "DescriptionHighlight": "Caruban Technology",
     "Description": "We are a startup focused on developing innovative software to simplify everyday life. Driven by a spirit of collaboration and creativity, we create digital solutions that are not only functional but also highly relevant to modern needs. With a team of dedicated individuals, we are committed to delivering technology that makes a real impact and remains accessible to everyone.",
-    "Description2": "Additionally, we offer professional website development services and sell modern, user friendly UI/UX templates. We believe that visual appeal and user experience are the keys to success in the digital world, therefore every product we create is designed with detail, aesthetics, and user comfort as our top priorities. Combining creativity and technology, we are ready to be your digital partner, turning your ideas into tangible solutions."
+    "Description2": "Additionally, we offer professional website development services and sell modern, user friendly UI/UX templates. We believe that visual appeal and user experience are the keys to success in the digital world, therefore every product we create is designed with detail, aesthetics, and user comfort as our top priorities. Combining creativity and technology, we are ready to be your digital partner, turning your ideas into tangible solutions.",
+    "VisionTitle": "Our Vision",
+    "Vision": "To become a leading technology company that drives innovation and digital transformation globally.",
+    "MissionTitle": "Our Mission",
+    "Mission1": "Deliver high-quality digital solutions.",
+    "Mission2": "Empower businesses through technology.",
+    "Mission3": "Continuously innovate with modern tech."
   },
   "Service": {
     "Title": "Why Choose Our Services?",

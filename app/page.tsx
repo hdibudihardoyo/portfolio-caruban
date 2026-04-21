@@ -6,13 +6,11 @@ import PriceSection from "@/components/PriceSection/price";
 import ReviewSection from "@/components/ReviewSection/review";
 import TeamSection from "@/components/TeamSection/team";
 import TechStackSection from "@/components/TechStackSection/TechStackSection";
-import AboutSection from "@/components/AboutSection/about";
 
 export default function HomePage() {
   return (
     <main>
       <HeroSection />
-      <AboutSection />
       <TechStackSection />
       <ServiceSection />
       <ProjectSection />

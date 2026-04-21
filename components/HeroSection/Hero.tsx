@@ -6,10 +6,12 @@ import { useTranslations } from "next-intl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { useChatbotContext } from "../AiChatbotContext";
+import { useState } from "react";
 
 export default function HeroSection() {
   const t = useTranslations("Hero");
   const { setIsOpen } = useChatbotContext();
+  const [showNotif, setShowNotif] = useState(true);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -85,62 +87,69 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Illustration  */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0, y: [0, -10, 0] }}
-          transition={{
-            opacity: { duration: 0.7, ease: "easeOut" },
-            x: { duration: 0.7, ease: "easeOut" },
-            y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.7 },
-          }}
-          className="relative w-full max-w-[480px] md:max-w-full mx-auto md:mx-0"
-        >
-          {/* Glow ring behind image */}
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[var(--primary-accent)]/20 to-transparent blur-2xl scale-95 -z-10" />
-          {/* Subtle card frame */}
-          <div className="relative rounded-3xl overflow-hidden ring-1 ring-[var(--primary-accent)]/10 shadow-2xl shadow-[var(--primary-accent)]/10 bg-[var(--primary-accent)]/5 backdrop-blur-sm p-2">
-            <Image
-              src="/hero5.svg"
-              alt="Hero Illustration"
-              width={300}
-              height={300}
-              priority
-              className="relative w-full h-auto drop-shadow-xl rounded-2xl"
-            />
-          </div>
-        </motion.div>
+        {/* Hero Illustration */}
+        <div className="relative rounded-3xl overflow-hidden ring-1 ring-[var(--primary-accent)]/10 shadow-2xl shadow-[var(--primary-accent)]/10 bg-[var(--primary-accent)]/5 backdrop-blur-sm p-2">
+          <Image
+            src="/images6.jpg"
+            alt="Hero Illustration"
+            width={300}
+            height={300}
+            priority
+            className="relative w-full h-auto drop-shadow-xl rounded-2xl"
+          />
+        </div>
       </div>
 
-        {/* Floating WhatsApp */}
-        <motion.div
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{
-            scale: 1,
-            opacity: 1,
-            y: [0, -8, 0],
-          }}
-          transition={{
-            scale: { delay: 1, type: "spring" },
-            y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-          }}
-          className="fixed bottom-8 right-0 z-50 p-4"
-        >
-          <button
-            onClick={() => setIsOpen(true)}
-            className="relative block group cursor-pointer appearance-none bg-transparent border-none p-0"
+      {/* Floating AI Chatbot */}
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.8, type: "spring", stiffness: 120 }}
+        className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3"
+      >
+        {/* Notif Bubble */}
+        {showNotif && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.9 }}
+            className="bg-primary text-white text-xs px-3 py-1.5 rounded-full shadow-lg backdrop-blur-md border border-white/10"
           >
-            <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-20 group-hover:opacity-40"></span>
-            <Image
-              src="/icon-catie-ai.png"
-              alt="Tanya AI"
-              width={100}
-              height={100}
-              className="relative drop-shadow-2xl shadow-primary transition-transform group-hover:scale-110"
-            />
-          </button>
-        </motion.div>
-      </div>
+            💬 Tanya AI
+          </motion.div>
+        )}
+
+        {/* Button */}
+        <button
+          onClick={() => {
+            setIsOpen(true);
+            setShowNotif(false);
+          }}
+          className="relative group cursor-pointer"
+        >
+          {/* Glow Effect */}
+          <span className="absolute inset-0 rounded-full bg-[var(--primary-accent)]/50 blur-xl opacity-70 group-hover:opacity-100 transition duration-300"></span>
+
+          {/* Pulse Ring */}
+          <span className="absolute inset-0 rounded-full border border-[var(--primary-accent)] opacity-75 animate-ping"></span>
+
+          {/* Main Icon */}
+          <Image
+            src="/icon-caruban-ai.png"
+            alt="Tanya AI"
+            width={80}
+            height={80}
+            className="relative rounded-full shadow-2xl transition-transform duration-300 group-hover:scale-110 group-active:scale-95"
+          />
+
+          {/* Notification Badge */}
+          {showNotif && (
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full w-5 h-5 flex items-center justify-center font-semibold shadow-md">
+              1
+            </span>
+          )}
+        </button>
+      </motion.div>
     </section>
   );
 }
