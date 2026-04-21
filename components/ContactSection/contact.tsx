@@ -22,7 +22,7 @@ export default function Contact() {
         <div className="flex flex-col items-center text-center mb-10 gap-4">
           <div className="w-15 h-1 rounded-full bg-[var(--color-muted)]" />
 
-          <h2 className="text-2xl md:text-3xl font-black tracking-tighter bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent">
+          <h2 className="text-2xl md:text-3xl font-black tracking-tighter text-[var(--primary-accent)]">
             {t("Title")}
           </h2>
           <p className="text-sm md:text-base max-w-md text-[var(--color-primary)]">

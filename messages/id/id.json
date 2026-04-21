@@ -48,8 +48,8 @@
       "Description": "Platform manajemen catatan sumbangan tradisional yang menggantikan buku manual dengan basis data real-time."
     },
     "Featured02": {
-      "Title": "Sistem Manajemen Inventaris",
-      "Description": "Solusi inventaris efisien yang dibangun untuk performa cepat dan alur kerja bisnis yang skala."
+      "Title": "Pendaftaran Online Mahasiswa Baru",
+      "Description": "Sistem pendaftaran mahasiswa baru online yang mempermudah proses pendaftaran dan pengolahan data."
     }
   },
   "FAQ": {
@@ -173,9 +173,9 @@
       "Description": "Pencatatan sumbangan hajatan berbasis cloud untuk menggantikan catatan manual."
     },
     "Project2": {
-      "Title": "Inventory Master",
-      "Category": "Management System",
-      "Description": "Pelacakan stok real-time untuk mendukung UMKM yang berkembang."
+      "Title": "Pendaftaran Online Mahasiswa Baru",
+      "Category": "Web Development",
+      "Description": "Sistem pendaftaran mahasiswa baru online yang mempermudah proses pendaftaran dan pengolahan data."
     },
     "Project3": {
       "Title": "Caruban Tech Profile",

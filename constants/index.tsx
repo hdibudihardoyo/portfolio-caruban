@@ -13,16 +13,16 @@ export const allProjects = [
     title: "Project1.Title",
     category: "Project1.Category",
     desc: "Project1.Description",
-    image: "/projects1.png",
+    image: "/projects-bukubuwuhan.png",
     link: "https://buku-buwuhan.vercel.app/",
   },
-  // {
-  //   title: "Project2.Title",
-  //   category: "Project2.Category",
-  //   desc: "Project2.Description",
-  //   image: "/image-contoh.jpg",
-  //   link: "#",
-  // },
+  {
+    title: "Project2.Title",
+    category: "Project2.Category",
+    desc: "Project2.Description",
+    image: "/projects-pmb.png",
+    link: "#",
+  },
   // {
   //   title: "Project3.Title",
   //   category: "Project3.Category",
@@ -155,18 +155,18 @@ export const featuredProjects = [
     id: "01",
     title: "Featured01.Title",
     description: "Featured01.Description",
-    image: "/projects1.png",
+    image: "/projects-bukubuwuhan.png",
     slug: "https://buku-buwuhan.vercel.app/",
     imageLeft: true,
   },
-  // {
-  //   id: "02",
-  //   title: "Featured02.Title",
-  //   description: "Featured02.Description",
-  //   image: "/image-contoh.jpg",
-  //   slug: "https://www.google.com",
-  //   imageLeft: false,
-  // },
+  {
+    id: "02",
+    title: "Featured02.Title",
+    description: "Featured02.Description",
+    image: "/projects-pmb.png",
+    slug: "https://stmik-ikmi-cirebon.vercel.app/pmb/register",
+    imageLeft: false,
+  },
 ];
 
 export const reviews = [

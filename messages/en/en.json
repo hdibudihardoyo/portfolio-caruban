@@ -48,8 +48,8 @@
       "Description": "A digital platform for recording traditional event donations, replacing manual ledgers with a real-time, organized database."
     },
     "Featured02": {
-      "Title": "Sistem Manajemen Inventaris",
-      "Description": "An efficient inventory management solution built for fast performance and scalable business workflows."
+      "Title": "Online Admission Student System",
+      "Description": "An online student admission system that simplifies the registration process and data management."
     }
   },
   "FAQ": {
@@ -173,9 +173,9 @@
       "Description": "Cloud based donation recording for traditional celebrations."
     },
     "Project2": {
-      "Title": "Inventory Master",
-      "Category": "Management System",
-      "Description": "Real time stock tracking for small and growing businesses."
+      "Title": "Online Admission Student System",
+      "Category": "Web Development",
+      "Description": "An online student admission system that simplifies the registration process and data management."
     },
     "Project3": {
       "Title": "Caruban Tech Profile",

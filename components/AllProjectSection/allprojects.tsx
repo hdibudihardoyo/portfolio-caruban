@@ -17,9 +17,9 @@ export default function AllProjects() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
           <div className="flex flex-col gap-3 text-left">
             <div className="w-15 h-1 rounded-full bg-[var(--color-muted)]" />
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tighter leading-tight bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent">
+            <h1 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight text-[var(--primary-accent)]">
               {t("TitlePrefix")} <br />
-              <span className="italic bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent">
+              <span className="text-[var(--color-primary)] font-black">
                 {t("TitleHighlight")}
               </span>
             </h1>

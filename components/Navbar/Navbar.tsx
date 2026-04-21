@@ -23,32 +23,35 @@ export default function Navbar() {
           aria-hidden="true"
         />
       )}
+
       <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
         <motion.nav
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
           className="
-            w-full max-w-[1050px] 
-            flex items-center justify-between 
+            relative w-full max-w-[1050px]
+            flex items-center justify-between
             pointer-events-auto
-            px-4 py-2 
-            bg-[var(--color-secondary)]/40 backdrop-blur-md 
-            rounded-full 
+            px-5 py-2.5
+            bg-[var(--color-secondary)]/50 backdrop-blur-xl
+            rounded-full
+            border border-[var(--primary-accent)]/10
+            shadow-lg shadow-black/10
           "
         >
           {/* Brand Logo */}
           <Link
             href="/"
             onClick={() => setActive("Beranda")}
-            className="flex items-center gap-3 group cursor-pointer shrink-0"
+            className="flex items-center gap-2.5 group cursor-pointer shrink-0"
           >
-            <div className="relative">
+            <div className="relative flex items-center justify-center w-8 h-8 rounded-xl bg-[var(--primary-accent)]/10  transition-all duration-300">
               <Image
                 src="/icon-caruban.png"
                 alt="Logo"
-                width={28}
-                height={28}
+                width={22}
+                height={22}
                 className="transition-transform duration-500 group-hover:rotate-12"
                 priority
               />
@@ -57,22 +60,21 @@ export default function Navbar() {
               <span className="text-xs font-black tracking-tighter">
                 Caruban
               </span>
-              <span className="text-[10px] font-bold tracking-[0.2em]">
+              <span className="text-[9px] font-bold tracking-[0.25em] opacity-70">
                 TECHNOLOGY
               </span>
             </div>
           </Link>
-
           {/* Nav Links - Desktop */}
-          <ul className="hidden lg:flex items-center gap-4 text-[11px] font-black uppercase tracking-wider">
+          <ul className="hidden lg:flex items-center gap-1 text-[11px] font-black uppercase tracking-wider">
             {navLinks.map((item) => (
               <li key={item.key} className="relative">
                 <Link
                   href={item.id}
                   onClick={() => handleNavClick(item.key)}
-                  className={`relative py-2 transition-colors duration-300 hover:text-[var(--primary-accent)] ${
+                  className={`relative flex items-center px-3 py-1.5 rounded-full transition-all duration-200 hover:text-[var(--primary-accent)] hover:bg-[var(--primary-accent)]/8 ${
                     active === item.key
-                      ? "text-[var(--color-muted)]"
+                      ? "text-[var(--primary-accent)] "
                       : "text-[var(--color-muted)]"
                   }`}
                 >
@@ -81,7 +83,7 @@ export default function Navbar() {
                   {active === item.key && (
                     <motion.div
                       layoutId="underline"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-[var(--secondary-accent)] rounded-full"
+                      className="absolute bottom-1 left-3 right-3 h-0.5 bg-[var(--primary-accent)] rounded-full"
                       transition={{
                         type: "spring",
                         stiffness: 380,
@@ -93,66 +95,88 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-
           {/* Action Buttons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
+            {/* Mobile menu toggle */}
             <button
               type="button"
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label={menuOpen ? "Tutup menu" : "Buka menu"}
-              className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-[var(--color-primary)] bg-[var(--primary-accent)] text-[var(--color-primary)] shadow-sm transition-all lg:hidden cursor-pointer"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--primary-accent)] text-[var(--color-primary)] shadow-sm shadow-[var(--primary-accent)]/30 transition-all hover:scale-105 active:scale-95 lg:hidden cursor-pointer"
             >
-              {menuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={menuOpen ? "x" : "menu"}
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  {menuOpen ? (
+                    <X className="h-4 w-4" />
+                  ) : (
+                    <Menu className="h-4 w-4" />
+                  )}
+                </motion.span>
+              </AnimatePresence>
             </button>
 
             <div className="hidden md:block">
               <LanguageToggle />
             </div>
+
             <Link
               href="/contact"
               onClick={() => handleNavClick("Kontak")}
-              className="hidden lg:inline-flex bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] text-[var(--color-primary)] text-[10px] font-bold uppercase tracking-widest p-3 rounded-full transition-all shadow-md active:scale-95 whitespace-nowrap cursor-pointer"
+              className="hidden lg:inline-flex items-center bg-[var(--primary-accent)] text-[var(--color-primary)] text-[10px] font-bold uppercase tracking-widest px-4 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg hover:shadow-[#1B9D77]/25 hover:scale-105 active:scale-95 whitespace-nowrap cursor-pointer"
             >
               {t("Button")}
             </Link>
           </div>
-
           {/* Nav Links - Mobile */}
           <AnimatePresence>
             {menuOpen && (
               <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="absolute inset-x-0 top-full mt-3 rounded-3xl border border-[var(--primary-accent)] bg-[var(--color-secondary)] p-5 shadow-2xl backdrop-blur-xl lg:hidden"
+                initial={{ opacity: 0, y: -8, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -8, scale: 0.98 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                className="absolute inset-x-0 top-full mt-3 rounded-3xl border border-[var(--primary-accent)]/20 bg-[var(--color-secondary)]/95 p-4 shadow-2xl shadow-black/20 backdrop-blur-xl lg:hidden overflow-hidden"
               >
-                <ul className="flex flex-col gap-3 text-sm font-bold uppercase tracking-wider text-[var(--color-tertiary)]">
-                  {navLinks.map((item) => (
-                    <li key={item.key}>
+                {/* Top gradient line */}
+                <div className="absolute inset-x-8 top-0 h-px bg-[var(--primary-accent)]" />
+
+                <ul className="flex flex-col gap-1 text-sm font-bold uppercase tracking-wider text-[var(--color-tertiary)]">
+                  {navLinks.map((item, i) => (
+                    <motion.li
+                      key={item.key}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05, duration: 0.2 }}
+                    >
                       <Link
                         href={item.id}
                         onClick={() => handleNavClick(item.key)}
-                        className={`block rounded-2xl px-4 py-3 transition-colors duration-200 ${
+                        className={`flex items-center gap-2 rounded-2xl px-4 py-3 transition-all duration-200 ${
                           active === item.key
-                            ? "bg-[var(--primary-accent)] text-[var(--color-primary)]"
-                            : "hover:bg-[var(--primary-accent)] hover:text-[var(--color-primary)]"
+                            ? "text-[var(--color-primary)] shadow-sm shadow-[var(--primary-accent)]/30"
+                            : "hover:bg-[var(--primary-accent)]/10 hover:text-[var(--primary-accent)]"
                         }`}
                       >
+                        {active === item.key && (
+                          <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0" />
+                        )}
                         {t(item.key)}
                       </Link>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
 
-                <div className="mt-4 flex flex-col gap-3 border-t pt-4">
+                <div className="mt-3 flex flex-col gap-3 border-t border-[var(--primary-accent)]/10 pt-4">
                   <Link
                     href="/contact"
                     onClick={() => handleNavClick("Kontak")}
-                    className="inline-flex items-center justify-center rounded-2xl text-[var(--color-primary)] bg-gradient-to-r from-[#1B9D77] to-[#F9CD19]  py-3 px-4 text-center text-xs font-black uppercase tracking-widest transition-all"
+                    className="inline-flex items-center justify-center rounded-2xl text-[var(--color-primary)] bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] py-3 px-4 text-center text-xs font-black uppercase tracking-widest shadow-md hover:shadow-lg transition-all active:scale-95"
                   >
                     {t("Button")}
                   </Link>

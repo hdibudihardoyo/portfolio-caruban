@@ -1,18 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --main-background: #050811;
-  --primary-accent: #1ca078;
+  --main-background: #091413;
+  --primary-accent: #285a48;
   --secondary-accent: #f9cd19;
   --color-primary: #ffffff;
   --color-secondary: #d9d9d9;
   --color-tertiary: #000000;
   --color-muted: #e8e9ee;
   --color-muted-2: #555555;
-
-  --font-sans:
-    var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
 }
 
 @layer base {

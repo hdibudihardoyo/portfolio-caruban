@@ -13,9 +13,9 @@ export default function TechStackSection() {
         <div className="flex justify-center mb-4">
           <div className="w-15 h-1 rounded-full bg-[var(--muted)]" />
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tighter bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent">
+        <h2 className="text-2xl md:text-3xl font-black tracking-tighter text-[var(--primary-accent)]">
           {t("TitlePrefix")}{" "}
-          <span className="italic bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent">
+          <span className="text-2xl md:text-3xl italic font-black text-[var(--color-primary)]">
             {t("TitleHighlight")}
           </span>
         </h2>
@@ -29,20 +29,13 @@ export default function TechStackSection() {
         {/* Fade Effects Kiri dan kanan */}
         <div className="absolute left-0 top-0 bottom-0 w-40 z-10 bg-gradient-to-r from-[var(--main-background)] to-transparent pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-40 z-10 bg-gradient-to-l from-[var(--main-background)] to-transparent pointer-events-none" />
-        {/* Efek Shadow di tengah
-        <div
-          className="absolute inset-y-0 inset-x-1/4 z-10 pointer-events-none "
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 100% at 50% 50%, rgba(249, 205, 25, 0.25) 0%, transparent 100%)",
-          }}
-        /> */}
+
         <div className="flex gap-3 animate-marquee py-12">
           {/* Loop data dua kali */}
           {[...techStacks, ...techStacks].map((tech, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 p-6 transition-all duration-300 whitespace-nowrap hover:shadow-xl hover:-translate-y-1"
+              className="flex items-center gap-2 p-6 transition-all duration-300 whitespace-nowrap  hover:-translate-y-1"
             >
               <div className="w-8 h-8 md:w-10 md:h-10 group-hover/item:grayscale-0 transition-all duration-500">
                 <StackIcon name={tech.icon} />

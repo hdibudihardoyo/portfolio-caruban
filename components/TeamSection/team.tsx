@@ -15,7 +15,7 @@ export default function TeamSection() {
         <div className="flex justify-center mb-4">
           <div className="w-15 h-1 rounded-full bg-[var(--color-muted)]" />
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold mb-10 sm:mb-16 tracking-tight bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent">
+        <h2 className="text-2xl md:text-3xl font-black mb-10 sm:mb-16 tracking-tight text-[var(--primary-accent)]">
           {t("Title")}
         </h2>
 

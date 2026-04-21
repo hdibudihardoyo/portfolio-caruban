@@ -9,7 +9,7 @@ export default function AboutSection() {
         {/* Judul */}
         <div className="flex flex-col gap-3 mb-8">
           <div className="w-12 h-1 rounded-full bg-[var(--color-muted)]" />
-          <h2 className="italic text-2xl md:text-3xl font-bold tracking-tighter leading-tight bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent">
+          <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight text-[var(--primary-accent)]">
             {t("Title")}
           </h2>
         </div>
@@ -28,7 +28,7 @@ export default function AboutSection() {
           </div>
 
           {/* Teks */}
-          <div className="flex flex-col gap-4 text-xs md:text-sm leading-relaxed text-[var(--color-primary)] text-justify">
+          <div className="flex flex-col gap-4 text-base leading-relaxed text-[var(--color-primary)] text-justify">
             <p>
               <span className="font-bold text-[var(--secondary-accent)]">
                 {t("DescriptionHighlight")}

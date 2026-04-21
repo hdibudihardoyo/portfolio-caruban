@@ -16,7 +16,7 @@ export default function ServiceSection() {
         <div className="grid gap-8">
           <div className="w-full flex flex-col gap-5 items-center text-center">
             <div className="w-15 h-1 rounded-full bg-[var(--color-muted)] mx-auto" />
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tighter bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-3xl font-black tracking-tighter text-[var(--primary-accent)]">
               {t("Title")}
             </h2>
             <p className="text-xs md:text-sm leading-relaxed max-w-2xl mx-auto text-[var(--color-primary)]">

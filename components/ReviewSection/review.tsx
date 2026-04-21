@@ -31,7 +31,7 @@ export default function SectionReview() {
           <div className="flex justify-center mb-3">
             <div className="w-15 h-1 rounded-full bg-[var(--color-muted)]" />
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tighter leading-tight bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] bg-clip-text text-transparent">
+          <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight text-[var(--primary-accent)]">
             {t("Title")}
           </h2>
         </div>
