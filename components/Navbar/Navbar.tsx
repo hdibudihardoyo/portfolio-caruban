@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
+import ToogleTheme from "@/components/ToogleTheme/ToogleTheme";
 import LanguageToggle from "@/components/toggle-languange/ToggleLanguange";
 import { navLinks } from "@/constants";
 import { useNavbar } from "@/hooks/useNavbar";
@@ -118,7 +119,10 @@ export default function Navbar() {
             </button>
 
             <div className="hidden md:block">
-              <LanguageToggle />
+              <div className="flex items-center justify-center gap-3">
+                <ToogleTheme />
+                <LanguageToggle />
+              </div>
             </div>
 
             <Link
@@ -176,8 +180,9 @@ export default function Navbar() {
                   >
                     {t("Button")}
                   </Link>
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center gap-3">
                     <LanguageToggle />
+                    <ToogleTheme />
                   </div>
                 </div>
               </motion.div>

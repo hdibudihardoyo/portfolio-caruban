@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { Poppins } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
+import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import AiChatbotFloating from "@/components/AiChatbotFloating";
@@ -31,16 +32,18 @@ export default async function RootLayout({
     .default;
 
   return (
-    <html lang={locale} className={`${poppins.variable} h-full antialiased`}>
+    <html lang={locale} className={`${poppins.variable} h-full scroll-smooth`}>
       <body className="min-h-full flex flex-col">
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <ChatbotProvider>
-            <Navbar />
-            {children}
-            <AiChatbotFloating />
-            <Footer />
-          </ChatbotProvider>
-        </NextIntlClientProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <ChatbotProvider>
+              <Navbar />
+              {children}
+              <AiChatbotFloating />
+              <Footer />
+            </ChatbotProvider>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

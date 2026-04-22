@@ -28,6 +28,7 @@ export default function Footer() {
                 alt="Logo Caruban Tech"
                 width={32}
                 height={32}
+                className="w-8 h-8"
               />
               <div className="flex flex-col leading-none">
                 <span className="text-base font-bold tracking-tighter text-[var(--color-tertiary)]">

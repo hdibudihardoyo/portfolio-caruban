@@ -63,25 +63,25 @@ export default function PriceSection() {
                 {t(plan.title)}
               </span>
 
-              <h3 className="text-xl sm:text-2xl font-black mb-2 tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-black mb-2 tracking-tighter text-[var(--color-tertiary)]">
                 {plan.price}
               </h3>
 
-              <p className="text-xs md:text-sm mb-5 min-h-[40px] leading-relaxed">
+              <p className="text-xs md:text-sm mb-5 min-h-[40px] leading-relaxed text-[var(--color-tertiary)] opacity-70">
                 {t(plan.desc)}
               </p>
 
-              <button className="w-full rounded-xl py-3 text-[11px] font-black uppercase tracking-wider transition-all duration-300 text-[var(--color-primary)] bg-[var(--primary-accent)] cursor-pointer">
+              <button className="w-full rounded-xl py-3 text-[11px] font-bold uppercase tracking-wider transition-all duration-300 text-[var(--color-primary)] bg-[var(--primary-accent)] cursor-pointer">
                 {t(plan.button)}
               </button>
 
-              <ul className="mt-6 space-y-3 text-xs md:text-sm text-left">
+              <ul className="mt-6 space-y-3 text-xs md:text-sm text-left text-[var(--color-tertiary)]">
                 {plan.features.map((item, idx) => (
                   <li
                     key={idx}
                     className="flex items-start gap-2.5 opacity-70 font-medium"
                   >
-                    <CheckIcon className="w-4 h-4 text-[var(--primary)] shrink-0 mt-0.5" />
+                    <CheckIcon className="w-4 h-4 text-[var(--color-tertiary)] shrink-0 mt-0.5" />
                     <span>{t(item)}</span>
                   </li>
                 ))}

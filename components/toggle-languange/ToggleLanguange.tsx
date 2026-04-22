@@ -14,7 +14,7 @@ export default function LanguageToggle() {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className={`w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 cursor-pointer ${
+        className={`w-8 h-8 flex items-center justify-center rounded-xl transition-all duration-300 cursor-pointer ${
           open
             ? "bg-[var(--primary-accent)] text-[var(--color-primary)] shadow-lg shadow-[var(--primary-accent)]/20"
             : "bg-[var(--primary-accent)] text-[var(--color-primary)] backdrop-blur-sm"
@@ -41,10 +41,10 @@ export default function LanguageToggle() {
               <button
                 key={lang.locale}
                 onClick={() => handleSwitch(lang.locale)}
-                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-xs transition-all duration-200 group cursor-pointer ${
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-xs transition-all duration-200 group cursor-pointer gap-4${
                   locale === lang.locale
                     ? "bg-[var(--primary-accent)] text-[var(--color-primary)]"
-                    : "text-[var(--brand-dark)] hover:bg-[var(--primary)]"
+                    : "text-[var(--primary-accent)] hover:bg-[var(--primary-accent)] hover:text-[var(--color-primary)]"
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -55,7 +55,7 @@ export default function LanguageToggle() {
                 {locale === lang.locale && (
                   <motion.div
                     layoutId="activeIndicator"
-                    className="w-1.5 h-1.5 rounded-full bg-[var(--primary)]"
+                    className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]"
                   />
                 )}
               </button>
