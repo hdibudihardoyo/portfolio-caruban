@@ -17,7 +17,7 @@ export default function FaqSection() {
         <div className="flex flex-col md:flex-row gap-6 md:gap-10">
           <div className="md:w-[35%] md:sticky md:top-24 md:h-fit shrink-0 flex flex-col gap-6">
             <div className="flex flex-col gap-4">
-              <div className="w-15 h-1 rounded-full bg-[var(--muted)]" />
+              <div className="w-15 h-1 rounded-full bg-[var(--color-muted)]" />
               <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight text-[var(--primary-accent)]">
                 {t("Title")} <br />
                 <span className="text-[var(--color-primary)]">
