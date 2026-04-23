@@ -16,8 +16,8 @@ export default function LanguageToggle() {
         onClick={() => setOpen(!open)}
         className={`w-8 h-8 flex items-center justify-center rounded-xl transition-all duration-300 cursor-pointer ${
           open
-            ? "bg-[var(--primary-accent)] text-[var(--color-primary)] shadow-lg shadow-[var(--primary-accent)]/20"
-            : "bg-[var(--primary-accent)] text-[var(--color-primary)] backdrop-blur-sm"
+            ? "bg-[var(--primary-accent)] text-[var(--button-text-color)] shadow-lg shadow-[var(--primary-accent)]/20"
+            : "bg-[var(--primary-accent)] text-[var(--button-text-color)] backdrop-blur-sm"
         }`}
       >
         <Globe
@@ -35,7 +35,7 @@ export default function LanguageToggle() {
             animate={{ opacity: 1, y: 5, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute right-0 mt-2 w-44 rounded-2xl border border-[var(--primary-accent)] bg-[var(--color-primary)] backdrop-blur-xl shadow-2xl overflow-hidden p-1.5 z-[60]"
+            className="absolute right-0 mt-2 w-44 rounded-2xl border backdrop-blur-xl shadow-2xl overflow-hidden p-1.5 z-[60]"
           >
             {languages.map((lang) => (
               <button
@@ -43,8 +43,8 @@ export default function LanguageToggle() {
                 onClick={() => handleSwitch(lang.locale)}
                 className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-xs transition-all duration-200 group cursor-pointer gap-4${
                   locale === lang.locale
-                    ? "bg-[var(--primary-accent)] text-[var(--color-primary)]"
-                    : "text-[var(--primary-accent)] hover:bg-[var(--primary-accent)] hover:text-[var(--color-primary)]"
+                    ? "text-[var(--button-text-color)]"
+                    : "text-[var(--button-text-color)]"
                 }`}
               >
                 <div className="flex items-center gap-3">

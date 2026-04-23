@@ -52,8 +52,8 @@ export default function HeroSection() {
         >
           {/* Badge / eyebrow */}
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[var(--color-primary)] bg-[var(--primary-accent)] text-[var(--color-primary)] text-[10px] font-semibold uppercase tracking-widest">
-              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-pulse" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[var(--button-text-color)] bg-[var(--primary-accent)] text-[var(--button-text-color)] text-[10px] font-semibold uppercase tracking-widest">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--button-text-color)] animate-pulse" />
               Digital Agency
             </span>
           </motion.div>
@@ -73,7 +73,7 @@ export default function HeroSection() {
             variants={itemVariants}
             className="flex flex-col items-start gap-3 w-full"
           >
-            <button className="group cursor-pointer relative overflow-hidden bg-[var(--primary-accent)] hover:bg-[#168a65] text-[var(--color-primary)] py-3.5 px-7 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-[var(--primary-accent)]/30 shadow-lg font-semibold text-xs uppercase tracking-wider flex items-center gap-2">
+            <button className="group cursor-pointer relative overflow-hidden bg-[var(--primary-accent)] hover:bg-[#168a65] text-[var(--button-text-color)] py-3.5 px-7 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-[var(--primary-accent)]/30 shadow-lg font-semibold text-xs uppercase tracking-wider flex items-center gap-2">
               {/* Shimmer effect */}
               <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
               <span className="relative">{t("Button")}</span>

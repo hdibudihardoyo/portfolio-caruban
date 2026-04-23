@@ -29,7 +29,7 @@ export default function AllProjects() {
           </div>
 
           <div className="hidden md:flex">
-            <span className="px-3 py-2 bg-[var(--primary-accent)] border border-[var(--color-primary)] rounded-full text-xs font-bold uppercase tracking-widest text-[var(--color-primary)]">
+            <span className="px-3 py-2 bg-[var(--primary-accent)] border border-[var(--button-text-color)] rounded-full text-xs font-bold uppercase tracking-widest text-[var(--button-text-color)]">
               {t("TotalProjects", { count: allProjects.length })}
             </span>
           </div>
@@ -56,7 +56,7 @@ export default function AllProjects() {
                 <div className="absolute inset-0 bg-[var(--brand-dark)]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 backdrop-blur-[2px]">
                   <Link
                     href={project.link}
-                    className="p-3 bg-[var(--color-primary)] rounded-xl hover:bg-[var(--primary-accent)] hover:text-[var(--color-primary)] transition-all shadow-xl"
+                    className="p-3 bg-[var(--button-text-color)] rounded-xl hover:bg-[var(--primary-accent)] hover:text-[var(--button-text-color)] transition-all shadow-xl"
                   >
                     <ExternalLink size={18} />
                   </Link>

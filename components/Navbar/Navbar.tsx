@@ -35,10 +35,11 @@ export default function Navbar() {
             flex items-center justify-between
             pointer-events-auto
             px-5 py-2.5
-            bg-[var(--color-secondary)]/50 backdrop-blur-xl
+            bg-[var(--surface-bg)]/80 backdrop-blur-xl
             rounded-full
             border border-[var(--primary-accent)]/10
-            shadow-lg shadow-black/10
+            shadow-lg shadow-[var(--color-tertiary)]/10
+            transition-colors duration-300
           "
         >
           {/* Brand Logo */}
@@ -99,7 +100,7 @@ export default function Navbar() {
               type="button"
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label={menuOpen ? "Tutup menu" : "Buka menu"}
-              className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--primary-accent)] text-[var(--color-primary)] shadow-sm shadow-[var(--primary-accent)]/30 transition-all hover:scale-105 active:scale-95 lg:hidden cursor-pointer"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--primary-accent)] text-[var(--button-text-color)] shadow-sm shadow-[var(--primary-accent)]/30 transition-all hover:scale-105 active:scale-95 lg:hidden cursor-pointer"
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.span
@@ -128,7 +129,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => handleNavClick("Kontak")}
-              className="hidden lg:inline-flex items-center bg-[var(--primary-accent)] text-[var(--color-primary)] text-[10px] font-bold uppercase tracking-widest px-4 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg hover:shadow-[#1B9D77]/25 hover:scale-105 active:scale-95 whitespace-nowrap cursor-pointer"
+              className="hidden lg:inline-flex items-center bg-[var(--primary-accent)] text-[var(--button-text-color)] text-[10px] font-bold uppercase tracking-widest px-4 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg hover:shadow-[#1B9D77]/25 hover:scale-105 active:scale-95 whitespace-nowrap cursor-pointer"
             >
               {t("Button")}
             </Link>
@@ -141,7 +142,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -8, scale: 0.98 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="absolute inset-x-0 top-full mt-3 rounded-3xl border border-[var(--primary-accent)]/20 bg-[var(--color-secondary)]/95 p-4 shadow-2xl shadow-black/20 backdrop-blur-xl lg:hidden overflow-hidden"
+                className="absolute inset-x-0 top-full mt-3 rounded-3xl border border-[var(--primary-accent)]/20 bg-[var(--surface-bg)]/95 p-4 shadow-2xl shadow-[var(--color-tertiary)]/20 backdrop-blur-xl lg:hidden overflow-hidden"
               >
                 <ul className="flex flex-col gap-1 text-sm font-bold uppercase tracking-wider text-[var(--color-tertiary)]">
                   {navLinks.map((item, i) => (
@@ -156,12 +157,12 @@ export default function Navbar() {
                         onClick={() => handleNavClick(item.key)}
                         className={`flex items-center gap-2 rounded-2xl px-4 py-3 transition-all duration-200 ${
                           active === item.key
-                            ? "text-[var(--color-primary)] bg-[var(--primary-accent)]"
-                            : "hover:bg-[var(--primary-accent)] hover:text-[var(--color-primary)]"
+                            ? "text-[var(--button-text-color)] bg-[var(--primary-accent)]"
+                            : "hover:bg-[var(--primary-accent)] hover:text-[var(--button-text-color)]"
                         }`}
                       >
                         {active === item.key && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[var(--button-text-color)] shrink-0" />
                         )}
                         {t(item.key)}
                       </Link>
@@ -173,7 +174,7 @@ export default function Navbar() {
                   <Link
                     href="/contact"
                     onClick={() => handleNavClick("Kontak")}
-                    className="inline-flex items-center justify-center rounded-2xl text-[var(--color-primary)] bg-[var(--primary-accent)] px-4 py-3 text-sm font-bold uppercase tracking-wide shadow-sm  transition-all hover:scale-105 active:scale-95] "
+                    className="inline-flex items-center justify-center rounded-2xl text-[var(--button-text-color)] bg-[var(--primary-accent)] px-4 py-3 text-sm font-bold uppercase tracking-wide"
                   >
                     {t("Button")}
                   </Link>

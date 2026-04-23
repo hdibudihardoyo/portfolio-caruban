@@ -148,8 +148,8 @@
   },
   "Team": {
     "Title": "Informasi Tim Developer",
-    "BackEndDeveloper": "Back-End Dev",
-    "FrontEndDeveloper": "Front-End Dev",
+    "BackEndDeveloper": "Back-End Developer",
+    "FrontEndDeveloper": "Front-End Developer",
     "UIUXDesigner": "UI/UX Designer"
   },
   "TechStack": {

@@ -36,16 +36,17 @@ export default function ServiceSection() {
                     src={service.image}
                     alt={t(service.title)}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover"
                   />
                 </div>
                 {/* Card body */}
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center justify-start gap-3">
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 bg-gradient-to-r from-[#1B9D77]/20 to-[#F9CD19]/20 text-sm sm:text-base font-bold text-[var(--color-primary)]">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[var(--primary-accent)] text-sm sm:text-base font-bold text-[var(--button-text-color)]">
                       {service.number}
                     </div>
-                    <h3 className="text-sm sm:text-base font-bold tracking-tight leading-snug bg-gradient-to-r from-[#1B9D77] to-[#F5F6FA] bg-clip-text text-transparent">
+                    <h3 className="text-sm sm:text-base font-bold tracking-tight leading-snug text-[var(--primary-accent)]">
                       {t(service.title)}
                     </h3>
                   </div>

@@ -1,14 +1,72 @@
 @import "tailwindcss";
 
-:root {
-  --main-background: #091413;
+/* Light Theme (Default) */
+:root,
+[data-theme="light"],
+.light {
+  /* Background Colors */
+  --main-background: #e5e5e5;
+  --secondary-background: #f5f5f5;
+  --tertiary-background: #efefef;
+
+  /* Brand Colors */
   --primary-accent: #285a48;
   --secondary-accent: #f9cd19;
+
+  /* Text Colors */
+  --color-primary: #1a1a1a;
+  --color-secondary: #4a4a4a;
+  --color-tertiary: #000000;
+  --color-muted: #7a7a7a;
+  --color-muted-2: #a0a0a0;
+
+  /* UI Colors */
+  --border-color: #e0e0e0;
+  --hover-background: #f0f0f0;
+
+  /* Component Colors */
+  --surface-bg: rgba(255, 255, 255, 0.94);
+  --surface-border: rgba(209, 207, 199, 0.8);
+  --hero-panel-bg: rgba(255, 255, 255, 0.95);
+  --hero-panel-border: rgba(209, 207, 199, 0.8);
+
+  /* Button Colors */
+  --button-text-color: #ffffff;
+  --button-hover-text-color: #ffffff;
+}
+
+/* Dark Theme */
+[data-theme="dark"],
+.dark {
+  /* Background Colors */
+  --main-background: #000000;
+  --secondary-background: #0f2420;
+  --tertiary-background: #143d34;
+
+  /* Brand Colors */
+  --primary-accent: #285a48;
+  --secondary-accent: #cfb961;
+
+  /* Text Colors */
   --color-primary: #ffffff;
   --color-secondary: #d9d9d9;
-  --color-tertiary: #000000;
-  --color-muted: #e8e9ee;
-  --color-muted-2: #555555;
+  --color-tertiary: #e0e0e0;
+  --color-muted: #a0a0a0;
+  --color-muted-2: #707070;
+
+  /* UI Colors */
+  --border-color: #1f4d3f;
+  --hover-background: #1a3a2f;
+
+  /* Component Colors */
+  --surface-bg: rgba(15, 36, 32, 0.94);
+  --surface-border: rgba(42, 157, 109, 0.2);
+  --hero-panel-bg: rgba(9, 20, 19, 0.95);
+  --hero-panel-border: rgba(42, 157, 109, 0.3);
+
+  /* Button Colors */
+  --button-text-color: #ffffff;
+  --button-hover-text-color: #ffffff;
 }
 
 @layer base {
@@ -28,10 +86,13 @@
   body {
     min-height: 100%;
     margin: 0;
-    background: #ffffff;
-    color: var(--foreground);
+    background: var(--main-background);
+    color: var(--color-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 
   img,
@@ -63,18 +124,24 @@
 
 @layer components {
   .surface {
-    background: rgba(255, 255, 255, 0.94);
-    border: 1px solid var(--border);
+    background: var(--surface-bg);
+    border: 1px solid var(--surface-border);
     box-shadow: 0 30px 90px rgba(26, 34, 67, 0.08);
     border-radius: 2rem;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease;
   }
 
   .hero-panel {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--hero-panel-bg);
     backdrop-filter: blur(18px);
-    border: 1px solid rgba(209, 207, 199, 0.8);
+    border: 1px solid var(--hero-panel-border);
     box-shadow: 0 28px 80px rgba(26, 34, 67, 0.08);
     border-radius: 2.5rem;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease;
   }
 
   .accent-badge {
@@ -83,11 +150,14 @@
     justify-content: center;
     padding: 0.5rem 0.9rem;
     border-radius: 999px;
-    background: rgba(29, 158, 117, 0.08);
-    color: var(--brand-dark);
+    background: rgba(42, 157, 109, 0.08);
+    color: var(--primary-accent);
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 }
 

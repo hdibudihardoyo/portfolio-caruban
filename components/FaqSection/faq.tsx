@@ -33,7 +33,7 @@ export default function FaqSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative w-full h-48 rounded-[1.5rem] overflow-hidden border border-[var(--border)] bg-zinc-50 shadow-sm"
+              className="relative w-full h-48 rounded-[1.5rem] overflow-hidden border border-[var(--border-color)] bg-[var(--secondary-background)] shadow-sm"
             >
               <Image
                 src="/faqq.svg"
@@ -56,11 +56,11 @@ export default function FaqSection() {
                     onClick={() => toggleFaqItem(index)}
                     className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 bg-[var(--primary-accent)]"
                   >
-                    <span className="text-xs md:text-sm tracking-tight leading-snug text-[var(--color-primary)] flex-1">
+                    <span className="text-xs md:text-sm tracking-tight leading-snug text-[var(--button-text-color)] flex-1">
                       {t(faq.question)}
                     </span>
                     <div
-                      className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 bg-white/20 text-[var(--color-primary)] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                      className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 bg-[var(--button-text-color)]/20 text-[var(--button-text-color)] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                     >
                       <ChevronDown className="w-4 h-4" />
                     </div>

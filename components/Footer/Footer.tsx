@@ -17,7 +17,7 @@ export default function Footer() {
   const tNav = useTranslations("Navbar");
 
   return (
-    <footer className="bg-[var(--primary-accent)] pt-20 pb-10 px-6">
+    <footer className="bg-[var(--primary-accent)] pt-20 pb-10 px-6 text-[var(--button-text-color)]">
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-16">
           {/* Brand Identity */}
@@ -31,10 +31,10 @@ export default function Footer() {
                 className="w-8 h-8"
               />
               <div className="flex flex-col leading-none">
-                <span className="text-base font-bold tracking-tighter text-[var(--color-tertiary)]">
+                <span className="text-base font-bold tracking-tighter text-[var(--button-text-color)]">
                   Caruban
                 </span>
-                <span className="text-[9px] font-bold tracking-[0.2em] text-[var(--color-tertiary)] uppercase">
+                <span className="text-[9px] font-bold tracking-[0.2em] text-[var(--button-text-color)] uppercase">
                   TECHNOLOGY
                 </span>
               </div>
@@ -45,7 +45,7 @@ export default function Footer() {
                 <Link
                   key={i}
                   href={social.link}
-                  className="w-8 h-8 rounded-full border border-[var(--color-tertiary)] flex items-center justify-center text-[var(--color-tertiary)]"
+                  className="w-8 h-8 rounded-full border border-[var(--button-text-color)] flex items-center justify-center text-[var(--button-text-color)]"
                 >
                   <FontAwesomeIcon icon={social.icon} className="text-xs" />
                 </Link>
@@ -55,10 +55,10 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-tertiary)]">
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--button-text-color)]">
               {t("Navigation")}
             </h4>
-            <ul className="flex flex-col gap-3 text-sm">
+            <ul className="flex flex-col gap-3 text-sm text-[var(--button-text-color)]">
               {navLinks.slice(0, 5).map((link) => (
                 <li key={link.key}>
                   <Link
@@ -74,10 +74,10 @@ export default function Footer() {
 
           {/* Services */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-tertiary)]">
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--button-text-color)]">
               {t("Services")}
             </h4>
-            <ul className="flex flex-col gap-4 text-sm">
+            <ul className="flex flex-col gap-4 text-sm text-[var(--button-text-color)]">
               {footerServices.map((service) => (
                 <li key={service}>{t(service)}</li>
               ))}
@@ -86,16 +86,16 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-tertiary)]">
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--button-text-color)]">
               {t("Contact")}
             </h4>
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-4 text-[var(--button-text-color)]">
               <li className="flex items-center gap-3">
-                <MapPin className="w-4 h-4 text-[var(--color-tertiary)] shrink-0" />
+                <MapPin className="w-4 h-4 text-[var(--button-text-color)] shrink-0" />
                 <span className="text-sm">{footerContact.address}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[var(--color-tertiary)] shrink-0" />
+                <Mail className="w-4 h-4 text-[var(--button-text-color)] shrink-0" />
                 <span className="text-sm">{footerContact.email}</span>
               </li>
             </ul>
@@ -103,8 +103,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[var(--color-tertiary)]">
-          <p className="text-[10px] text-center font-bold uppercase tracking-widest">
+        <div className="pt-8 border-t border-[var(--button-text-color)]">
+          <p className="text-[10px] text-center font-bold uppercase tracking-widest text-[var(--button-text-color)]">
             {t("Copyright")}
           </p>
         </div>
