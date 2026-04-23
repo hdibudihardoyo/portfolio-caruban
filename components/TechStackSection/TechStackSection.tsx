@@ -11,7 +11,7 @@ export default function TechStackSection() {
       {/* Header */}
       <div className="max-w-5xl mx-auto px-6 text-center mb-8">
         <div className="flex justify-center mb-4">
-          <div className="w-15 h-1 rounded-full bg-[var(--muted)]" />
+          <div className="w-15 h-1 rounded-full bg-[var(--color-muted)]" />
         </div>
         <h2 className="text-2xl md:text-3xl font-black tracking-tighter text-[var(--primary-accent)]">
           {t("TitlePrefix")}{" "}

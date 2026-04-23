@@ -40,11 +40,11 @@ export default function TeamSection() {
               </div>
 
               {/* Info Card */}
-              <div className="flex flex-col gap-1 bg-[var(--primary-accent)] border border-[var(--color-primary)] px-4 py-3 sm:px-6 sm:py-4 rounded-tr-[2rem] rounded-bl-[2rem] -mt-6 relative z-20 w-full shadow-lg transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-2xl">
-                <p className="text-left text-xs font-bold uppercase tracking-widest text-[var(--color-primary)]">
+              <div className="flex flex-col gap-1 bg-[var(--primary-accent)] border border-[var(--button-text-color)] px-4 py-3 sm:px-6 sm:py-4 rounded-tr-[2rem] rounded-bl-[2rem] -mt-6 relative z-20 w-full shadow-lg transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-2xl">
+                <p className="text-left text-xs font-bold uppercase tracking-widest text-[var(--button-text-color)]">
                   {t(item.role)}
                 </p>
-                <p className="text-xs  tracking-tight uppercase text-[var(--color-primary)]">
+                <p className="text-xs  tracking-tight uppercase text-[var(--button-text-color)]">
                   {item.name}
                 </p>
               </div>
@@ -56,11 +56,11 @@ export default function TeamSection() {
                     key={idx}
                     href={social.link}
                     target="_blank"
-                    className="w-8 h-8 bg-[var(--color-secondary)]/60 border border-[var(--color-primary)] rounded-full flex items-center justify-center hover:bg-[var(--primary-accent)] hover:border-transparent transition-all duration-300 hover:scale-110"
+                    className="w-8 h-8 bg-[var(--primary-accent)] border border-[var(--button-text-color)] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 group"
                   >
                     <FontAwesomeIcon
                       icon={social.icon}
-                      className="w-3.5 h-3.5 text-[var(--color-primary)]"
+                      className="w-3.5 h-3.5 text-[var(--button-text-color)] transition-colors duration-300"
                     />
                   </Link>
                 ))}

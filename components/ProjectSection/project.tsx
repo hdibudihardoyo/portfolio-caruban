@@ -77,7 +77,7 @@ export default function ProjectSection() {
                 <Link
                   target="_blank"
                   href={project.slug}
-                  className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-[var(--primary-accent)] text-[var(--color-primary)] text-xs font-bold transition-all duration-300 hover:scale-105 shadow-lg uppercase tracking-wider"
+                  className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-[var(--primary-accent)] text-[var(--button-text-color)] text-xs font-bold transition-all duration-300 hover:scale-105 shadow-lg uppercase tracking-wider"
                 >
                   {t("Details")}
                   <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[var(--secondary-accent)]">
@@ -101,10 +101,10 @@ export default function ProjectSection() {
           href="/projects"
           className="group flex flex-col items-center gap-3 mt-4"
         >
-          <div className="w-8 h-8 rounded-full bg-[var(--primary-accent)] border-2 border-[var(--color-primary)] flex items-center justify-center">
-            <ArrowRight className="w-4 h-4 -rotate-45 transition-all duration-500 text-[var(--color-primary)] group-hover:rotate-0" />
+          <div className="w-8 h-8 rounded-full bg-[var(--primary-accent)] border-2 border-white flex items-center justify-center">
+            <ArrowRight className="w-4 h-4 -rotate-45 transition-all duration-500 text-white group-hover:rotate-0" />
           </div>
-          <span className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-primary)]">
+          <span className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-tertiary)]">
             {t("Explore")}
           </span>
         </Link>

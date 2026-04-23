@@ -15,7 +15,7 @@ export default function PriceSection() {
     >
       <div className="max-w-5xl mx-auto text-center">
         <div className="flex justify-center mb-4">
-          <div className="w-15 h-1 rounded-full bg-[var(--muted)]" />
+          <div className="w-15 h-1 rounded-full bg-[var(--color-muted)]" />
         </div>
 
         <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight mb-2 text-[var(--primary-accent)]">
@@ -32,8 +32,8 @@ export default function PriceSection() {
               onClick={() => setActive("gratis")}
               className={`px-4 py-3 rounded-lg text-[9px] font-black transition-all duration-300 cursor-pointer ${
                 active === "gratis"
-                  ? "bg-[var(--color-primary)] text-[var(--primary-accent)]"
-                  : "text-[var(--color-primary)]"
+                  ? "bg-[var(--button-text-color)] text-[var(--primary-accent)]"
+                  : "text-[var(--button-text-color)]"
               }`}
             >
               {t("FreePlan")}
@@ -43,8 +43,8 @@ export default function PriceSection() {
               onClick={() => setActive("berbayar")}
               className={`px-4 py-3 rounded-lg text-[9px] font-black transition-all duration-300 cursor-pointer ${
                 active === "berbayar"
-                  ? "bg-[var(--color-primary)] text-[var(--primary-accent)]"
-                  : "text-[var(--color-primary)]"
+                  ? "bg-[var(--button-text-color)] text-[var(--primary-accent)]"
+                  : "text-[var(--button-text-color)]"
               }`}
             >
               {t("PaidPlan")}
@@ -71,7 +71,7 @@ export default function PriceSection() {
                 {t(plan.desc)}
               </p>
 
-              <button className="w-full rounded-xl py-3 text-[11px] font-bold uppercase tracking-wider transition-all duration-300 text-[var(--color-primary)] bg-[var(--primary-accent)] cursor-pointer">
+              <button className="w-full rounded-xl py-3 text-[11px] font-bold uppercase tracking-wider transition-all duration-300 text-[var(--button-text-color)] bg-[var(--primary-accent)] cursor-pointer">
                 {t(plan.button)}
               </button>
 

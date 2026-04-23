@@ -105,7 +105,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex-1 bg-[var(--primary-accent)] text-[var(--color-primary)] py-4 rounded-full font-bold text-[11px] uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all active:scale-95 shadow-lg shadow-black/5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 bg-[var(--primary-accent)] text-[var(--button-text-color)] py-4 rounded-full font-bold text-[11px] uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all active:scale-95 shadow-lg shadow-black/5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Mail className="w-4 h-4" />
                   {loading ? "Mengirim..." : t("SendEmail")}
@@ -114,7 +114,7 @@ export default function Contact() {
                   type="button"
                   onClick={handleWhatsAppChat}
                   disabled={loading}
-                  className="flex-1 bg-[var(--primary-accent)] text-[var(--color-primary)] py-4 rounded-full font-bold text-[11px] uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all active:scale-95 shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 bg-[var(--primary-accent)] text-[var(--button-text-color)] py-4 rounded-full font-bold text-[11px] uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all active:scale-95 shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <MessageCircle className="w-4 h-4" />
                   {t("WhatsAppChat")}
@@ -191,11 +191,11 @@ export default function Contact() {
                     key={idx}
                     href={social.link}
                     target="_blank"
-                    className={`w-8 h-8 bg-[var(--color-secondary)]/60 border border-[var(--color-primary)] rounded-full flex items-center justify-center hover:border-transparent transition-all duration-300 hover:scale-110 hover:-translate-y-1 ${social.color}`}
+                    className={`w-8 h-8 bg-[var(--primary-accent)] border border-[var(--button-text-color)] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 group`}
                   >
                     <FontAwesomeIcon
                       icon={social.icon}
-                      className="w-3.5 h-3.5 text-[var(--color-primary)]"
+                      className="w-3.5 h-3.5 text-[var(--button-text-color)]"
                     />
                   </Link>
                 ))}

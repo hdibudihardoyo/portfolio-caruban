@@ -42,7 +42,7 @@ export default function SectionReview() {
           <button
             type="button"
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[var(--primary-accent)] border border-[var(--color-primary)] text-[var(--color-primary)] shadow-lg cursor-pointer transition-all active:scale-95"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[var(--primary-accent)] border border-[var(--button-text-color)] text-[var(--button-text-color)] shadow-lg cursor-pointer transition-all active:scale-95"
             aria-label="Previous review"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -59,7 +59,7 @@ export default function SectionReview() {
                   key={i}
                   whileHover={{ y: -5 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className="min-w-[280px] md:min-w-[320px] bg-white border border-[var(--border)] rounded-[2rem] p-6 shadow-sm relative snap-center"
+                  className="min-w-[280px] md:min-w-[320px] bg-[var(--surface-bg)] border border-[var(--surface-border)] rounded-[2rem] p-6 shadow-sm relative snap-center"
                 >
                   <div className="flex flex-col items-center justify-center gap-3">
                     <div>
@@ -93,7 +93,7 @@ export default function SectionReview() {
           <button
             type="button"
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[var(--primary-accent)] border border-[var(--color-primary)] text-[var(--color-primary)] shadow-lg cursor-pointer transition-all active:scale-95"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[var(--primary-accent)] border border-[var(--button-text-color)] text-[var(--button-text-color)] shadow-lg cursor-pointer transition-all active:scale-95"
             aria-label="Next review"
           >
             <ArrowRight className="w-4 h-4" />

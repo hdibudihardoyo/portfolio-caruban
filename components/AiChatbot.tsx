@@ -39,22 +39,22 @@ const AiAssistant = () => {
   return (
     <div className="flex flex-col h-full w-full bg-transparent overflow-hidden">
       {/* Header */}
-      <div className="p-4 border-b bg-[var(--primary-accent)] text-[var(--color-primary)] shadow-sm shrink-0">
+      <div className="p-4 border-b bg-[var(--primary-accent)] text-[var(--button-text-color)] shadow-sm shrink-0">
         <div className="flex items-center gap-3">
-          <div className="shrink-0 aspect-square p-2 bg-white/20 flex items-center justify-center size-10 md:size-12 rounded-full backdrop-blur-md border border-white/30">
+          <div className="shrink-0 aspect-square p-2 bg-[var(--color-primary)]/20 flex items-center justify-center size-10 md:size-12 rounded-full backdrop-blur-md border border-[var(--color-primary)]/30">
             <Bot className="size-6 md:size-8" />
           </div>
           <div className="tracking-tight overflow-hidden">
             <h3 className="font-bold text-base md:text-lg leading-tight truncate">
               Caruban AI
             </h3>
-            <p className="text-[10px] md:text-xs text-[var(--color-secondary)] truncate">
+            <p className="text-[10px] md:text-xs truncate">
               Asisten Virtual Caruban Technology
             </p>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="ml-auto p-2 hover:bg-white/10 rounded-full transition-colors cursor-pointer"
+            className="ml-auto p-2 hover:bg-[var(--color-primary)]/10 rounded-full transition-colors cursor-pointer"
             aria-label="Tutup Chat"
           >
             <X className="size-5" />
@@ -81,8 +81,8 @@ const AiAssistant = () => {
                   className={cn(
                     "p-3 rounded-2xl text-sm max-w-[80%] shadow-sm leading-relaxed",
                     m.role === "user"
-                      ? "bg-primary text-primary-foreground rounded-br-none"
-                      : "bg-muted/80 backdrop-blur-sm border border-border text-foreground rounded-bl-none",
+                      ? "bg-[var(--primary-accent)] text-[var(--button-text-color)] rounded-br-none"
+                      : "bg-[var(--secondary-background)] backdrop-blur-sm border border-[var(--border-color)] text-[var(--color-primary)] rounded-bl-none",
                   )}
                 >
                   <p className="whitespace-pre-wrap text-sm leading-relaxed">
@@ -94,10 +94,10 @@ const AiAssistant = () => {
 
             {isLoading && (
               <div className="w-full animate-in fade-in duration-300">
-                <div className="bg-muted/50 p-4 rounded-2xl rounded-bl-none flex gap-1 items-center h-10 w-fit">
-                  <span className="w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce [animation-delay:-0.3s]" />
-                  <span className="w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce [animation-delay:-0.15s]" />
-                  <span className="w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce" />
+                <div className="bg-[var(--secondary-background)]/50 p-4 rounded-2xl rounded-bl-none flex gap-1 items-center h-10 w-fit">
+                  <span className="w-1.5 h-1.5 bg-[var(--primary-accent)]/40 rounded-full animate-bounce [animation-delay:-0.3s]" />
+                  <span className="w-1.5 h-1.5 bg-[var(--primary-accent)]/40 rounded-full animate-bounce [animation-delay:-0.15s]" />
+                  <span className="w-1.5 h-1.5 bg-[var(--primary-accent)]/40 rounded-full animate-bounce" />
                 </div>
               </div>
             )}
@@ -114,7 +114,7 @@ const AiAssistant = () => {
               <button
                 key={text}
                 onClick={() => sendMessage(text)}
-                className="cursor-pointer bg-accent text-accent-foreground hover:bg-primary/20 transition-all py-1 px-3 rounded-full text-[11px] font-normal border border-border"
+                className="cursor-pointer bg-[var(--secondary-background)] text-[var(--button-text-color)] hover:bg-[var(--primary-accent)]/20 transition-all py-1 px-3 rounded-full text-[11px] font-normal border border-[var(--border-color)]"
               >
                 {text}
               </button>
@@ -129,16 +129,16 @@ const AiAssistant = () => {
             onKeyDown={handleKeyDown}
             rows={1}
             style={{ minHeight: "40px", height: "40px" }}
-            className="flex-1 min-h-[40px] max-h-[120px] resize-none rounded-3xl border border-muted-foreground/20 bg-background shadow-sm focus:outline-none focus:ring-2 focus:ring-primary py-[10px] px-4 leading-[20px] overflow-hidden text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 min-h-[40px] max-h-[120px] resize-none rounded-3xl border border-[var(--border-color)] bg-[var(--main-background)] shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-accent)] py-[10px] px-4 leading-[20px] overflow-hidden text-sm text-[var(--color-primary)] disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={isLoading}
             autoFocus={false}
           />
           <button
             onClick={() => sendMessage(input)}
             disabled={isLoading || !input.trim()}
-            className="rounded-full size-10 shadow-md bg-primary hover:bg-primary/80 shrink-0 transition-transform active:scale-95 flex items-center justify-center text-primary-foreground disabled:opacity-50 disabled:cursor-not-allowed"
+            className="rounded-full size-10 border bg-[var(--primary-accent)]  shrink-0 transition-transform active:scale-95 flex items-center justify-center text-[var(--button-text-color)] disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <SendIcon className="w-4 h-4" />
+            <SendIcon className="w-4 h-4 text-[var(--button-text-color)]" />
           </button>
         </div>
       </div>

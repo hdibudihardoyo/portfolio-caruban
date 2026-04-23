@@ -238,7 +238,7 @@ export const services: ServiceItem[] = [
 export const teams = [
   {
     role: "BackEndDeveloper",
-    name: "HARIS GUNAWAN R",
+    name: "HARIS GUNAWAN ROMADON",
     image: "/haris.png",
     socials: [
       { icon: faInstagram, link: "https://www.instagram.com/harisgunawanr_" },

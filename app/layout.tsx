@@ -32,9 +32,18 @@ export default async function RootLayout({
     .default;
 
   return (
-    <html lang={locale} className={`${poppins.variable} h-full scroll-smooth`}>
+    <html
+      lang={locale}
+      className={`${poppins.variable} h-full scroll-smooth`}
+      suppressHydrationWarning
+    >
       <body className="min-h-full flex flex-col">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          storageKey="theme"
+        >
           <NextIntlClientProvider locale={locale} messages={messages}>
             <ChatbotProvider>
               <Navbar />
