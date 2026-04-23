@@ -148,8 +148,8 @@
   },
   "Team": {
     "Title": "Meet Our Developer Team",
-    "BackEndDeveloper": "Back-End Developer",
-    "FrontEndDeveloper": "Front-End Developer",
+    "BackEndDeveloper": "Back-End Dev",
+    "FrontEndDeveloper": "Front-End Dev",
     "UIUXDesigner": "UI/UX Designer"
   },
   "TechStack": {

@@ -44,7 +44,7 @@ export default function TeamSection() {
                 <p className="text-left text-xs font-bold uppercase tracking-widest text-[var(--color-primary)]">
                   {t(item.role)}
                 </p>
-                <p className="text-xs sm:text-sm font-bold tracking-tight uppercase text-[var(--color-primary)]">
+                <p className="text-xs  tracking-tight uppercase text-[var(--color-primary)]">
                   {item.name}
                 </p>
               </div>

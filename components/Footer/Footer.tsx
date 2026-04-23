@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
               <Image
-                src="/icon-caruban.png"
+                src="/icon.jpeg"
                 alt="Logo Caruban Tech"
                 width={32}
                 height={32}

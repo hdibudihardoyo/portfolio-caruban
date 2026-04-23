@@ -47,12 +47,12 @@ export default function Navbar() {
             onClick={() => setActive("Beranda")}
             className="flex items-center gap-2.5 group cursor-pointer shrink-0"
           >
-            <div className="relative flex items-center justify-center w-8 h-8 rounded-xl bg-[var(--primary-accent)]/10  transition-all duration-300">
+            <div className="relative flex items-center justify-center w-8 h-8">
               <Image
-                src="/icon-caruban.png"
+                src="/icon.jpeg"
                 alt="Logo"
-                width={22}
-                height={22}
+                width={25}
+                height={25}
                 className="transition-transform duration-500 group-hover:rotate-12"
                 priority
               />
