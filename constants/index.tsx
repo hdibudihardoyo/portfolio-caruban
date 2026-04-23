@@ -138,7 +138,7 @@ export const berbayarPlans: PricingPlan[] = [
   },
   {
     title: "Paid.CustomApp.Title",
-    price: "Mulai Rp 5jt",
+    price: "Rp 5.000.000",
     desc: "Paid.CustomApp.Description",
     features: [
       "Paid.CustomApp.Feature1",

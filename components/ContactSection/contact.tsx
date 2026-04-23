@@ -7,9 +7,19 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslations } from "next-intl";
 import { socialMedia, contactConfig } from "@/constants";
+import { useContact } from "@/hooks/useContact";
 
 export default function Contact() {
   const t = useTranslations("Contact");
+  const {
+    formData,
+    loading,
+    status,
+    errorMessage,
+    handleInputChange,
+    handleSendEmail,
+    handleWhatsAppChat,
+  } = useContact();
   return (
     <section
       id="contact"
@@ -33,43 +43,79 @@ export default function Contact() {
         <div className="flex flex-col md:flex-row items-start gap-8 md:gap-6">
           {/* Left Form */}
           <div className="w-full md:w-3/5">
-            <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <form
+              onSubmit={handleSendEmail}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            >
               <div className="flex flex-col gap-2">
                 <input
                   type="text"
+                  name="firstName"
                   placeholder={t("FirstName")}
+                  value={formData.firstName}
+                  onChange={handleInputChange}
                   className="text-[var(--color-primary)] w-full px-5 py-3 rounded-2xl border border-[var(--primary-accent)] bg-[var(--color-primary)]/10 text-sm focus:outline-none transition-all placeholder:text-[var(--primary-accent)]"
                 />
               </div>
               <div className="flex flex-col gap-2">
                 <input
                   type="text"
+                  name="lastName"
                   placeholder={t("LastName")}
+                  value={formData.lastName}
+                  onChange={handleInputChange}
                   className="text-[var(--color-primary)] w-full px-5 py-3 rounded-2xl border border-[var(--primary-accent)] bg-[var(--color-primary)]/10 text-sm focus:outline-none focus:border-[var(--primary-accent)] transition-all placeholder:text-[var(--primary-accent)]"
                 />
               </div>
               <div className="sm:col-span-2">
                 <input
                   type="email"
+                  name="email"
                   placeholder={t("Email")}
+                  value={formData.email}
+                  onChange={handleInputChange}
                   className="text-[var(--color-primary)] w-full px-5 py-3 rounded-2xl border border-[var(--primary-accent)] bg-[var(--color-primary)]/10 text-sm focus:outline-none focus:border-[var(--primary-accent)] transition-all placeholder:text-[var(--primary-accent)]"
                 />
               </div>
               <div className="sm:col-span-2">
                 <textarea
+                  name="message"
                   placeholder={t("Message")}
+                  value={formData.message}
+                  onChange={handleInputChange}
                   rows={5}
                   className="text-[var(--color-primary)] w-full px-5 py-4 rounded-[2rem] border border-[var(--primary-accent)] bg-[var(--color-primary)]/10 text-sm focus:outline-none focus:border-[var(--primary-accent)] transition-all resize-none placeholder:text-[var(--primary-accent)]"
                 ></textarea>
               </div>
 
+              {/* Status Message */}
+              {status === "success" && (
+                <div className="sm:col-span-2 p-3 bg-green-500/20 border border-green-500 rounded-xl text-green-700 text-sm">
+                  ✓ Pesan terkirim! Kami akan segera menghubungi Anda.
+                </div>
+              )}
+              {status === "error" && (
+                <div className="sm:col-span-2 p-3 bg-red-500/20 border border-red-500 rounded-xl text-red-700 text-sm">
+                  ✕ {errorMessage}
+                </div>
+              )}
+
               {/* Buttons Group */}
               <div className="sm:col-span-2 flex flex-col sm:flex-row gap-4 mt-2">
-                <button className="flex-1 bg-[var(--primary-accent)] text-[var(--color-primary)] py-4 rounded-full font-bold text-[11px] uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all active:scale-95 shadow-lg shadow-black/5 cursor-pointer">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="flex-1 bg-[var(--primary-accent)] text-[var(--color-primary)] py-4 rounded-full font-bold text-[11px] uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all active:scale-95 shadow-lg shadow-black/5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                >
                   <Mail className="w-4 h-4" />
-                  {t("SendEmail")}
+                  {loading ? "Mengirim..." : t("SendEmail")}
                 </button>
-                <button className="flex-1 bg-[var(--color-primary)]/10 text-[var(--primary-accent)] border border-var[--color-primary] py-4 rounded-full font-bold text-[11px] uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all active:scale-95 shadow-lg cursor-pointer">
+                <button
+                  type="button"
+                  onClick={handleWhatsAppChat}
+                  disabled={loading}
+                  className="flex-1 bg-[var(--primary-accent)] text-[var(--color-primary)] py-4 rounded-full font-bold text-[11px] uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all active:scale-95 shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                >
                   <MessageCircle className="w-4 h-4" />
                   {t("WhatsAppChat")}
                 </button>

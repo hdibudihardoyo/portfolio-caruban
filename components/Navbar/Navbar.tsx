@@ -143,9 +143,6 @@ export default function Navbar() {
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 className="absolute inset-x-0 top-full mt-3 rounded-3xl border border-[var(--primary-accent)]/20 bg-[var(--color-secondary)]/95 p-4 shadow-2xl shadow-black/20 backdrop-blur-xl lg:hidden overflow-hidden"
               >
-                {/* Top gradient line */}
-                <div className="absolute inset-x-8 top-0 h-px bg-[var(--primary-accent)]" />
-
                 <ul className="flex flex-col gap-1 text-sm font-bold uppercase tracking-wider text-[var(--color-tertiary)]">
                   {navLinks.map((item, i) => (
                     <motion.li
@@ -159,8 +156,8 @@ export default function Navbar() {
                         onClick={() => handleNavClick(item.key)}
                         className={`flex items-center gap-2 rounded-2xl px-4 py-3 transition-all duration-200 ${
                           active === item.key
-                            ? "text-[var(--color-primary)] shadow-sm shadow-[var(--primary-accent)]/30"
-                            : "hover:bg-[var(--primary-accent)]/10 hover:text-[var(--primary-accent)]"
+                            ? "text-[var(--color-primary)] bg-[var(--primary-accent)]"
+                            : "hover:bg-[var(--primary-accent)] hover:text-[var(--color-primary)]"
                         }`}
                       >
                         {active === item.key && (
@@ -176,7 +173,7 @@ export default function Navbar() {
                   <Link
                     href="/contact"
                     onClick={() => handleNavClick("Kontak")}
-                    className="inline-flex items-center justify-center rounded-2xl text-[var(--color-primary)] bg-gradient-to-r from-[#1B9D77] to-[#F9CD19] py-3 px-4 text-center text-xs font-black uppercase tracking-widest shadow-md hover:shadow-lg transition-all active:scale-95"
+                    className="inline-flex items-center justify-center rounded-2xl text-[var(--color-primary)] bg-[var(--primary-accent)] px-4 py-3 text-sm font-bold uppercase tracking-wide shadow-sm  transition-all hover:scale-105 active:scale-95] "
                   >
                     {t("Button")}
                   </Link>
