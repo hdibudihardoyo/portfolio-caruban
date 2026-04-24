@@ -5,9 +5,9 @@
 [data-theme="light"],
 .light {
   /* Background Colors */
-  --main-background: #e5e5e5;
-  --secondary-background: #f5f5f5;
-  --tertiary-background: #efefef;
+  --main-background: #eeeeee;
+  --secondary-background: #e5e5e5;
+  --tertiary-background: #ffffff;
 
   /* Brand Colors */
   --primary-accent: #285a48;
@@ -17,7 +17,7 @@
   --color-primary: #1a1a1a;
   --color-secondary: #4a4a4a;
   --color-tertiary: #000000;
-  --color-muted: #7a7a7a;
+  --color-muted: #000000;
   --color-muted-2: #a0a0a0;
 
   /* UI Colors */
@@ -26,10 +26,10 @@
 
   /* Card Colors */
   --card-bg: #ffffff;
-  --card-border: #000;
+  --card-border: #242628;
 
   /* Button Colors */
-  --button-text-color: #ffffff;
+  --button-text-color: #e7e9ea;
   --button-hover-text-color: #ffffff;
 }
 
@@ -37,9 +37,9 @@
 [data-theme="dark"],
 .dark {
   /* Background Colors */
-  --main-background: #000000;
+  --main-background: #111111;
   --secondary-background: #0f2420;
-  --tertiary-background: #143d34;
+  --tertiary-background: #000000;
 
   /* Brand Colors */
   --primary-accent: #285a48;
@@ -49,7 +49,7 @@
   --color-primary: #ffffff;
   --color-secondary: #d9d9d9;
   --color-tertiary: #e0e0e0;
-  --color-muted: #a0a0a0;
+  --color-muted: #ffffff;
   --color-muted-2: #707070;
 
   /* UI Colors */
@@ -57,8 +57,8 @@
   --hover-background: #1a3a2f;
 
   /* Card Colors */
-  --card-bg: rgba(26, 26, 26, 0.8);
-  --card-border: #ffffff;
+  --card-bg: #17181c;
+  --card-border: #242628;
 
   /* Button Colors */
   --button-text-color: #ffffff;
