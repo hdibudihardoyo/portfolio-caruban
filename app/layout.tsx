@@ -5,9 +5,9 @@ import { NextIntlClientProvider } from "next-intl";
 import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import AiChatbotFloating from "@/components/AiChatbotFloating";
+import AiChatbotFloating from "@/components/AIChatbot/AiChatbotFloating";
 import "./globals.css";
-import { ChatbotProvider } from "@/components/AiChatbotContext";
+import { ChatbotProvider } from "@/components/AIChatbot/AiChatbotContext";
 
 const poppins = Poppins({
   variable: "--font-poppins",

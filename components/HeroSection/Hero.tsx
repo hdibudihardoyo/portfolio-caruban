@@ -5,7 +5,7 @@ import { motion, Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { useChatbotContext } from "../AiChatbotContext";
+import { useChatbotContext } from "../AIChatbot/AiChatbotContext";
 import { useState } from "react";
 
 export default function HeroSection() {

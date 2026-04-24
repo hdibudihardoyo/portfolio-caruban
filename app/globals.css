@@ -24,11 +24,9 @@
   --border-color: #e0e0e0;
   --hover-background: #f0f0f0;
 
-  /* Component Colors */
-  --surface-bg: rgba(255, 255, 255, 0.94);
-  --surface-border: rgba(209, 207, 199, 0.8);
-  --hero-panel-bg: rgba(255, 255, 255, 0.95);
-  --hero-panel-border: rgba(209, 207, 199, 0.8);
+  /* Card Colors */
+  --card-bg: #ffffff;
+  --card-border: #000;
 
   /* Button Colors */
   --button-text-color: #ffffff;
@@ -58,11 +56,9 @@
   --border-color: #1f4d3f;
   --hover-background: #1a3a2f;
 
-  /* Component Colors */
-  --surface-bg: rgba(15, 36, 32, 0.94);
-  --surface-border: rgba(42, 157, 109, 0.2);
-  --hero-panel-bg: rgba(9, 20, 19, 0.95);
-  --hero-panel-border: rgba(42, 157, 109, 0.3);
+  /* Card Colors */
+  --card-bg: #1a1a1a1a;
+  --card-border: #ffffff;
 
   /* Button Colors */
   --button-text-color: #ffffff;
