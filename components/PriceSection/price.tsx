@@ -57,7 +57,7 @@ export default function PriceSection() {
           {plans.map((plan, i) => (
             <div
               key={i}
-              className="relative flex flex-col surface p-6 transition-all duration-500 hover:-translate-y-1"
+              className="relative flex flex-col rounded-2xl bg-[var(--color-primary)]/10 border border-[var(--color-primary)] p-6 transition-all duration-500 hover:-translate-y-1"
             >
               <span className="text-xs md:text-sm uppercase font-black text-[var(--primary-accent)] mb-3">
                 {t(plan.title)}
