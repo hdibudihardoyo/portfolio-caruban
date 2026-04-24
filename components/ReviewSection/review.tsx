@@ -59,7 +59,7 @@ export default function SectionReview() {
                   key={i}
                   whileHover={{ y: -5 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className="min-w-[280px] md:min-w-[320px] bg-[var(--surface-bg)] border border-[var(--surface-border)] rounded-[2rem] p-6 shadow-sm relative snap-center"
+                  className="min-w-[280px] md:min-w-[320px] bg-[var(--color-primary)]/10 border-[var(--color-primary)] rounded-[2rem] p-6 shadow-sm relative snap-center"
                 >
                   <div className="flex flex-col items-center justify-center gap-3">
                     <div>
