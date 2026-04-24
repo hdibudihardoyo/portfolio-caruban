@@ -28,7 +28,7 @@ export default function ServiceSection() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="surface group relative overflow-hidden p-4 flex flex-col gap-4 h-full hover:-translate-y-1 bg-[var(--color-primary)]/10 border-[var(--color-primary)] transition-all duration-300 rounded-2xl"
+                className="surface group relative overflow-hidden p-4 flex flex-col gap-4 h-full hover:-translate-y-1 bg-[var(--card-bg)] border-[var(--card-border)] transition-all duration-300 rounded-2xl"
               >
                 {/* Card image */}
                 <div className="relative h-44 sm:h-40 md:h-36 overflow-hidden rounded-2xl">

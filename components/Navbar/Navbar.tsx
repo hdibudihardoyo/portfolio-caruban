@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import ToogleTheme from "@/components/ToogleTheme/ToogleTheme";
-import LanguageToggle from "@/components/toggle-languange/ToggleLanguange";
+import LanguageToggle from "@/components/ToggleLanguange/ToggleLanguange";
 import { navLinks } from "@/constants";
 import { useNavbar } from "@/hooks/useNavbar";
 
