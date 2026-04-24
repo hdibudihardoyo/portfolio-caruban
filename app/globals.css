@@ -57,7 +57,7 @@
   --hover-background: #1a3a2f;
 
   /* Card Colors */
-  --card-bg: #1a1a1a1a;
+  --card-bg: rgba(26, 26, 26, 0.8);
   --card-border: #ffffff;
 
   /* Button Colors */

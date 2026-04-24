@@ -54,7 +54,7 @@ export default function Contact() {
                   placeholder={t("FirstName")}
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  className="text-[var(--color-primary)] w-full px-5 py-3 rounded-2xl border border-[var(--primary-accent)] bg-[var(--color-primary)]/10 text-sm focus:outline-none transition-all placeholder:text-[var(--primary-accent)]"
+                  className="text-[var(--color-primary)] w-full px-5 py-3 rounded-2xl border border-[var(--primary-accent)] bg-[var(--card-bg)] text-sm focus:outline-none transition-all placeholder:text-[var(--primary-accent)]"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -64,7 +64,7 @@ export default function Contact() {
                   placeholder={t("LastName")}
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  className="text-[var(--color-primary)] w-full px-5 py-3 rounded-2xl border border-[var(--primary-accent)] bg-[var(--color-primary)]/10 text-sm focus:outline-none focus:border-[var(--primary-accent)] transition-all placeholder:text-[var(--primary-accent)]"
+                  className="text-[var(--color-primary)] w-full px-5 py-3 rounded-2xl border border-[var(--primary-accent)] bg-[var(--card-bg)] text-sm focus:outline-none focus:border-[var(--primary-accent)] transition-all placeholder:text-[var(--primary-accent)]"
                 />
               </div>
               <div className="sm:col-span-2">
@@ -74,7 +74,7 @@ export default function Contact() {
                   placeholder={t("Email")}
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="text-[var(--color-primary)] w-full px-5 py-3 rounded-2xl border border-[var(--primary-accent)] bg-[var(--color-primary)]/10 text-sm focus:outline-none focus:border-[var(--primary-accent)] transition-all placeholder:text-[var(--primary-accent)]"
+                  className="text-[var(--color-primary)] w-full px-5 py-3 rounded-2xl border border-[var(--primary-accent)] bg-[var(--card-bg)] text-sm focus:outline-none focus:border-[var(--primary-accent)] transition-all placeholder:text-[var(--primary-accent)]"
                 />
               </div>
               <div className="sm:col-span-2">
@@ -84,7 +84,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={5}
-                  className="text-[var(--color-primary)] w-full px-5 py-4 rounded-[2rem] border border-[var(--primary-accent)] bg-[var(--color-primary)]/10 text-sm focus:outline-none focus:border-[var(--primary-accent)] transition-all resize-none placeholder:text-[var(--primary-accent)]"
+                  className="text-[var(--color-primary)] w-full px-5 py-4 rounded-[2rem] border border-[var(--primary-accent)] bg-[var(--card-bg)] text-sm focus:outline-none focus:border-[var(--primary-accent)] transition-all resize-none placeholder:text-[var(--primary-accent)]"
                 ></textarea>
               </div>
 

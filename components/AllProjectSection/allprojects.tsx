@@ -29,7 +29,7 @@ export default function AllProjects() {
           </div>
 
           <div className="hidden md:flex">
-            <span className="px-3 py-2 bg-[var(--primary-accent)] border border-[var(--button-text-color)] rounded-full text-xs font-bold uppercase tracking-widest text-[var(--button-text-color)]">
+            <span className="px-3 py-2 bg-[var(--card-bg)] border border-[var(--card-border)] rounded-full text-xs font-bold text-[var(--color-primary)]">
               {t("TotalProjects", { count: allProjects.length })}
             </span>
           </div>
@@ -43,7 +43,7 @@ export default function AllProjects() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="group flex flex-col border border-[var(--color-primary)] rounded-2xl overflow-hidden hover:border-[var(--color-secondary)] transition-all duration-500 hover:shadow-2xl"
+              className="group flex flex-col bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl"
             >
               {/* Image Preview */}
               <div className="relative h-52 w-full overflow-hidden">
@@ -53,10 +53,10 @@ export default function AllProjects() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-[var(--brand-dark)]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 backdrop-blur-[2px]">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 backdrop-blur-[2px]">
                   <Link
                     href={project.link}
-                    className="p-3 bg-[var(--button-text-color)] rounded-xl hover:bg-[var(--primary-accent)] hover:text-[var(--button-text-color)] transition-all shadow-xl"
+                    className="p-3 bg-[var(--primary-accent)] rounded-xl shadow-xl"
                   >
                     <ExternalLink size={18} />
                   </Link>
