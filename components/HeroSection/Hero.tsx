@@ -6,11 +6,11 @@ import { useTranslations } from "next-intl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { useChatbotContext } from "../AiChatbotContext";
-import { use, useState } from "react";
+import { useState } from "react";
 
 export default function HeroSection() {
   const t = useTranslations("Hero");
-  const T = useTranslations("AiChatbot");
+  const T = useTranslations("AIChatbot");
   const { setIsOpen } = useChatbotContext();
   const [showNotif, setShowNotif] = useState(true);
 
@@ -114,7 +114,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 10, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.9 }}
-            className="bg-primary text-white text-xs px-3 py-1.5 rounded-full shadow-lg backdrop-blur-md border border-white/10"
+            className="bg-[var(--primary-accent)] text-[var(--button-text-color)] text-xs px-3 py-1.5 rounded-full border border-[var(--color-muted)]/20 flex items-center gap-1.5"
           >
             💬 {T("Bagde")}
           </motion.div>
@@ -128,9 +128,6 @@ export default function HeroSection() {
           }}
           className="relative group cursor-pointer"
         >
-          {/* Glow Effect */}
-          <span className="absolute inset-0 rounded-full bg-[var(--primary-accent)]/50 blur-xl opacity-70 group-hover:opacity-100 transition duration-300"></span>
-
           {/* Pulse Ring */}
           <span className="absolute inset-0 rounded-full border border-[var(--primary-accent)] opacity-75 animate-ping"></span>
 
@@ -140,12 +137,12 @@ export default function HeroSection() {
             alt="AI Chatbot Icon"
             width={80}
             height={80}
-            className="relative rounded-full shadow-2xl transition-transform duration-300 group-hover:scale-110 group-active:scale-95"
+            className="relative rounded-full shadow-xl transition-transform duration-300 group-hover:scale-110 group-active:scale-95"
           />
 
           {/* Notification Badge */}
           {showNotif && (
-            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full w-5 h-5 flex items-center justify-center font-semibold shadow-md">
+            <span className="absolute -top-1 -right-1 bg-red-500 text-[var(--button-text-color)] text-[10px] rounded-full w-5 h-5 flex items-center justify-center font-semibold shadow-md">
               1
             </span>
           )}

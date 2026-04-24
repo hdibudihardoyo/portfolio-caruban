@@ -37,7 +37,7 @@ const AiAssistant = () => {
     e.target.style.height = `${e.target.scrollHeight}px`;
   };
 
-  const t = useTranslations("AiChatbot");
+  const t = useTranslations("AIChatbot");
 
   return (
     <div className="flex flex-col h-full w-full bg-transparent overflow-hidden">
@@ -117,7 +117,7 @@ const AiAssistant = () => {
               <button
                 key={text}
                 onClick={() => sendMessage(text)}
-                className="cursor-pointer bg-[var(--secondary-background)] text-[var(--button-text-color)] hover:bg-[var(--primary-accent)]/20 transition-all py-1 px-3 rounded-full text-[11px] font-normal border border-[var(--border-color)]"
+                className="cursor-pointer  border border-[var(--border-color)] bg-[var(--main-background)] text-[var(--color-primary)] transition-all py-1 px-3 rounded-full text-[10px] font-normal"
               >
                 {text}
               </button>
