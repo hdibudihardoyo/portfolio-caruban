@@ -1,4 +1,3 @@
-/** Data form kontak */
 export interface ContactFormData {
   firstName: string;
   lastName: string;
@@ -6,10 +5,8 @@ export interface ContactFormData {
   message: string;
 }
 
-/** Status pengiriman form */
 export type ContactStatus = "idle" | "success" | "error";
 
-/** Return type dari hook useContact */
 export interface UseContactReturn {
   formData: ContactFormData;
   loading: boolean;

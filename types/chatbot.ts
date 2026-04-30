@@ -1,6 +1,5 @@
 import type { IMessage } from "./AiChatbot";
 
-/** Context type untuk ChatbotProvider */
 export interface ChatbotContextType {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;

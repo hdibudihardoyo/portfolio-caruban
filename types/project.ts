@@ -1,4 +1,3 @@
-/** Featured project (ditampilkan di halaman home) */
 export interface FeaturedProject {
   id: string;
   title: string;
@@ -8,7 +7,6 @@ export interface FeaturedProject {
   imageLeft: boolean;
 }
 
-/** Project item di halaman /projects (semua proyek) */
 export interface ProjectItem {
   title: string;
   category: string;

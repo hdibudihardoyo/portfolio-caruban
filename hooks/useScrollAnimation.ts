@@ -19,13 +19,12 @@ export function getScrollVariants(
       ...(axis === "x" ? { x: 0 } : { y: 0 }),
       transition: {
         duration,
-        ease: [0.16, 1, 0.3, 1], // expo-out — sangat smooth & natural
+        ease: [0.16, 1, 0.3, 1],
       },
     },
   };
 }
 
-/** Container variant — stagger children otomatis */
 export function getStaggerVariants(staggerDelay = 0.1): Variants {
   return {
     hidden: {},
@@ -38,5 +37,4 @@ export function getStaggerVariants(staggerDelay = 0.1): Variants {
   };
 }
 
-/** Shared viewport options — animate once when 12% of element is visible */
 export const scrollViewport = { once: true, amount: 0.12 } as const;

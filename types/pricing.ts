@@ -1,5 +1,3 @@
-/** Types untuk section Pricing / Harga */
-
 export interface PricingPlan {
   title: string;
   price: string;
