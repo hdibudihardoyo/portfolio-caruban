@@ -4,7 +4,7 @@ import ProjectSection from "@/components/ProjectSection/project";
 import FaqSection from "@/components/FaqSection/faq";
 import PriceSection from "@/components/PriceSection/price";
 import ReviewSection from "@/components/ReviewSection/review";
-import TeamSection from "@/components/TeamSection/team";
+import ProcessSection from "@/components/ProcessSection/process";
 import TechStackSection from "@/components/TechStackSection/TechStackSection";
 
 export default function HomePage() {
@@ -14,7 +14,7 @@ export default function HomePage() {
       <TechStackSection />
       <ServiceSection />
       <ProjectSection />
-      <TeamSection />
+      <ProcessSection />
       <FaqSection />
       <ReviewSection />
       <PriceSection />

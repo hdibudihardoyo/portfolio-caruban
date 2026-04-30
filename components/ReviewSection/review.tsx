@@ -1,11 +1,20 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useRef } from "react";
 import { reviews } from "@/constants";
+
+// Warna avatar berbeda untuk setiap huruf inisial
+const avatarColors = [
+  "bg-violet-500",
+  "bg-sky-500",
+  "bg-emerald-500",
+  "bg-amber-500",
+  "bg-rose-500",
+  "bg-indigo-500",
+];
 
 export default function SectionReview() {
   const t = useTranslations("Review");
@@ -54,38 +63,60 @@ export default function SectionReview() {
             className="overflow-x-auto overflow-y-hidden scrollbar-hide px-4 snap-x snap-mandatory"
           >
             <div className="flex gap-6 pb-6">
-              {reviews.map((item, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ y: -5 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className="min-w-[280px] md:min-w-[320px] bg-[var(--card-bg)] rounded-[2rem] p-6 shadow-sm relative snap-center"
-                >
-                  <div className="flex flex-col items-center justify-center gap-3">
-                    <div>
-                      <p className="text-xs md:text-sm italic opacity-70 mb-8 leading-relaxed relative z-10 font-medium text-[var(--color-tertiary)]">
-                        “{t(item.text)}”
-                      </p>
+              {reviews.map((item, i) => {
+                const initial = item.name.charAt(0).toUpperCase();
+                const colorClass = avatarColors[i % avatarColors.length];
+                return (
+                  <motion.div
+                    key={i}
+                    whileHover={{ y: -6, scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                    className="min-w-[280px] md:min-w-[320px] bg-[var(--card-bg)] rounded-[2rem] p-6 shadow-sm relative snap-center flex flex-col gap-4 border border-[var(--color-muted)]/20"
+                  >
+                    {/* Stars — filled + empty untuk yang tidak penuh */}
+                    <div className="flex gap-0.5">
+                      {Array.from({ length: 5 }).map((_, si) => (
+                        <Star
+                          key={si}
+                          className={`w-4 h-4 ${
+                            si < item.rating
+                              ? "fill-yellow-400 text-yellow-400"
+                              : "fill-transparent text-[var(--color-muted)]/40"
+                          }`}
+                        />
+                      ))}
                     </div>
 
-                    <div className="w-10 h-10 bg-[var(--color-primary)]/10 text-[var(--color-tertiary)] rounded-full flex items-center justify-center text-xs md:text-sm font-black">
-                      <Image
-                        src="/dama.png"
-                        alt={item.name}
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                      />
-                    </div>
+                    {/* Quote */}
+                    <p className="text-xs md:text-sm italic opacity-80 leading-relaxed font-medium text-[var(--color-tertiary)] flex-1">
+                      &ldquo;{t(item.text)}&rdquo;
+                    </p>
 
-                    <div>
-                      <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-[var(--color-tertiary)]">
-                        {item.name}
-                      </p>
+                    {/* Divider */}
+                    <div className="h-px bg-[var(--color-muted)]/20 w-full" />
+
+                    {/* Reviewer Info */}
+                    <div className="flex items-center gap-3">
+                      {/* Avatar Inisial */}
+                      <div
+                        className={`w-11 h-11 rounded-full flex-shrink-0 flex items-center justify-center ${colorClass} ring-2 ring-white/10`}
+                      >
+                        <span className="text-white text-base font-black leading-none">
+                          {initial}
+                        </span>
+                      </div>
+                      <div className="flex flex-col">
+                        <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-[var(--color-tertiary)]">
+                          {item.name}
+                        </p>
+                        <p className="text-[10px] text-[var(--color-muted)] font-medium tracking-wide">
+                          {t(item.role)}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
 

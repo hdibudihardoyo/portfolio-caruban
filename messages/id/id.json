@@ -104,29 +104,29 @@
     "Paid": {
       "BusinessWebsite": {
         "Title": "Business Website",
-        "Description": "Website profesional dengan fitur lengkap dan desain custom.",
-        "Feature1": "Website multi halaman",
-        "Feature2": "Desain custom",
-        "Feature3": "SEO dasar",
-        "Feature4": "Support 3 bulan",
+        "Description": "Website profesional multi-halaman dengan desain custom, struktur siap SEO, dan dukungan teknis 3 bulan pasca-rilis.",
+        "Feature1": "Hingga 10 halaman custom",
+        "Feature2": "Responsif & dioptimalkan SEO",
+        "Feature3": "CMS / manajemen konten",
+        "Feature4": "Support teknis 3 bulan",
         "Button": "Pesan Sekarang"
       },
       "ECommerce": {
         "Title": "E-Commerce",
-        "Description": "Toko online dengan pembayaran otomatis dan fitur admin.",
-        "Feature1": "Keranjang & checkout",
-        "Feature2": "Payment gateway",
-        "Feature3": "Dashboard admin",
-        "Feature4": "Manajemen produk",
+        "Description": "Toko online lengkap dengan payment gateway, manajemen pesanan, dan dashboard admin yang dedicated.",
+        "Feature1": "Katalog produk & keranjang",
+        "Feature2": "Integrasi payment gateway",
+        "Feature3": "Dashboard admin & analitik",
+        "Feature4": "Support teknis 6 bulan",
         "Button": "Pesan Sekarang"
       },
       "CustomApp": {
         "Title": "Custom App",
-        "Description": "Aplikasi web khusus sesuai kebutuhan logika bisnis Anda.",
-        "Feature1": "Logika custom penuh",
-        "Feature2": "Integrasi API",
-        "Feature3": "Sistem skala",
-        "Feature4": "Maintenance premium",
+        "Description": "Aplikasi web enterprise yang dibangun sesuai spesifikasi Anda dengan arsitektur scalable dan dukungan premium setahun penuh.",
+        "Feature1": "Logika bisnis sepenuhnya custom",
+        "Feature2": "REST API & integrasi pihak ketiga",
+        "Feature3": "Arsitektur cloud-ready yang scalable",
+        "Feature4": "Maintenance premium 12 bulan",
         "Button": "Konsultasi Gratis"
       }
     }
@@ -134,18 +134,41 @@
   "Review": {
     "Title": "Apa Kata Mereka?",
     "Hint": "← Geser untuk melihat →",
-    "Testimonial1": "Websitenya keren parah, gue suka banget sama desainnya! Worth it lah pokoknya",
-    "Testimonial2": "Timnya asik-asik, ga ribet, langsung ngerti maunya kita. Hasilnya juga mantap!",
-    "Testimonial3": "Revisinya sabar banget ngeladenin request gue yang banyak. Makasih ya",
-    "Testimonial4": "Pelayanan cepat dan hasil sesuai ekspektasi, recommended banget!",
-    "Testimonial5": "Desainnya bener-bener mencerminkan identitas brand kami. Caruban Tech emang juara!",
-    "Testimonial6": "Kodingannya rapi, performa web kencang banget. Puas banget sama hasilnya."
+    "Testimonial1": "Websitenya keren banget, desainnya melampaui ekspektasi gue! Sangat worth it dan pasti bakal rekomendasiin ke orang lain.",
+    "Testimonial2": "Hasilnya bagus dan timnya cukup responsif. Cuma beberapa revisi di akhir agak molor dari jadwal, tapi overall kami puas sama hasilnya.",
+    "Testimonial3": "Desainnya lumayan, tapi komunikasinya bisa lebih baik lagi. Pengiriman sempat telat dan ada beberapa fitur yang tidak sesuai diskusi awal. Semoga ke depannya lebih baik.",
+    "Testimonial4": "Kerjaannya luar biasa dari awal sampai selesai! Cepat, kodenya rapi, dan hasilnya persis seperti yang kami bayangkan. Pasti bakal kerja sama lagi!",
+    "Testimonial5": "Desainnya beneran mencerminkan identitas brand kami. Pengalamannya menyenangkan, walau proses revisi bisa lebih terstruktur. Secara keseluruhan puas.",
+    "Testimonial6": "Websitenya berjalan dengan baik, tapi ada beberapa bug pasca-rilis yang cukup lama diperbaiki. Pengalaman rata-rata proses QA-nya perlu ditingkatkan.",
+    "ReviewRole1": "Pemilik UMKM · Cirebon",
+    "ReviewRole2": "Pendiri Startup · Jakarta",
+    "ReviewRole3": "Desainer Lepas · Bandung",
+    "ReviewRole4": "Penjual E-Commerce · Surabaya",
+    "ReviewRole5": "Organisator Non-Profit · Yogyakarta",
+    "ReviewRole6": "Penggemar Teknologi · Semarang"
   },
   "Team": {
     "Title": "Informasi Tim Developer",
     "BackEndDeveloper": "Back-End Developer",
     "FrontEndDeveloper": "Front-End Developer",
     "UIUXDesigner": "UI/UX Designer"
+  },
+  "Process": {
+    "Title": "Cara Kerja Kami",
+    "Description": "Alur kerja terstruktur kami memastikan setiap proyek selesai tepat waktu, sesuai anggaran, dan melampaui ekspektasi.",
+    "Step": "Langkah",
+    "Step1Title": "Konsultasi",
+    "Step1Desc": "Kami memulai dengan sesi diskusi mendalam untuk memahami tujuan, target pengguna, dan kebutuhan teknis proyek Anda.",
+    "Step2Title": "Perencanaan & Analisis",
+    "Step2Desc": "Kami mendefinisikan ruang lingkup, membuat roadmap proyek, dan menetapkan deliverable dengan jadwal yang jelas.",
+    "Step3Title": "Desain UI/UX",
+    "Step3Desc": "Tim desainer kami membuat wireframe dan mockup hi-fi, beriterasi hingga tampilan dan nuansanya sempurna.",
+    "Step4Title": "Pengembangan",
+    "Step4Desc": "Tim engineer kami membangun produk Anda menggunakan tech stack modern dengan kode yang bersih, skalabel, dan mudah dikelola.",
+    "Step5Title": "Pengujian & QA",
+    "Step5Desc": "Setiap fitur diuji secara ketat di berbagai perangkat dan browser sebelum diluncurkan untuk memastikan nol bug kritis.",
+    "Step6Title": "Peluncuran & Dukungan",
+    "Step6Desc": "Kami meluncurkan proyek Anda dan menyediakan pemantauan pasca-peluncuran serta pemeliharaan berkelanjutan."
   },
   "TechStack": {
     "TitlePrefix": "Teknologi",

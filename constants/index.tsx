@@ -113,7 +113,7 @@ export const gratisPlans: PricingPlan[] = [
 export const berbayarPlans: PricingPlan[] = [
   {
     title: "Paid.BusinessWebsite.Title",
-    price: "Rp 1.500.000",
+    price: "Rp 3.500.000",
     desc: "Paid.BusinessWebsite.Description",
     features: [
       "Paid.BusinessWebsite.Feature1",
@@ -125,7 +125,7 @@ export const berbayarPlans: PricingPlan[] = [
   },
   {
     title: "Paid.ECommerce.Title",
-    price: "Rp 3.500.000",
+    price: "Rp 6.500.000",
     desc: "Paid.ECommerce.Description",
     features: [
       "Paid.ECommerce.Feature1",
@@ -138,7 +138,7 @@ export const berbayarPlans: PricingPlan[] = [
   },
   {
     title: "Paid.CustomApp.Title",
-    price: "Rp 5.000.000",
+    price: "Rp 9.500.000",
     desc: "Paid.CustomApp.Description",
     features: [
       "Paid.CustomApp.Feature1",
@@ -172,27 +172,39 @@ export const featuredProjects = [
 export const reviews = [
   {
     text: "Testimonial1",
-    name: "miyaa anifah",
+    name: "Miyaa Anifah",
+    role: "ReviewRole1",
+    rating: 5,
   },
   {
     text: "Testimonial2",
     name: "Rizky Pratama",
+    role: "ReviewRole2",
+    rating: 4,
   },
   {
     text: "Testimonial3",
     name: "Farhan Alif",
+    role: "ReviewRole3",
+    rating: 3,
   },
   {
     text: "Testimonial4",
     name: "Andi Saputra",
+    role: "ReviewRole4",
+    rating: 5,
   },
   {
     text: "Testimonial5",
     name: "Siti Aminah",
+    role: "ReviewRole5",
+    rating: 4,
   },
   {
     text: "Testimonial6",
     name: "Budi Santoso",
+    role: "ReviewRole6",
+    rating: 3,
   },
 ];
 

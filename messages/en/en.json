@@ -104,48 +104,71 @@
     "Paid": {
       "BusinessWebsite": {
         "Title": "Business Website",
-        "Description": "A professional website with full features and custom design.",
-        "Feature1": "Multi page website",
-        "Feature2": "Custom design",
-        "Feature3": "Basic SEO",
-        "Feature4": "3 months support",
+        "Description": "A professional multi-page website with custom design, SEO-ready structure, and 3 months of post-launch support.",
+        "Feature1": "Up to 10 custom pages",
+        "Feature2": "Responsive & SEO optimized",
+        "Feature3": "CMS / content management",
+        "Feature4": "3 months technical support",
         "Button": "Order Now"
       },
       "ECommerce": {
         "Title": "E-Commerce",
-        "Description": "An online store with automated payments and admin tools.",
-        "Feature1": "Cart & checkout",
-        "Feature2": "Payment gateway",
-        "Feature3": "Admin dashboard",
-        "Feature4": "Product management",
+        "Description": "A full-featured online store with payment gateway, order management, and dedicated admin dashboard.",
+        "Feature1": "Product catalog & cart",
+        "Feature2": "Payment gateway integration",
+        "Feature3": "Admin dashboard & analytics",
+        "Feature4": "6 months technical support",
         "Button": "Order Now"
       },
       "CustomApp": {
         "Title": "Custom App",
-        "Description": "A tailored web app built for your business logic and growth needs.",
-        "Feature1": "Full custom logic",
-        "Feature2": "API integration",
-        "Feature3": "Scalable system",
-        "Feature4": "Premium maintenance",
-        "Button": "Free consultation"
+        "Description": "Enterprise-grade custom web application built to your exact specifications with scalable architecture and premium support.",
+        "Feature1": "Fully custom business logic",
+        "Feature2": "REST API & third-party integration",
+        "Feature3": "Scalable cloud-ready architecture",
+        "Feature4": "12 months premium maintenance",
+        "Button": "Free Consultation"
       }
     }
   },
   "Review": {
     "Title": "What Clients Say?",
     "Hint": "← Swipe to view →",
-    "Testimonial1": "The website looks amazing, I really love the design! Totally worth it.",
-    "Testimonial2": "The team was easy to work with and understood exactly what we needed. Great result!",
-    "Testimonial3": "They were patient with revisions and handled my many requests professionally.",
-    "Testimonial4": "Fast delivery and the final result matched our expectations perfectly.",
-    "Testimonial5": "The design captured our brand identity beautifully. Caruban Tech is top-notch!",
-    "Testimonial6": "Clean code and fast performance. Very satisfied with the final website."
+    "Testimonial1": "The website looks absolutely amazing! The design exceeded all my expectations. Highly recommended, totally worth every penny.",
+    "Testimonial2": "Overall the result is good and the team was responsive. Just a few minor revisions at the end took a bit longer than expected, but we're happy with the outcome.",
+    "Testimonial3": "The design is decent, but communication could be improved. Delivery was a bit delayed and some features weren't exactly as discussed. Hopefully better next time.",
+    "Testimonial4": "Outstanding work from start to finish! Fast delivery, clean code, and the final product matched exactly what we envisioned. Will definitely work with them again.",
+    "Testimonial5": "The design really captures our brand identity. Great experience overall, though I wish the revision process was a bit clearer. Still satisfied with the result.",
+    "Testimonial6": "The website works fine, but there were a few bugs post-launch that took a while to fix. Average experience overall — room for improvement in QA process.",
+    "ReviewRole1": "UMKM Owner · Cirebon",
+    "ReviewRole2": "Startup Founder · Jakarta",
+    "ReviewRole3": "Freelance Designer · Bandung",
+    "ReviewRole4": "E-Commerce Seller · Surabaya",
+    "ReviewRole5": "Non-Profit Organizer · Yogyakarta",
+    "ReviewRole6": "Tech Enthusiast · Semarang"
   },
   "Team": {
     "Title": "Meet Our Developer Team",
     "BackEndDeveloper": "Back-End Dev",
     "FrontEndDeveloper": "Front-End Dev",
     "UIUXDesigner": "UI/UX Designer"
+  },
+  "Process": {
+    "Title": "How We Work",
+    "Description": "Our structured workflow ensures every project is delivered on time, on budget, and beyond expectations.",
+    "Step": "Step",
+    "Step1Title": "Consultation",
+    "Step1Desc": "We start with a deep-dive discovery call to understand your goals, target audience, and technical requirements.",
+    "Step2Title": "Planning & Analysis",
+    "Step2Desc": "We define scope, create a project roadmap, and outline deliverables with a clear timeline and milestones.",
+    "Step3Title": "UI/UX Design",
+    "Step3Desc": "Our designers craft wireframes and high-fidelity mockups, iterating until the look and feel is perfect.",
+    "Step4Title": "Development",
+    "Step4Desc": "Our engineers build your product using modern tech stacks with clean, scalable, and maintainable code.",
+    "Step5Title": "Testing & QA",
+    "Step5Desc": "Every feature is rigorously tested across devices and browsers before going live to ensure zero critical bugs.",
+    "Step6Title": "Launch & Support",
+    "Step6Desc": "We deploy your project and provide post-launch monitoring and ongoing maintenance to keep everything running smoothly."
   },
   "TechStack": {
     "TitlePrefix": "Technology",
