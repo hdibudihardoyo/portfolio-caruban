@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -70,11 +70,10 @@ export default function Navbar() {
                 <Link
                   href={item.id}
                   onClick={() => handleNavClick(item.key)}
-                  className={`relative flex items-center px-3 py-1.5 rounded-full transition-all duration-200 hover:text-[var(--primary-accent)] hover:bg-[var(--primary-accent)]/8 ${
-                    active === item.key
-                      ? "text-[var(--primary-accent)] "
-                      : "text-[var(--color-muted)]"
-                  }`}
+                  className={`relative flex items-center px-3 py-1.5 rounded-full transition-all duration-200 hover:text-[var(--primary-accent)] hover:bg-[var(--primary-accent)]/8 ${active === item.key
+                    ? "text-[var(--primary-accent)] "
+                    : "text-[var(--color-muted)]"
+                    }`}
                 >
                   {t(item.key)}
 
@@ -142,9 +141,9 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -8, scale: 0.98 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="absolute inset-x-0 top-full mt-3 rounded-3xl border border-[var(--primary-accent)]/20 bg-[var(--surface-bg)]/95 p-4 shadow-2xl shadow-[var(--color-tertiary)]/20 backdrop-blur-xl lg:hidden overflow-hidden"
+                className="absolute inset-x-0 top-full mt-3 rounded-3xl border border-[var(--color-primary)] bg-[var(--primary-accent)] p-4 shadow-2xl shadow-[var(--color-tertiary)]/20 backdrop-blur-xl lg:hidden overflow-hidden"
               >
-                <ul className="flex flex-col gap-1 text-sm font-bold uppercase tracking-wider text-[var(--color-tertiary)]">
+                <ul className="flex flex-col gap-1 text-sm font-bold uppercase tracking-wider text-white">
                   {navLinks.map((item, i) => (
                     <motion.li
                       key={item.key}
@@ -155,14 +154,13 @@ export default function Navbar() {
                       <Link
                         href={item.id}
                         onClick={() => handleNavClick(item.key)}
-                        className={`flex items-center gap-2 rounded-2xl px-4 py-3 transition-all duration-200 ${
-                          active === item.key
-                            ? "text-[var(--button-text-color)] bg-[var(--primary-accent)]"
-                            : "hover:bg-[var(--primary-accent)] hover:text-[var(--button-text-color)]"
-                        }`}
+                        className={`flex items-center gap-2 rounded-2xl px-4 py-3 transition-all duration-200 ${active === item.key
+                          ? "text-[var(--primary-accent)] bg-white"
+                          : "text-white hover:bg-white/10"
+                          }`}
                       >
                         {active === item.key && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-[var(--button-text-color)] shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary-accent)] shrink-0" />
                         )}
                         {t(item.key)}
                       </Link>
@@ -170,17 +168,21 @@ export default function Navbar() {
                   ))}
                 </ul>
 
-                <div className="mt-3 flex flex-col gap-3 border-t border-[var(--primary-accent)]/10 pt-4">
+                <div className="mt-3 flex flex-col gap-3 border-t border-white/20 pt-4">
                   <Link
                     href="/contact"
                     onClick={() => handleNavClick("Kontak")}
-                    className="inline-flex items-center justify-center rounded-2xl text-[var(--button-text-color)] bg-[var(--primary-accent)] px-4 py-3 text-sm font-bold uppercase tracking-wide"
+                    className="inline-flex items-center justify-center rounded-2xl text-[var(--primary-accent)] bg-white px-4 py-3 text-sm font-bold uppercase tracking-wide cursor-pointer hover:bg-gray-100 transition-colors"
                   >
                     {t("Button")}
                   </Link>
-                  <div className="flex items-center justify-center gap-3">
-                    <LanguageToggle />
-                    <ToogleTheme />
+                  <div className="flex items-center justify-center gap-3 mt-1">
+                    <div className="border border-white/40 rounded-full flex items-center justify-center overflow-hidden">
+                      <LanguageToggle />
+                    </div>
+                    <div className="border border-white/40 rounded-full flex items-center justify-center overflow-hidden">
+                      <ToogleTheme />
+                    </div>
                   </div>
                 </div>
               </motion.div>
