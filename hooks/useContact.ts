@@ -1,34 +1,18 @@
 import { useState } from "react";
 import { contactConfig } from "@/constants";
 
-interface FormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  message: string;
-}
+import type { ContactFormData, UseContactReturn, ContactStatus } from "@/types/contact";
 
-interface UseContactReturn {
-  formData: FormData;
-  loading: boolean;
-  status: "idle" | "success" | "error";
-  errorMessage: string;
-  handleInputChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => void;
-  handleSendEmail: (e: React.FormEvent) => void;
-  handleWhatsAppChat: (e: React.FormEvent) => void;
-}
 
 export const useContact = (): UseContactReturn => {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<ContactFormData>({
     firstName: "",
     lastName: "",
     email: "",
     message: "",
   });
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<ContactStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputChange = (

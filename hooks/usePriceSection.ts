@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { berbayarPlans, gratisPlans, type PricingPlan } from "@/constants";
+import { berbayarPlans, gratisPlans } from "@/constants";
+import type { PricingPlan } from "@/types/pricing";
 
 export function usePriceSection() {
   const [active, setActive] = useState<"gratis" | "berbayar">("gratis");

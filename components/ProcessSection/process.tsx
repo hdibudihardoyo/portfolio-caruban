@@ -10,6 +10,7 @@ import {
   TestTube2,
   Rocket,
 } from "lucide-react";
+import { getScrollVariants, scrollViewport } from "@/hooks/useScrollAnimation";
 
 const steps = [
   {
@@ -50,14 +51,23 @@ const steps = [
   },
 ];
 
+/** Cycle through 4 directions for the step cards */
+const STEP_DIRECTIONS = ["left", "up", "right", "left", "up", "right"] as const;
+
 export default function ProcessSection() {
   const t = useTranslations("Process");
 
   return (
     <section className="py-20 sm:py-24 px-6 bg-[var(--main-background)] overflow-hidden">
       <div className="max-w-5xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-14">
+        {/* Header — slide from top */}
+        <motion.div
+          variants={getScrollVariants("down")}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+          className="text-center mb-14"
+        >
           <div className="flex justify-center mb-3">
             <div className="w-15 h-1 rounded-full bg-[var(--color-muted)]" />
           </div>
@@ -67,17 +77,18 @@ export default function ProcessSection() {
           <p className="mt-3 text-sm text-[var(--color-muted)] max-w-lg mx-auto leading-relaxed">
             {t("Description")}
           </p>
-        </div>
+        </motion.div>
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {steps.map((step, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              variants={getScrollVariants(STEP_DIRECTIONS[i], 50)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={scrollViewport}
+              transition={{ delay: i * 0.07 }}
               whileHover={{ y: -6 }}
               className="relative bg-[var(--card-bg)] border border-[var(--color-muted)]/20 rounded-[2rem] p-6 group cursor-default overflow-hidden"
             >

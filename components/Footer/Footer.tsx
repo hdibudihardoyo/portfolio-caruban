@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Mail, MapPin } from "lucide-react";
@@ -11,6 +12,14 @@ import {
   footerServices,
   footerContact,
 } from "@/constants";
+import {
+  getScrollVariants,
+  getStaggerVariants,
+  scrollViewport,
+} from "@/hooks/useScrollAnimation";
+
+/** Arah masuk tiap kolom footer */
+const COL_DIRS = ["left", "up", "up", "right"] as const;
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -19,9 +28,20 @@ export default function Footer() {
   return (
     <footer className="bg-[var(--primary-accent)] pt-20 pb-10 px-6 text-[var(--button-text-color)]">
       <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-16">
-          {/* Brand Identity */}
-          <div className="flex flex-col gap-6">
+
+        {/* Grid kolom — stagger container */}
+        <motion.div
+          variants={getStaggerVariants(0.12)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-16"
+        >
+          {/* Brand Identity — dari kiri */}
+          <motion.div
+            variants={getScrollVariants("left", 45)}
+            className="flex flex-col gap-6"
+          >
             <div className="flex items-center gap-3">
               <Image
                 src="/icon.jpeg"
@@ -45,16 +65,19 @@ export default function Footer() {
                 <Link
                   key={i}
                   href={social.link}
-                  className="w-8 h-8 rounded-full border border-[var(--button-text-color)] flex items-center justify-center text-[var(--button-text-color)]"
+                  className="w-8 h-8 rounded-full border border-[var(--button-text-color)] flex items-center justify-center text-[var(--button-text-color)] hover:scale-110 transition-transform duration-300"
                 >
                   <FontAwesomeIcon icon={social.icon} className="text-xs" />
                 </Link>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Quick Links */}
-          <div className="flex flex-col gap-6">
+          {/* Quick Links — dari bawah */}
+          <motion.div
+            variants={getScrollVariants("up", 45)}
+            className="flex flex-col gap-6"
+          >
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--button-text-color)]">
               {t("Navigation")}
             </h4>
@@ -63,17 +86,20 @@ export default function Footer() {
                 <li key={link.key}>
                   <Link
                     href={link.id}
-                    className="hover:text-[var(--color-primary)] transition-colors"
+                    className="hover:text-[var(--color-primary)] transition-colors duration-200"
                   >
                     {tNav(link.key)}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          {/* Services */}
-          <div className="flex flex-col gap-6">
+          {/* Services — dari bawah */}
+          <motion.div
+            variants={getScrollVariants("up", 45)}
+            className="flex flex-col gap-6"
+          >
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--button-text-color)]">
               {t("Services")}
             </h4>
@@ -82,10 +108,13 @@ export default function Footer() {
                 <li key={service}>{t(service)}</li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          {/* Contact Info */}
-          <div className="flex flex-col gap-6">
+          {/* Contact Info — dari kanan */}
+          <motion.div
+            variants={getScrollVariants("right", 45)}
+            className="flex flex-col gap-6"
+          >
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--button-text-color)]">
               {t("Contact")}
             </h4>
@@ -99,15 +128,21 @@ export default function Footer() {
                 <span className="text-sm">{footerContact.email}</span>
               </li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[var(--button-text-color)]">
+        {/* Bottom Bar — fade dari bawah */}
+        <motion.div
+          variants={getScrollVariants("up", 20)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+          className="pt-8 border-t border-[var(--button-text-color)]"
+        >
           <p className="text-[10px] text-center font-bold uppercase tracking-widest text-[var(--button-text-color)]">
             {t("Copyright")}
           </p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

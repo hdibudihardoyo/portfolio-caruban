@@ -1,8 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { services } from "@/constants";
+import {
+  getScrollVariants,
+  getStaggerVariants,
+  scrollViewport,
+} from "@/hooks/useScrollAnimation";
+
+
 
 export default function ServiceSection() {
   const t = useTranslations("Service");
@@ -14,7 +22,14 @@ export default function ServiceSection() {
     >
       <div className="max-w-5xl mx-auto z-10 relative">
         <div className="grid gap-8">
-          <div className="w-full flex flex-col gap-5 items-center text-center">
+          {/* Header — slide dari atas */}
+          <motion.div
+            variants={getScrollVariants("down")}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+            className="w-full flex flex-col gap-5 items-center text-center"
+          >
             <div className="w-15 h-1 rounded-full bg-[var(--color-muted)] mx-auto" />
             <h2 className="text-2xl md:text-3xl font-black tracking-tighter text-[var(--primary-accent)]">
               {t("Title")}
@@ -22,12 +37,20 @@ export default function ServiceSection() {
             <p className="text-xs md:text-sm leading-relaxed max-w-2xl mx-auto text-[var(--color-primary)]">
               {t("Description")}
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* Cards — parent stagger container */}
+          <motion.div
+            variants={getStaggerVariants(0.1)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+          >
             {services.map((service, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={getScrollVariants("up", 45)}
                 className="surface group relative overflow-hidden p-4 flex flex-col gap-4 h-full hover:-translate-y-1 bg-[var(--card-bg)] border-[var(--card-border)] transition-all duration-300 rounded-2xl"
               >
                 {/* Card image */}
@@ -40,6 +63,7 @@ export default function ServiceSection() {
                     className="object-cover"
                   />
                 </div>
+
                 {/* Card body */}
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center justify-start gap-3">
@@ -50,14 +74,13 @@ export default function ServiceSection() {
                       {t(service.title)}
                     </h3>
                   </div>
-
                   <p className="text-xs sm:text-sm leading-relaxed text-[var(--color-primary)]">
                     {t(service.description)}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

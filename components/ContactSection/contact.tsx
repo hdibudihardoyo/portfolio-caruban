@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslations } from "next-intl";
 import { socialMedia, contactConfig } from "@/constants";
 import { useContact } from "@/hooks/useContact";
+import { getScrollVariants, scrollViewport } from "@/hooks/useScrollAnimation";
 
 export default function Contact() {
   const t = useTranslations("Contact");
@@ -28,21 +29,32 @@ export default function Contact() {
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-[var(--primary)] opacity-[0.02] blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-5xl mx-auto">
-        {/* Header  */}
-        <div className="flex flex-col items-center text-center mb-10 gap-4">
+        {/* Header — slide from top */}
+        <motion.div
+          variants={getScrollVariants("down")}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+          className="flex flex-col items-center text-center mb-10 gap-4"
+        >
           <div className="w-15 h-1 rounded-full bg-[var(--color-muted)]" />
-
           <h2 className="text-2xl md:text-3xl font-black tracking-tighter text-[var(--primary-accent)]">
             {t("Title")}
           </h2>
           <p className="text-sm md:text-base max-w-md text-[var(--color-primary)]">
             {t("Description")}
           </p>
-        </div>
+        </motion.div>
 
         <div className="flex flex-col md:flex-row items-start gap-8 md:gap-6">
-          {/* Left Form */}
-          <div className="w-full md:w-3/5">
+          {/* Left Form — slide from left */}
+          <motion.div
+            variants={getScrollVariants("left")}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+            className="w-full md:w-3/5"
+          >
             <form
               onSubmit={handleSendEmail}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
@@ -121,10 +133,16 @@ export default function Contact() {
                 </button>
               </div>
             </form>
-          </div>
+          </motion.div>
 
-          {/* Right Visuals */}
-          <div className="w-full md:w-2/5 flex flex-col items-center">
+          {/* Right Visuals — slide from right */}
+          <motion.div
+            variants={getScrollVariants("right")}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+            className="w-full md:w-2/5 flex flex-col items-center"
+          >
             <div className="relative">
               <div className="w-44 h-44 md:w-60 md:h-60 rounded-full flex items-center justify-center relative">
                 <div className="w-[90%] h-[90%] rounded-full overflow-hidden">
@@ -201,7 +219,7 @@ export default function Contact() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

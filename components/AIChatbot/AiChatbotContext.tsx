@@ -1,17 +1,8 @@
 "use client";
 
-import { IMessage } from "@/types/AiChatbot";
+import type { IMessage } from "@/types/AiChatbot";
+import type { ChatbotContextType } from "@/types/chatbot";
 import { createContext, useContext, useState, useCallback, ReactNode } from "react";
-
-interface ChatbotContextType {
-  isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
-  messages: IMessage[];
-  input: string;
-  setInput: (val: string) => void;
-  isLoading: boolean;
-  sendMessage: (text: string) => void;
-}
 
 const ChatbotContext = createContext<ChatbotContextType | undefined>(undefined);
 

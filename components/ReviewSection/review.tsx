@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useRef } from "react";
 import { reviews } from "@/constants";
+import { getScrollVariants, scrollViewport } from "@/hooks/useScrollAnimation";
 
 // Warna avatar berbeda untuk setiap huruf inisial
 const avatarColors = [
@@ -35,18 +36,30 @@ export default function SectionReview() {
       className="py-20 sm:py-24 px-6 bg-[var(--main-background)] overflow-hidden"
     >
       <div className="max-w-5xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
+        {/* Header — slide dari atas */}
+        <motion.div
+          variants={getScrollVariants("down")}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+          className="text-center mb-12"
+        >
           <div className="flex justify-center mb-3">
             <div className="w-15 h-1 rounded-full bg-[var(--color-muted)]" />
           </div>
           <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight text-[var(--primary-accent)]">
             {t("Title")}
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Carousel Container */}
-        <div className="relative group">
+        {/* Carousel wrapper — slide dari bawah */}
+        <motion.div
+          variants={getScrollVariants("up", 40)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+          className="relative group"
+        >
           {/* Tombol Kiri */}
           <button
             type="button"
@@ -66,14 +79,34 @@ export default function SectionReview() {
               {reviews.map((item, i) => {
                 const initial = item.name.charAt(0).toUpperCase();
                 const colorClass = avatarColors[i % avatarColors.length];
+
+                // Arah berganti-ganti: kiri → atas → kanan → kiri → …
+                const cardDirections = [
+                  "left",
+                  "up",
+                  "right",
+                  "left",
+                  "up",
+                  "right",
+                ] as const;
+                const dir = cardDirections[i % cardDirections.length];
+
                 return (
                   <motion.div
                     key={i}
+                    variants={getScrollVariants(dir, 45)}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    transition={{
+                      duration: 0.7,
+                      delay: i * 0.1,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
                     whileHover={{ y: -6, scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
                     className="min-w-[280px] md:min-w-[320px] bg-[var(--card-bg)] rounded-[2rem] p-6 shadow-sm relative snap-center flex flex-col gap-4 border border-[var(--color-muted)]/20"
                   >
-                    {/* Stars — filled + empty untuk yang tidak penuh */}
+                    {/* Stars */}
                     <div className="flex gap-0.5">
                       {Array.from({ length: 5 }).map((_, si) => (
                         <Star
@@ -129,12 +162,19 @@ export default function SectionReview() {
           >
             <ArrowRight className="w-4 h-4" />
           </button>
-        </div>
+        </motion.div>
 
-        {/* Pesan untuk user */}
-        <p className="text-xs text-[var(--color-primary)] text-center mt-10 text-[10px] font-black uppercase tracking-[0.2em] animate-pulse">
+        {/* Hint text — fade dari bawah */}
+        <motion.p
+          variants={getScrollVariants("up", 20)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+          transition={{ delay: 0.3, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="text-[var(--color-primary)] text-center mt-10 text-[10px] font-black uppercase tracking-[0.2em] animate-pulse"
+        >
           {t("Hint")}
-        </p>
+        </motion.p>
       </div>
     </section>
   );

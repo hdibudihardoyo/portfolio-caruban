@@ -7,6 +7,8 @@ import {
   faLinkedin,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
+import type { PricingPlan } from "@/types/pricing";
+import type { ServiceItem } from "@/types/service";
 
 export const allProjects = [
   {
@@ -65,14 +67,9 @@ export const navLinks = [
   { key: "Contact", name: "Kontak", id: "/contact" },
 ];
 
-export interface PricingPlan {
-  title: string;
-  price: string;
-  desc: string;
-  features: string[];
-  button: string;
-  highlight?: boolean;
-}
+// PricingPlan → see @/types/pricing
+export type { PricingPlan } from "@/types/pricing";
+
 
 export const gratisPlans: PricingPlan[] = [
   {
@@ -208,13 +205,8 @@ export const reviews = [
   },
 ];
 
-export interface ServiceItem {
-  image: string;
-  icon: ReactNode;
-  title: string;
-  description: string;
-  number: string;
-}
+// ServiceItem → see @/types/service
+
 
 export const services: ServiceItem[] = [
   {

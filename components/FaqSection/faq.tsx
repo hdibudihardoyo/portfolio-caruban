@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { faqs } from "@/constants";
 import { useFaq } from "@/hooks/useFaq";
+import { getScrollVariants, scrollViewport } from "@/hooks/useScrollAnimation";
 
 export default function FaqSection() {
   const t = useTranslations("FAQ");
@@ -15,7 +16,14 @@ export default function FaqSection() {
     <section className="relative py-20 sm:py-24 px-6 overflow-hidden bg-[var(--main-background)]">
       <div className="max-w-5xl mx-auto z-10 relative">
         <div className="flex flex-col md:flex-row gap-6 md:gap-10">
-          <div className="md:w-[35%] md:sticky md:top-24 md:h-fit shrink-0 flex flex-col gap-6">
+          {/* Left sticky panel — slide from left */}
+          <motion.div
+            variants={getScrollVariants("left")}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+            className="md:w-[35%] md:sticky md:top-24 md:h-fit shrink-0 flex flex-col gap-6"
+          >
             <div className="flex flex-col gap-4">
               <div className="w-15 h-1 rounded-full bg-[var(--color-muted)]" />
               <h2 className="text-2xl md:text-3xl font-black tracking-tighter leading-tight text-[var(--primary-accent)]">
@@ -43,9 +51,16 @@ export default function FaqSection() {
                 priority
               />
             </motion.div>
-          </div>
+          </motion.div>
 
-          <div className="flex-1 flex flex-col gap-2">
+          {/* Right FAQ list — slide from right */}
+          <motion.div
+            variants={getScrollVariants("right")}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+            className="flex-1 flex flex-col gap-2"
+          >
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
               return (
@@ -88,7 +103,7 @@ export default function FaqSection() {
                 </div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
